@@ -174,6 +174,7 @@ code {
   background: var(--code-bg);
 } */
 
+
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: 'Geist Variable', sans-serif;
@@ -208,6 +209,15 @@ code {
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-brand-orange-50:#FFF3EC;
+  --color-brand-orange-100:#FFDCC6;
+  --color-brand-orange-200:#FFC199;
+  --color-brand-orange-300:#FFA76B;
+  --color-brand-orange-400:#FF8A4D;
+  --color-brand-orange-500:#FF6733;
+  --color-brand-orange-600:#FF4100;
+  --color-brand-orange-700:#E53900;
+  --color-brand-orange-800:#9F2B00;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -215,6 +225,7 @@ code {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  
 }
 
 .dark {
