@@ -5,27 +5,25 @@
 @import url('https://googleapis.com');
 @custom-variant dark (&:is(.dark *));
 :root {
-
- 
   /* Background */
 
-  --bg-plain-:var(--color-white);
-  --bg-subtle-:var(--color-zinc-50);
-  --bg-muted-:var(--color-zinc-100);
-  --bg-soft-:var(--color-zinc-200);
-  --bg-default-:var(--color-zinc-500);
-  --bg-inverse-:var(--color-zinc-800);
-    --bg-elevated: color-mix(in srgb, var(--color-black) 20%, transparent);
-  --bg-primary:var(--color-brand-orange-800);
-  --bg-primary-faint:var(--color-brand-orange-400);
-  --bg-primary-fade:var(--color-brand-orange-100);
+  --bg-plain: var(--color-white);
+  --bg-subtle: var(--color-zinc-50);
+  --bg-muted: var(--color-zinc-100);
+  --bg-soft: var(--color-zinc-200);
+  --bg-default: var(--color-zinc-500);
+  --bg-inverse: var(--color-zinc-800);
+  --bg-elevated: color-mix(in srgb, var(--color-black) 20%, transparent);
+  --bg-primary: var(--color-brand-orange-800);
+  --bg-primary-faint: var(--color-brand-orange-400);
+  --bg-primary-fade: var(--color-brand-orange-100);
   --bg-overlay: color-mix(in srgb, var(--color-white) 60%, transparent);
   --blur-overlay: 86px;
-  
+
   /* borders */
   --border-plain: var(--color-zinc-800);
   --border-subtle: var(--color-zinc-100);
-   --border-muted: var(--color-zinc-200);
+  --border-muted: var(--color-zinc-200);
   --border-soft: var(--color-zinc-300);
   --border-default: var(--color-zinc-400);
   --border-inverse: var(--color-white);
@@ -33,9 +31,9 @@
   --border-primary-faint: var(--color-brand-orange-400);
   --border-primary-fade: var(--color-brand-orange-100);
 
- /* Text */
+  /* Text */
 
- --text-plain: var(--color-zinc-800);
+  --text-plain: var(--color-zinc-800);
   --text-subtle: var(--color-zinc-300);
   --text-muted: var(--color-zinc-400);
   --text-soft: var(--color-zinc-500);
@@ -45,26 +43,21 @@
   --text-primary-faint: var(--color-brand-orange-400);
   --text-primary-fade: var(--color-brand-orange-100);
 
-/* Shadows */
+  /* Shadows */
 
-  --app-shadow-primary-sm: 0px 2px 10px color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
-  --app-shadow-primary: 0px 4px 20px color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
-  --app-shadow-primary-lg: 0px 6px 30px color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary-sm: 0px 2px 10px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary: 0px 4px 20px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary-lg: 0px 6px 30px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
 
-
-/* Ring */ 
+  /* Ring */
 
   --ring-default: var(--color-maroon-50);
-  --ring-danger: var(--color-red-100);
+  --ring-danger: var(--color-brand-orange-600);
   --ring-width-default: 3px;
 
-
-
-
-
-
-
-  
   @media (max-width: 1024px) {
     font-size: 16px;
   }
@@ -209,25 +202,22 @@ code {
   background: var(--code-bg);
 } */
 
-
 @theme inline {
+  /* primitive colors */
 
-
-/* primitive colors */
-
-  --color-brand-orange-50:#FFF3EC;
-  --color-brand-orange-100:#FFDCC6;
-  --color-brand-orange-200:#FFC199;
-  --color-brand-orange-300:#FFA76B;
-  --color-brand-orange-400:#FF8A4D;
-  --color-brand-orange-500:#FF6733;
-  --color-brand-orange-600:#FF4100;
-  --color-brand-orange-700:#E53900;
-  --color-brand-orange-800:#9F2B00;
+  --color-brand-orange-50: #fff3ec;
+  --color-brand-orange-100: #ffdcc6;
+  --color-brand-orange-200: #ffc199;
+  --color-brand-orange-300: #ffa76b;
+  --color-brand-orange-400: #ff8a4d;
+  --color-brand-orange-500: #ff6733;
+  --color-brand-orange-600: #ff4100;
+  --color-brand-orange-700: #e53900;
+  --color-brand-orange-800: #9f2b00;
   --color-maroon-50: #fbeaea;
+  --color-brand-dark: #452b2c;
 
-
-/* Background */
+  /* Background */
 
   --color-bg-plain: var(--bg-plain);
   --color-bg-subtle: var(--bg-subtle);
@@ -240,22 +230,22 @@ code {
   --color-bg-primary: var(--bg-primary);
   --color-bg-primary-faint: var(--bg-primary-faint);
   --color-bg-primary-fade: var(--bg-primary-fade);
-  ---blur-overlay: var(--blur-overlay);
+  --blur-overlay: var(--blur-overlay);
 
   /* borders */
 
-   --color-border-plain: var(--border-plain);
+  --color-border-plain: var(--border-plain);
   --color-border-subtle: var(--border-subtle);
   --color-border-muted: var(--border-muted);
   --color-border-soft: var(--border-soft);
   --color-border-default: var(--border-default);
   --color-border-inverse: var(--border-inverse);
- --color-border-primary: var(--border-primary);
+  --color-border-primary: var(--border-primary);
   --color-border-primary-faint: var(--border-primary-faint);
   --color-border-primary-fade: var(--border-primary-fade);
 
   /* Text */
-   --color-text-plain: var(--text-plain);
+  --color-text-plain: var(--text-plain);
   --color-text-subtle: var(--text-subtle);
   --color-text-muted: var(--text-muted);
   --color-text-soft: var(--text-soft);
@@ -265,33 +255,88 @@ code {
   --color-text-primary-faint: var(--text-primary-faint);
   --color-text-primary-fade: var(--text-primary-fade);
 
-/* Shadows */
+  /* Shadows */
   --shadow-shadow-primary-sm: var(--app-shadow-primary-sm);
   --shadow-shadow-primary: var(--app-shadow-primary);
   --shadow-shadow-primary-lg: var(--app-shadow-primary-lg);
 
-  /* Ring */ 
- --color-ring-default: var(--ring-default);
+  /* Ring */
+  --color-ring-default: var(--ring-default);
   --color-ring-danger: var(--ring-danger);
 
-/* Radius */
-  --radius-sm: 1rem; 
-  --radius-base: 1.125rem; 
-  --radius-lg: 1.25rem; 
-  --radius-xl: 3.125rem; 
+  /* Radius */
+  --radius-sm: 1rem;
+  --radius-base: 1.125rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 3.125rem;
 
   /* Fonts */
 
-  --font-sans: "Baloo Thambi 2", sans-serif;
-  --font-inter: "Inter", sans-serif;
-  
+  --font-sans: 'Baloo Thambi 2', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* shadcn base tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
 }
 
 .dark {
- 
- 
-}
+  /* Background */
 
+  --bg-plain: var(--color-zinc-700);
+  --bg-subtle: var(--color-zinc-800);
+  --bg-muted: var(--color-zinc-900);
+  --bg-soft: var(--color-zinc-700);
+  --bg-default: var(--color-zinc-600);
+  --bg-inverse: var(--color-zinc-50);
+  --bg-elevated: color-mix(in srgb, var(--color-black) 20%, transparent);
+  --bg-primary: var(--color-brand-orange-800);
+  --bg-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
+  --bg-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
+  --bg-overlay: color-mix(in srgb, var(--color-black) 60%, transparent);
+  --blur-overlay: 86px;
+
+  /* borders */
+
+  --border-plain: var(--color-zinc-50);
+  --border-subtle: var(--color-zinc-700);
+  --border-muted: var(--color-zinc-800);
+  --border-soft: var(--color-zinc-600);
+  --border-default: var(--color-zinc-500);
+  --border-inverse: var(--color-zinc-800);
+  --border-primary: var(--color-brand-orange-800);
+  --border-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
+  --border-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
+
+  /* Text */
+
+  --text-plain: var(--color-zinc-50);
+  --text-subtle: var(--color-zinc-500);
+  --text-muted: var(--color-zinc-400);
+  --text-soft: var(--color-zinc-300);
+  --text-default: var(--color-zinc-200);
+  --text-inverse: var(--color-zinc-800);
+  --text-primary: var(--color-brand-orange-800);
+  --text-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
+  --text-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
+
+  /* Shadows */
+
+  --app-shadow-primary-sm: 0px 2px 10px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary: 0px 4px 20px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary-lg: 0px 4px 36px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+
+  /* Ring */
+
+  --ring-default: var(--color-maroon-50);
+  --ring-danger: var(--color-brand-dark);
+  --ring-width-default: 3px;
+}
 
 @utility ring-default {
   box-shadow: 0 0 0 var(--ring-width-default) var(--color-ring-default);
@@ -300,7 +345,6 @@ code {
 @utility ring-danger {
   box-shadow: 0 0 0 var(--ring-width-default) var(--color-ring-danger);
 }
-
 
 @layer base {
   * {
