@@ -55,7 +55,7 @@
   /* Ring */
 
   --ring-default: var(--color-maroon-50);
-  --ring-danger: var(--color-red-100);
+  --ring-danger: var(--color-brand-orange-600);
   --ring-width-default: 3px;
 
   @media (max-width: 1024px) {
@@ -215,6 +215,7 @@ code {
   --color-brand-orange-700: #e53900;
   --color-brand-orange-800: #9f2b00;
   --color-maroon-50: #fbeaea;
+  --color-brand-dark: #452b2c;
 
   /* Background */
 
@@ -229,7 +230,7 @@ code {
   --color-bg-primary: var(--bg-primary);
   --color-bg-primary-faint: var(--bg-primary-faint);
   --color-bg-primary-fade: var(--bg-primary-fade);
-  ---blur-overlay: var(--blur-overlay);
+  --blur-overlay: var(--blur-overlay);
 
   /* borders */
 
@@ -273,9 +274,68 @@ code {
 
   --font-sans: 'Baloo Thambi 2', sans-serif;
   --font-inter: 'Inter', sans-serif;
+
+  /* shadcn base tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
 }
 
 .dark {
+  /* Background */
+
+  --bg-plain: var(--color-zinc-700);
+  --bg-subtle: var(--color-zinc-800);
+  --bg-muted: var(--color-zinc-900);
+  --bg-soft: var(--color-zinc-700);
+  --bg-default: var(--color-zinc-600);
+  --bg-inverse: var(--color-zinc-50);
+  --bg-elevated: color-mix(in srgb, var(--color-black) 20%, transparent);
+  --bg-primary: var(--color-brand-orange-800);
+  --bg-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
+  --bg-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
+  --bg-overlay: color-mix(in srgb, var(--color-black) 60%, transparent);
+  --blur-overlay: 86px;
+
+  /* borders */
+
+  --border-plain: var(--color-zinc-50);
+  --border-subtle: var(--color-zinc-700);
+  --border-muted: var(--color-zinc-800);
+  --border-soft: var(--color-zinc-600);
+  --border-default: var(--color-zinc-500);
+  --border-inverse: var(--color-zinc-800);
+  --border-primary: var(--color-brand-orange-800);
+  --border-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
+  --border-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
+
+  /* Text */
+
+  --text-plain: var(--color-zinc-50);
+  --text-subtle: var(--color-zinc-500);
+  --text-muted: var(--color-zinc-400);
+  --text-soft: var(--color-zinc-300);
+  --text-default: var(--color-zinc-200);
+  --text-inverse: var(--color-zinc-800);
+  --text-primary: var(--color-brand-orange-800);
+  --text-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
+  --text-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
+
+  /* Shadows */
+
+  --app-shadow-primary-sm: 0px 2px 10px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary: 0px 4px 20px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-primary-lg: 0px 4px 36px
+    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+
+  /* Ring */
+
+  --ring-default: var(--color-maroon-50);
+  --ring-danger: var(--color-brand-dark);
+  --ring-width-default: 3px;
 }
 
 @utility ring-default {
