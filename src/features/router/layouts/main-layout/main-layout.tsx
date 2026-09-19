@@ -10,7 +10,10 @@ const MainLayout = () => {
     <div className="flex min-h-screen flex-col items-center justify-center">
       <LanguageSwitcher />
       <h1>{t('welcome')}</h1>
-      <Button variant="secondary" icon={<ArrowUpRight />}>
+      <Button variant="outline" icon={<ArrowUpRight />}>
+        Explore More
+      </Button>
+      <Button variant="ghost" icon={<ArrowUpRight />}>
         Get Started
       </Button>
       <Outlet />
