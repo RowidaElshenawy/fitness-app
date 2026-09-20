@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
@@ -14,6 +14,11 @@ import Register from '@/app/auth-pages/register';
 import ForgotPassword from '@/app/auth-pages/forgot-password';
 
 const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Navigate to="/en" replace />,
+  },
+
   {
     path: '/:locale',
     element: <LocaleLayout />,

@@ -1,7 +1,7 @@
-export default function RegisterPage() {
+export default function Register() {
   return (
     <>
-      <h2>register page</h2>
+      <h2 className="text-black">register page</h2>
     </>
   );
 }
