@@ -38,7 +38,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="card-title"
       className={cn(
-        'font-heading text-xl leading-8 font-bold tracking-wide uppercase text-text-inverse group-data-[size=sm]/card:text-sm',
+        'font-heading text-xl leading-8 font-bold tracking-wide uppercase text-text-plain group-data-[size=sm]/card:text-sm',
         className
       )}
       {...props}
@@ -91,7 +91,7 @@ function CardOverlay({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="card-overlay"
       className={cn(
-        'absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-bg-elevated px-4 py-4 backdrop-blur-3xl',
+        'absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-bg-overlay px-4 py-4 backdrop-blur-3xl dark:bg-bg-elevated ',
         className
       )}
       {...props}
