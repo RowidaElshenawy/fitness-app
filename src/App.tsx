@@ -2,10 +2,10 @@
 // import LanguageSwitcher from './shared/components/custom-ui/language-switcher/language-switcher';
 
 // function App() {
-//   const { t } = useTranslation()
+//   const { t } = useTranslation();
 //   return (
 //     <>
-//      <LanguageSwitcher />
+//       <LanguageSwitcher />
 //       <h1>{t('welcome')}</h1>
 //     </>
 //   );
