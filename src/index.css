@@ -13,8 +13,8 @@
   --bg-default: var(--color-zinc-500);
   --bg-inverse: var(--color-zinc-800);
   --bg-elevated: color-mix(in srgb, var(--color-black) 20%, transparent);
-  --bg-primary: var(--color-brand-orange-800);
-  --bg-primary-faint: var(--color-brand-orange-400);
+  --bg-primary: var(--color-brand-orange-600);
+  --bg-primary-faint: var(--color-brand-orange-800);
   --bg-primary-fade: var(--color-brand-orange-100);
   --bg-overlay: color-mix(in srgb, var(--color-white) 60%, transparent);
   --blur-overlay: 86px;
@@ -26,8 +26,8 @@
   --border-soft: var(--color-zinc-300);
   --border-default: var(--color-zinc-400);
   --border-inverse: var(--color-white);
-  --border-primary: var(--color-brand-orange-800);
-  --border-primary-faint: var(--color-brand-orange-400);
+  --border-primary: var(--color-brand-orange-600);
+  --border-primary-faint: var(--color-brand-orange-800);
   --border-primary-fade: var(--color-brand-orange-100);
 
   /* Text */
@@ -38,8 +38,8 @@
   --text-soft: var(--color-zinc-500);
   --text-default: var(--color-zinc-600);
   --text-inverse: var(--color-white);
-  --text-primary: var(--color-brand-orange-800);
-  --text-primary-faint: var(--color-brand-orange-400);
+  --text-primary: var(--color-brand-orange-600);
+  --text-primary-faint: var(--color-brand-orange-800);
   --text-primary-fade: var(--color-brand-orange-100);
 
   /* Shadows */
@@ -328,12 +328,15 @@ code {
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border, var(--color-border-subtle));
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
   }
   html {
-    @apply font-sans;
+    font-family: var(--font-sans);
   }
 }

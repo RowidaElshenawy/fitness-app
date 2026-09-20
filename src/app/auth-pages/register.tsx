@@ -1,5 +1,7 @@
-const Register = () => {
-  return <div className="bg-bg-plain">Register page</div>;
-};
-
-export default Register;
+export default function RegisterPage() {
+  return (
+    <>
+      <h2>register page</h2>
+    </>
+  );
+}
