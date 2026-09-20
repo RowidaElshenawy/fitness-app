@@ -2,7 +2,6 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/geist';
-@import url('https://googleapis.com');
 @custom-variant dark (&:is(.dark *));
 :root {
   /* Background */
@@ -54,7 +53,7 @@
 
   /* Ring */
 
-  --ring-default: var(--color-maroon-50);
+  --ring-default: var(--color-brand-orange-300);
   --ring-danger: var(--color-brand-orange-600);
   --ring-width-default: 3px;
 
@@ -314,7 +313,7 @@ code {
 
   /* Ring */
 
-  --ring-default: var(--color-maroon-50);
+  --ring-default: var(--color-brand-orange-300);
   --ring-danger: var(--color-brand-dark);
   --ring-width-default: 3px;
 }
