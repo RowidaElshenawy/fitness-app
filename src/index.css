@@ -20,6 +20,7 @@
   --blur-overlay: 86px;
 
   /* borders */
+  --border-danger: var(--color-red-600);
   --border-plain: var(--color-zinc-800);
   --border-subtle: var(--color-zinc-100);
   --border-muted: var(--color-zinc-200);
@@ -31,7 +32,7 @@
   --border-primary-fade: var(--color-brand-orange-100);
 
   /* Text */
-
+  --text-danger: var(--color-red-600);
   --text-plain: var(--color-zinc-800);
   --text-subtle: var(--color-zinc-300);
   --text-muted: var(--color-zinc-400);
@@ -213,7 +214,7 @@ code {
   --blur-overlay: var(--blur-overlay);
 
   /* borders */
-
+  --color-border-danger: var(--border-danger);
   --color-border-plain: var(--border-plain);
   --color-border-subtle: var(--border-subtle);
   --color-border-muted: var(--border-muted);
@@ -225,6 +226,7 @@ code {
   --color-border-primary-fade: var(--border-primary-fade);
 
   /* Text */
+  --color-text-danger: var(--text-danger);
   --color-text-plain: var(--text-plain);
   --color-text-subtle: var(--text-subtle);
   --color-text-muted: var(--text-muted);
@@ -279,7 +281,7 @@ code {
   --blur-overlay: 86px;
 
   /* borders */
-
+  --border-danger: var(--color-red-500);
   --border-plain: var(--color-zinc-50);
   --border-subtle: var(--color-zinc-700);
   --border-muted: var(--color-zinc-800);
@@ -291,7 +293,7 @@ code {
   --border-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
 
   /* Text */
-
+  --text-danger: var(--color-red-500);
   --text-plain: var(--color-zinc-50);
   --text-subtle: var(--color-zinc-500);
   --text-muted: var(--color-zinc-400);

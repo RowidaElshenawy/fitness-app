@@ -3,5 +3,22 @@
     "english": "الإنجليزية",
     "arabic": "العربية"
   },
-  "welcome": "مرحبًا"
+  "welcome": "مرحبًا",
+
+  "custom-input": {
+    "default": {
+      "first-name": "الاسم الأول",
+      "last-name": "الاسم الاخير"
+    },
+
+    "search": "بحث",
+    "email": "الايميل",
+    "phone": "رقم الهاتف",
+
+    "password": {
+      "password": "كلمة المرور",
+      "new-password": "كلمة المرور الجديده",
+      "confirm-new-password": "تأكيد كلمة المرورالجديده"
+    }
+  }
 }
