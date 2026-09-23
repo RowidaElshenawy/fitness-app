@@ -1,0 +1,23 @@
+{
+  "language": {
+    "english": "English",
+    "arabic": "Arabic"
+  },
+  "welcome": "Welcome",
+  "custom-input": {
+    "default": {
+      "first-name": "First Name",
+      "last-name": "Last Name"
+    },
+
+    "search": "Search",
+    "email": "Email",
+    "phone": "phone number",
+
+    "password": {
+      "password": "Password",
+      "new-password": "New Password",
+      "confirm-new-password": "Confirm New Password"
+    }
+  }
+}
