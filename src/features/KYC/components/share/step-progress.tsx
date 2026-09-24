@@ -1,19 +1,25 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const StepProgress: React.FC = () => {
+type StepProgressProps = {
+  currentStep: number;
+  totalSteps: number;
+};
+
+export const StepProgress: React.FC<StepProgressProps> = ({ currentStep, totalSteps }) => {
   const { t } = useTranslation();
 
-  const currentStep = 1;
-  const totalSteps = 6;
   const size = 64;
   const strokeWidth = 3;
 
   const center = size / 2;
   const radius = center - strokeWidth;
+
   const circumference = 2 * Math.PI * radius;
 
+  // Calculate progress
   const progress = currentStep / totalSteps;
+
   const strokeDashoffset = circumference - progress * circumference;
 
   const stepsText = t('kyc.stepProgress', {
@@ -24,19 +30,24 @@ export const StepProgress: React.FC = () => {
 
   return (
     <div
-      className="relative flex items-center justify-center font-sans select-none"
-      style={{ width: size, height: size }}
+      className="relative flex select-none items-center justify-center font-sans"
+      style={{
+        width: size,
+        height: size,
+      }}
     >
-      <svg width={size} height={size} className="transform -rotate-90">
+      <svg width={size} height={size} className="-rotate-90 transform">
+        {/* Background Circle */}
         <circle
           cx={center}
           cy={center}
           r={radius}
-          stroke=""
+          stroke="#333333"
           strokeWidth={strokeWidth}
           fill="transparent"
         />
 
+        {/* Progress Circle */}
         <circle
           cx={center}
           cy={center}
@@ -47,11 +58,12 @@ export const StepProgress: React.FC = () => {
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
           strokeLinecap="round"
-          className="transition-all duration-300 ease-out"
+          className="transition-all duration-500 ease-out"
         />
       </svg>
 
-      <span className="absolute text-white font-medium text-sm">{stepsText}</span>
+      {/* Step Number */}
+      <span className="absolute text-sm font-medium text-white">{stepsText}</span>
     </div>
   );
 };
