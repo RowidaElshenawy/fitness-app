@@ -11,11 +11,13 @@ const HeaderAuth = ({
     <>
       <h3
         className={cn(
-          'font-sans font-normal text-2xl text-text-inverse text-center leading-13',
+          'font-sans font-extrabold text-2xl text-text-inverse text-center leading-13',
           className
         )}
       >
-        {subtitlePosition === 'before' && <span className="text-lg block">{subtitle}</span>}
+        {subtitlePosition === 'before' && (
+          <span className=" font-normal text-lg block">{subtitle}</span>
+        )}
         {title}
         {subtitlePosition === 'after' && <span className="text-lg block">{subtitle}</span>}
       </h3>
