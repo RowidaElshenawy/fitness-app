@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import CustomInput from '@/shared/components/custom-ui/custom-input';
 import { Button } from '@/shared/components/ui/button';
 import { ArrowUpRight } from 'lucide-react';
@@ -9,6 +11,7 @@ const Home = () => {
       <CustomInput variant="default" subVariant="first-name" />
       <CustomInput variant="default" subVariant="last-name" />
       <CustomInput variant="email" />
+      <Link to={'forgot-password'}>Forgot Password?</Link>
       <CustomInput variant="otp" error={true} />
       <CustomInput variant="search" />
       <CustomInput variant="password" subVariant="password" />
