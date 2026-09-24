@@ -1,4 +1,6 @@
 import CustomInput from '@/shared/components/custom-ui/custom-input';
+import { Button } from '@/shared/components/ui/button';
+import { ArrowUpRight } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -12,6 +14,12 @@ const Home = () => {
       <CustomInput variant="password" subVariant="password" />
       <CustomInput variant="password" subVariant="new-password" />
       <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
+      <Button variant="outline" icon={<ArrowUpRight />}>
+        Explore More
+      </Button>
+      <Button variant="ghost" icon={<ArrowUpRight />}>
+        Get Started
+      </Button>
     </div>
   );
 };
