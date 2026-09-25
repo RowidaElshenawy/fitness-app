@@ -4,16 +4,17 @@ import { useState } from 'react';
 import { type UseFormReturn } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import type { ForgotPasswordForm } from '../components/forgot-password/forgot-password-flow';
+import type { ForgotPasswordForm, ForgotPasswordStep } from '../lib/types/forgot-password';
 import { forgotPassword, resetPassword, verifyResetCode } from '../lib/apis/forgot-password.api';
 
-export type ForgotPasswordStep = 'email' | 'code' | 'password';
-
 const useForgotPassword = (form: UseFormReturn<ForgotPasswordForm>) => {
+  // Navigation
   const navigate = useNavigate();
 
-  const [step, setStep] = useState<ForgotPasswordStep>('password');
+  // State
+  const [step, setStep] = useState<ForgotPasswordStep>('email');
 
+  // Mutation
   const forgotPasswordMutation = useMutation({
     mutationFn: forgotPassword,
     onSuccess: () => setStep('code'),
@@ -31,6 +32,22 @@ const useForgotPassword = (form: UseFormReturn<ForgotPasswordForm>) => {
     },
   });
 
+  // Variables
+  const isPending =
+    forgotPasswordMutation.isPending ||
+    verifyResetCodeMutation.isPending ||
+    resetPasswordMutation.isPending;
+
+  const getErrorMessage = (error: unknown) =>
+    isAxiosError(error) ? String(error.response?.data?.error ?? '') : '';
+
+  const stepError = {
+    email: getErrorMessage(forgotPasswordMutation.error),
+    code: getErrorMessage(verifyResetCodeMutation.error),
+    password: getErrorMessage(resetPasswordMutation.error),
+  }[step];
+
+  // Functions
   const handleEmailSubmit = () => {
     const { email } = form.getValues();
 
@@ -68,20 +85,6 @@ const useForgotPassword = (form: UseFormReturn<ForgotPasswordForm>) => {
 
     navigate('../login');
   };
-
-  const isPending =
-    forgotPasswordMutation.isPending ||
-    verifyResetCodeMutation.isPending ||
-    resetPasswordMutation.isPending;
-
-  const getErrorMessage = (error: unknown) =>
-    isAxiosError(error) ? String(error.response?.data?.error ?? '') : '';
-
-  const stepError = {
-    email: getErrorMessage(forgotPasswordMutation.error),
-    code: getErrorMessage(verifyResetCodeMutation.error),
-    password: getErrorMessage(resetPasswordMutation.error),
-  }[step];
 
   return {
     step,

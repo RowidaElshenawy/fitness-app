@@ -8,13 +8,7 @@ import EmailStep from './email-step';
 import ResetPasswordStep from './reset-password-step';
 import VerifyCodeStep from './verify-code-step';
 import useForgotPassword from '../../hooks/use-forgot-password';
-
-export interface ForgotPasswordForm {
-  email: string;
-  resetCode: string;
-  newPassword: string;
-  confirmPassword: string;
-}
+import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
 
 const ForgotPasswordForm = () => {
   // Translation

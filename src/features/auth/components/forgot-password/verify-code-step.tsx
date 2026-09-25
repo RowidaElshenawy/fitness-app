@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import CustomInput from '@/shared/components/custom-ui/custom-input';
 import HeaderAuth from '../shared/header-auth';
-import type { ForgotPasswordForm } from './forgot-password-flow';
+import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
 
 interface VerifyCodeStepProps {
   isPending: boolean;

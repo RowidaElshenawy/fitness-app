@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import CustomInput from '@/shared/components/custom-ui/custom-input';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import HeaderAuth from '../shared/header-auth';
-import type { ForgotPasswordForm } from './forgot-password-flow';
+import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
 
 interface EmailStepProps {
   isPending: boolean;
@@ -20,7 +20,7 @@ const EmailStep = ({ isPending, error }: EmailStepProps) => {
 
   return (
     <>
-      <HeaderAuth subtitle={t('forgot-password.enter-code')} />
+      <HeaderAuth subtitle={t('forgot-password.enter-email')} />
 
       <Controller
         name="email"
