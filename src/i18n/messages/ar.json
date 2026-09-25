@@ -4,21 +4,35 @@
     "arabic": "العربية"
   },
   "welcome": "مرحبًا",
-
   "custom-input": {
     "default": {
       "first-name": "الاسم الأول",
-      "last-name": "الاسم الاخير"
+      "last-name": "الاسم الاخير",
+      "male": "ذكر",
+      "female": "أنثى",
+      "next": "التالي",
+      "submit": "إرسال"
     },
-
     "search": "بحث",
     "email": "الايميل",
     "phone": "رقم الهاتف",
-
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
+    }
+  },
+  "kyc": {
+    "gender-title": "اخبرنا عن نفسك!",
+    "gender-subtitle": "نحتاج لمعرفة جنسك،",
+    "age-title": "كم عمرك ؟",
+    "weight-title": "ما هو وزنك ؟",
+    "height-title": "ما هو طولك ؟",
+    "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
+    "units": {
+      "years-old": "سنة",
+      "kg": "كجم",
+      "cm": "سم"
     }
   }
 }
