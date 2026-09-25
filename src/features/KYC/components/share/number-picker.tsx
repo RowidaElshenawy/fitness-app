@@ -41,7 +41,7 @@ export default function NumberPicker({
         })}
       </div>
       {/* Indicator */}
-      <div className=" mt-5 h-0 w-0 border-b-10 border-r-8 border-l-8 border-l-transparent border-r-transparent border-b-bg-primary " />{' '}
+      <div className=" mt-5 h-0 w-0 border-b-10 border-r-8 border-l-8 border-l-transparent border-r-transparent border-b-bg-primary " />
     </div>
   );
 }

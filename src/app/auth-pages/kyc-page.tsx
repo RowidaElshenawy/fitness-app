@@ -4,6 +4,8 @@ import { GenderStep } from '@/features/KYC/components/gender-step';
 import NumberPicker from '@/features/KYC/components/share/number-picker';
 import { StepProgress } from '@/features/KYC/components/share/step-progress';
 import { Button } from '@/shared/components/ui/button';
+import HeaderAuth from '@/features/auth/components/shared/header-auth';
+import { useTranslation } from 'react-i18next';
 
 export interface KycFormData {
   gender: 'male' | 'female' | null;
@@ -15,6 +17,7 @@ export interface KycFormData {
 }
 
 export default function KycPage() {
+  const { t } = useTranslation();
   // Current step
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -99,9 +102,11 @@ export default function KycPage() {
 
         {currentStep === 1 && (
           <div className="flex w-full max-w-md flex-col items-center space-y-6">
-            <h2 className="text-center text-2xl font-bold uppercase">Tell Us About Yourself!</h2>
-
-            <p className="text-center text-sm text-gray-400">To Know About Your Gender</p>
+            <HeaderAuth
+              title={t('kyc.gender-title')}
+              subtitle={t('kyc.gender-subtitle')}
+              subtitlePosition="after"
+            />
 
             <GenderStep
               gender={formData.gender}
@@ -109,20 +114,21 @@ export default function KycPage() {
             />
 
             <Button
-              variant="primary"
+              variant={formData.gender ? 'primary' : 'ghost'}
               disabled={!formData.gender}
               onClick={handleNext}
               className="
-                w-full
-                py-4
+                w-4/5
+                py-6
                 font-bold
                 transition
                 hover:opacity-90
                 disabled:cursor-not-allowed
                 disabled:opacity-50
+                text-lg
               "
             >
-              Next
+              {t('custom-input.default.next')}
             </Button>
           </div>
         )}
@@ -133,11 +139,15 @@ export default function KycPage() {
 
         {currentStep === 2 && (
           <div className="flex w-full max-w-md flex-col items-center space-y-6">
-            <h2 className="text-center text-2xl font-bold">How Old Are You?</h2>
+            <HeaderAuth
+              title={t('kyc.age-title')}
+              subtitle={t('kyc.hint')}
+              subtitlePosition="after"
+            />
 
             <NumberPicker
-              title="Years Old"
-              min={18}
+              title={t('kyc.units.years-old')}
+              min={10}
               max={100}
               value={formData.age}
               onChange={(value) => updateFormData('age', value)}
@@ -155,9 +165,10 @@ export default function KycPage() {
                 hover:opacity-90
                 disabled:cursor-not-allowed
                 disabled:opacity-50
+                text-lg
               "
             >
-              Next
+              {t('custom-input.default.next')}
             </Button>
           </div>
         )}
@@ -168,10 +179,14 @@ export default function KycPage() {
 
         {currentStep === 3 && (
           <div className="flex w-full max-w-md flex-col items-center space-y-6">
-            <h2 className="text-center text-2xl font-bold">What Is Your Weight?</h2>
+            <HeaderAuth
+              title={t('kyc.weight-title')}
+              subtitle={t('kyc.hint')}
+              subtitlePosition="after"
+            />
 
             <NumberPicker
-              title="KG"
+              title={t('kyc.units.kg')}
               min={30}
               max={200}
               value={formData.weight}
@@ -190,9 +205,10 @@ export default function KycPage() {
                 hover:opacity-90
                 disabled:cursor-not-allowed
                 disabled:opacity-50
+                text-lg
               "
             >
-              Next
+              {t('custom-input.default.next')}
             </Button>
           </div>
         )}
@@ -203,10 +219,13 @@ export default function KycPage() {
 
         {currentStep === 4 && (
           <div className="flex w-full max-w-md flex-col items-center space-y-6">
-            <h2 className="text-center text-2xl font-bold">What Is Your Height?</h2>
-
+            <HeaderAuth
+              title={t('kyc.height-title')}
+              subtitle={t('kyc.hint')}
+              subtitlePosition="after"
+            />
             <NumberPicker
-              title="CM"
+              title={t('kyc.units.cm')}
               min={100}
               max={220}
               value={formData.height}
@@ -220,12 +239,12 @@ export default function KycPage() {
                      w-4/5
                 py-6
                   
-                
+                text-lg
                   
                   font-bold
                 "
             >
-              Next
+              {t('custom-input.default.next')}
             </Button>
           </div>
         )}
@@ -250,9 +269,10 @@ export default function KycPage() {
                       w-4/5
                 py-6
                   font-bold
+                  text-lg
                 "
             >
-              Next
+              {t('custom-input.default.next')}
             </Button>
           </div>
         )}
@@ -277,10 +297,11 @@ export default function KycPage() {
               className="
                      w-4/5
                      py-6
+                     text-lg
                   font-bold
                 "
             >
-              Submit
+              {t('custom-input.default.submit')}
             </Button>
           </div>
         )}

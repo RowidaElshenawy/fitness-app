@@ -8,18 +8,28 @@ const HeaderAuth = ({
   subtitlePosition = 'before',
 }: THeaderAuthProps) => {
   return (
-    <>
+    <div className="text-center">
       <h3
         className={cn(
-          'font-sans font-normal text-2xl text-text-inverse text-center leading-13',
+          'font-sans font-extrabold text-2xl md:text-3xl text-text-inverse leading-tight tracking-wide',
           className
         )}
       >
-        {subtitlePosition === 'before' && <span className="text-lg block">{subtitle}</span>}
+        {subtitlePosition === 'before' && (
+          <span className="text-sm md:text-base font-normal text-gray-300 mb-1 block">
+            {subtitle}
+          </span>
+        )}
+
         {title}
-        {subtitlePosition === 'after' && <span className="text-lg block">{subtitle}</span>}
+
+        {subtitlePosition === 'after' && (
+          <span className="text-sm md:text-base font-normal text-gray-300 opacity-90 mt-1.5 block">
+            {subtitle}
+          </span>
+        )}
       </h3>
-    </>
+    </div>
   );
 };
 

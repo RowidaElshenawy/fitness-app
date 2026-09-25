@@ -38,32 +38,24 @@ export const StepProgress: React.FC<StepProgressProps> = ({ currentStep, totalSt
     >
       <svg width={size} height={size} className="-rotate-90 transform">
         {/* Background Circle */}
-        <circle
-          cx={center}
-          cy={center}
-          r={radius}
-          stroke="#333333"
-          strokeWidth={strokeWidth}
-          fill="transparent"
-        />
+        <circle cx={center} cy={center} r={radius} strokeWidth={strokeWidth} fill="transparent" />
 
         {/* Progress Circle */}
         <circle
           cx={center}
           cy={center}
           r={radius}
-          stroke="#FF4500"
           strokeWidth={strokeWidth}
           fill="transparent"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
           strokeLinecap="round"
-          className="transition-all duration-500 ease-out"
+          className="transition-all duration-500 ease-out stroke-bg-primary"
         />
       </svg>
 
       {/* Step Number */}
-      <span className="absolute text-sm font-medium text-white">{stepsText}</span>
+      <span className="absolute text-sm font-medium text-text-inverse">{stepsText}</span>
     </div>
   );
 };
