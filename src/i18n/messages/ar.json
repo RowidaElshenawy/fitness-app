@@ -20,5 +20,23 @@
       "new-password": "كلمة المرور الجديده",
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
     }
+  },
+  "forgot-password": {
+    "find-account": "البحث عن حسابك",
+    "enter-email": "أدخل بريدك الإلكتروني",
+    "send-otp": "إرسال رمز التحقق",
+    "verify-account": "تأكيد حسابك",
+    "enter-code": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني",
+    "verify-code": "التحقق من الرمز",
+    "reset-password": "إعادة تعيين كلمة المرور",
+    "enter-new-password": "أدخل كلمة المرور الجديدة",
+    "reset-password-button": "إعادة تعيين كلمة المرور",
+    "email-required": "البريد الإلكتروني مطلوب",
+    "otp-required": "رمز التحقق مطلوب",
+    "password-required": "كلمة المرور مطلوبة",
+    "confirm-password-required": "يرجى تأكيد كلمة المرور",
+    "passwords-do-not-match": "كلمتا المرور غير متطابقتين",
+    "didnt-receive-code": "لم تستلم رمز التحقق؟",
+    "resend-code": "إعادة إرسال الرمز"
   }
 }

@@ -4,6 +4,7 @@
     "arabic": "Arabic"
   },
   "welcome": "Welcome",
+
   "custom-input": {
     "default": {
       "first-name": "First Name",
@@ -19,5 +20,23 @@
       "new-password": "New Password",
       "confirm-new-password": "Confirm New Password"
     }
+  },
+  "forgot-password": {
+    "find-account": "Find your account",
+    "enter-email": "Enter your email",
+    "send-otp": "Send OTP",
+    "verify-account": "Verify Account",
+    "enter-code": "Enter the verification code sent to your email",
+    "verify-code": "Verify Code",
+    "reset-password": "Reset your password",
+    "enter-new-password": "Enter your new password",
+    "reset-password-button": "Reset Password",
+    "email-required": "Email is required",
+    "otp-required": "Verification code is required",
+    "password-required": "Password is required",
+    "confirm-password-required": "Please confirm your password",
+    "passwords-do-not-match": "Passwords do not match",
+    "didnt-receive-code": "Didn't receive the verification code?",
+    "resend-code": "Resend Code"
   }
 }
