@@ -10,7 +10,7 @@ import VerifyCodeStep from './verify-code-step';
 import useForgotPassword from '../../hooks/use-forgot-password';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
 
-const ForgotPasswordForm = () => {
+const ForgotPasswordFlow = () => {
   // Translation
   const { t } = useTranslation();
 
@@ -123,4 +123,4 @@ const ForgotPasswordForm = () => {
   );
 };
 
-export default ForgotPasswordForm;
+export default ForgotPasswordFlow;
