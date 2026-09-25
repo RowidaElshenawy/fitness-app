@@ -4,6 +4,7 @@
     "arabic": "Arabic"
   },
   "welcome": "Welcome",
+
   "custom-input": {
     "default": {
       "first-name": "First Name",
@@ -30,6 +31,12 @@
     "reset-password": "Reset your password",
     "enter-new-password": "Enter your new password",
     "reset-password-button": "Reset Password",
-    "email-required": "Email is required"
+    "email-required": "Email is required",
+    "otp-required": "Verification code is required",
+    "password-required": "Password is required",
+    "confirm-password-required": "Please confirm your password",
+    "passwords-do-not-match": "Passwords do not match",
+    "didnt-receive-code": "Didn't receive the verification code?",
+    "resend-code": "Resend Code"
   }
 }

@@ -31,6 +31,12 @@
     "reset-password": "إعادة تعيين كلمة المرور",
     "enter-new-password": "أدخل كلمة المرور الجديدة",
     "reset-password-button": "إعادة تعيين كلمة المرور",
-    "email-required": "البريد الإلكتروني مطلوب"
+    "email-required": "البريد الإلكتروني مطلوب",
+    "otp-required": "رمز التحقق مطلوب",
+    "password-required": "كلمة المرور مطلوبة",
+    "confirm-password-required": "يرجى تأكيد كلمة المرور",
+    "passwords-do-not-match": "كلمتا المرور غير متطابقتين",
+    "didnt-receive-code": "لم تستلم رمز التحقق؟",
+    "resend-code": "إعادة إرسال الرمز"
   }
 }

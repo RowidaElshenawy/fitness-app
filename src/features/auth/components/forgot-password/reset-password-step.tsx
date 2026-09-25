@@ -1,86 +1,65 @@
-import { ArrowLeft } from 'lucide-react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/shared/components/ui/button';
 import CustomInput from '@/shared/components/custom-ui/custom-input';
+import HeaderAuth from '../shared/header-auth';
 import type { ForgotPasswordForm } from './forgot-password-flow';
 
 interface ResetPasswordStepProps {
-  onSubmit: () => void;
-  onBack: () => void;
   isPending: boolean;
 }
 
-const ResetPasswordStep = ({ onSubmit, onBack, isPending }: ResetPasswordStepProps) => {
+const ResetPasswordStep = ({ isPending }: ResetPasswordStepProps) => {
   // Translation
   const { t } = useTranslation();
 
   // Context
-  const { control } = useFormContext<ForgotPasswordForm>();
+  const { control, getValues } = useFormContext<ForgotPasswordForm>();
 
   return (
-    <div className="mx-auto flex w-96 flex-col gap-4">
-      <div className="flex items-center gap-2">
-        <Button
-          type="button"
-          variant="outline"
-          className="cursor-pointer"
-          onClick={onBack}
-          disabled={isPending}
-        >
-          <ArrowLeft className="rtl:rotate-180" />
-        </Button>
+    <>
+      <HeaderAuth subtitle={t('forgot-password.enter-new-password')} />
 
-        <h1 className="text-2xl font-bold">{t('forgot-password.reset-password')}</h1>
-      </div>
-
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          onSubmit();
+      <Controller
+        name="newPassword"
+        control={control}
+        rules={{
+          required: t('forgot-password.password-required'),
         }}
-        className="flex flex-col gap-4"
-      >
-        <p>{t('forgot-password.enter-new-password')}</p>
+        render={({ field, fieldState }) => (
+          <CustomInput
+            variant="password"
+            subVariant="new-password"
+            value={field.value}
+            onChange={field.onChange}
+            disabled={isPending}
+            error={!!fieldState.error}
+            errorMessage={fieldState.error?.message}
+          />
+        )}
+      />
 
-        <Controller
-          name="newPassword"
-          control={control}
-          render={({ field, fieldState }) => (
-            <CustomInput
-              variant="password"
-              subVariant="new-password"
-              value={field.value}
-              onChange={field.onChange}
-              disabled={isPending}
-              error={!!fieldState.error}
-              errorMessage={fieldState.error?.message}
-            />
-          )}
-        />
-
-        <Controller
-          name="confirmPassword"
-          control={control}
-          render={({ field, fieldState }) => (
-            <CustomInput
-              variant="password"
-              subVariant="confirm-new-password"
-              value={field.value}
-              onChange={field.onChange}
-              disabled={isPending}
-              error={!!fieldState.error}
-              errorMessage={fieldState.error?.message}
-            />
-          )}
-        />
-
-        <Button type="submit" variant="primary" className="cursor-pointer" disabled={isPending}>
-          {t('forgot-password.reset-password-button')}
-        </Button>
-      </form>
-    </div>
+      <Controller
+        name="confirmPassword"
+        control={control}
+        rules={{
+          required: t('forgot-password.confirm-password-required'),
+          validate: (value) =>
+            value === getValues('newPassword') || t('forgot-password.passwords-do-not-match'),
+        }}
+        render={({ field, fieldState }) => (
+          <CustomInput
+            variant="password"
+            subVariant="confirm-new-password"
+            value={field.value}
+            onChange={field.onChange}
+            disabled={isPending}
+            error={!!fieldState.error}
+            errorMessage={fieldState.error?.message}
+          />
+        )}
+      />
+    </>
   );
 };
 
