@@ -47,6 +47,8 @@
       "password-lowercase": "Password must contain at least one lowercase letter.",
       "password-number": "Password must contain at least one number.",
       "password-special": "Password must contain at least one special character.",
+      "re-password-required": "confirm password is required.",
+      "password-mismatch": "Passwords do not match",
       "something-went-wrong": "Something went wrong. Please try again."
     }
   }

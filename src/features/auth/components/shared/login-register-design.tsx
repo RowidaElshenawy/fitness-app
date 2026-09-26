@@ -20,7 +20,7 @@ const LoginRegisterDesign = ({
       <div className="flex flex-col gap-6 items-center w-full px-10">
         <div className="w-full flex flex-col gap-2 ">
           <div className=" flex flex-col  gap-4 w-full">
-            <HeaderAuth title="Login" className="font-extrabold" />
+            <HeaderAuth title="Login" />
             {children}
           </div>
           <Link
@@ -46,7 +46,7 @@ const LoginRegisterDesign = ({
         </div>
         <Button
           variant="primary"
-          className="w-full"
+          className="w-full font-sans font-extrabold text-base"
           disabled={form.formState.isSubmitted && !form.formState.isValid}
           type="submit"
         >
