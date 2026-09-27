@@ -19,5 +19,16 @@
       "new-password": "New Password",
       "confirm-new-password": "Confirm New Password"
     }
+  },
+  "auth": {
+    "subtitle-login-register": "Hey There,",
+    "login": {
+      "subtitle": "WELCOME BACK!",
+      "title": "Login",
+      "forgot-password": "Forget Password ?",
+      "dont-have-an-account": "Dont have an account yet ? ",
+      "register": "Register",
+      "or": "Or"
+    }
   }
 }

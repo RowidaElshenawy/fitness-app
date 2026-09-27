@@ -8,6 +8,9 @@ const LoginRegisterDesign = ({
   buttonTitle,
   spanTitle,
   linkTitle,
+  title,
+  forgotPassword,
+  or,
   href,
   form,
   onSubmit,
@@ -20,18 +23,18 @@ const LoginRegisterDesign = ({
       <div className="flex flex-col gap-6 items-center w-full px-10">
         <div className="w-full flex flex-col gap-2 ">
           <div className=" flex flex-col  gap-4 w-full">
-            <HeaderAuth title="Login" />
+            <HeaderAuth title={title} />
             {children}
           </div>
           <Link
             to="/:locale/forgot-password"
             className="self-end font-sans font-bold text-base  text-text-primary transition-all duration-300 ease-in-out hover:underline"
           >
-            Forget Password ?
+            {forgotPassword}
           </Link>
         </div>
-        <span className="block font-sans font-normal text-sm text-text-subtle relative before:content-[''] before:w-20 before:h-0.5 before:bg-bg-soft after:content-['']  after:w-20 after:h-0.5 after:bg-bg-soft">
-          Or
+        <span className="flex items-center gap-5 font-sans font-normal text-sm text-text-subtle relative before:content-[''] before:w-20 before:h-0.5 before:bg-bg-soft after:content-['']  after:w-20 after:h-0.5 after:bg-bg-soft">
+          {or}
         </span>
         <div className="flex gap-4 ">
           <span className="w-8 h-8 bg-bg-inverse rounded-full flex  items-center justify-center">
