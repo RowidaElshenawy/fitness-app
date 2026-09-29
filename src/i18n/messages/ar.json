@@ -32,5 +32,16 @@
     "enter-new-password": "أدخل كلمة المرور الجديدة",
     "reset-password-button": "إعادة تعيين كلمة المرور",
     "email-required": "البريد الإلكتروني مطلوب"
+  },
+  "auth": {
+    "subtitle-login-register": "مرحبًا بك,",
+    "login": {
+      "subtitle": "أهلًا بعودتك!",
+      "title": "تسجيل الدخول",
+      "forgot-password": "هل نسيت كلمة المرور؟",
+      "dont-have-an-account": "ليس لديك حساب حتى الآن؟ ",
+      "register": "إنشاء حساب",
+      "or": "أو"
+    }
   }
 }

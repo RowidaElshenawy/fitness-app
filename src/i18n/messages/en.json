@@ -50,6 +50,17 @@
       "re-password-required": "confirm password is required.",
       "password-mismatch": "Passwords do not match",
       "something-went-wrong": "Something went wrong. Please try again."
+    },
+    "auth": {
+      "subtitle-login-register": "Hey There,",
+      "login": {
+        "subtitle": "WELCOME BACK!",
+        "title": "Login",
+        "forgot-password": "Forget Password ?",
+        "dont-have-an-account": "Dont have an account yet ? ",
+        "register": "Register",
+        "or": "Or"
+      }
     }
   }
 }
