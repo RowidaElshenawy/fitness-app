@@ -7,7 +7,11 @@
   "custom-input": {
     "default": {
       "first-name": "First Name",
-      "last-name": "Last Name"
+      "last-name": "Last Name",
+      "male": "Male",
+      "female": "Female",
+      "next": "Next",
+      "submit": "Submit"
     },
 
     "search": "Search",
@@ -60,6 +64,19 @@
         "dont-have-an-account": "Dont have an account yet ? ",
         "register": "Register",
         "or": "Or"
+      },
+      "kyc": {
+        "gender-title": "tell us about yourself!",
+        "gender-subtitle": "We Need To Know Your Gender,",
+        "age-title": "How Old Are you ?",
+        "weight-title": "what is your weight ?",
+        "height-title": "what is your height ?",
+        "hint": "this helps us create Your personalized plan",
+        "units": {
+          "years-old": "Years Old",
+          "kg": "KG",
+          "cm": "CM"
+        }
       }
     }
   }
