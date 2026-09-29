@@ -11,14 +11,10 @@ import { StepProgress } from './steps/step-progress';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import { Button } from '@/shared/components/ui/button';
 import HeaderAuth from '../shared/header-auth';
-import type {
-  KycFormData,
-  TRegisterFields,
-  TRegisterStepsProps,
-  TUserInfoData,
-} from '../../types/register';
+import type { KycFormData, TRegisterStepsProps, TUserInfoData } from '../../types/register';
 import { registerUser } from '../../lib/apis/register.api';
 import UserInfoForm from './user-info-form';
+import { useMutation } from '@tanstack/react-query';
 
 const PROFILE_STEPS: Exclude<TRegisterStepsProps, 'user-info'>[] = [
   'gender',
@@ -43,8 +39,19 @@ export default function RegisterSteps() {
     goal: '',
     activityLevel: '',
   });
-  const [serverError, setServerError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const registerMutation = useMutation({
+    mutationFn: registerUser,
+    onSuccess: () => {
+      navigate(`/${locale}/login`);
+    },
+  });
+  const registerError = isAxiosError(registerMutation.error)
+    ? String(
+        registerMutation.error.response?.data?.message ??
+          registerMutation.error.response?.data?.error ??
+          ''
+      )
+    : '';
 
   const updateFormData = <K extends keyof KycFormData>(key: K, value: KycFormData[K]) => {
     setFormData((previous) => ({ ...previous, [key]: value }));
@@ -53,44 +60,25 @@ export default function RegisterSteps() {
   const currentProfileStep = PROFILE_STEPS.indexOf(
     step as Exclude<TRegisterStepsProps, 'user-info'>
   );
-
-  const handleNext = async () => {
-    setServerError(null);
+  const handleNext = () => {
     if (currentProfileStep < PROFILE_STEPS.length - 1) {
       setStep(PROFILE_STEPS[currentProfileStep + 1]);
       return;
     }
 
-    if (!userInfo || !formData.gender || !formData.goal || !formData.activityLevel) return;
-
-    setIsSubmitting(true);
-    try {
-      const registerData: TRegisterFields = {
-        ...userInfo,
-        gender: formData.gender,
-        age: formData.age,
-        weight: formData.weight,
-        height: formData.height,
-        goal: formData.goal,
-        activityLevel: formData.activityLevel,
-      };
-      await registerUser(registerData);
-      navigate(`/${locale}/login`);
-    } catch (error) {
-      if (isAxiosError<{ message?: string; error?: string }>(error)) {
-        setServerError(
-          error.response?.data?.message ??
-            error.response?.data?.error ??
-            (error.response
-              ? `Signup failed (${error.response.status})`
-              : 'Cannot reach the server. Check your connection.')
-        );
-      } else {
-        setServerError(t('register.errors.something-went-wrong'));
-      }
-    } finally {
-      setIsSubmitting(false);
+    if (!userInfo || !formData.gender || !formData.goal || !formData.activityLevel) {
+      return;
     }
+
+    registerMutation.mutate({
+      ...userInfo,
+      gender: formData.gender,
+      age: formData.age,
+      weight: formData.weight,
+      height: formData.height,
+      goal: formData.goal,
+      activityLevel: formData.activityLevel,
+    });
   };
 
   const handleBack = () => {
@@ -195,7 +183,7 @@ export default function RegisterSteps() {
         </>
       )}
 
-      {serverError && <ErrorAlert errorMessage={serverError} />}
+      {registerError && <ErrorAlert errorMessage={registerError} />}
       <div className="flex w-full gap-3">
         <Button type="button" variant="ghost" className="flex-1" onClick={handleBack}>
           {t('custom-input.default.back')}
@@ -205,14 +193,14 @@ export default function RegisterSteps() {
           variant={step === 'gender' ? (formData.gender ? 'primary' : 'ghost') : 'primary'}
           className="flex-1 py-6 text-lg font-bold"
           disabled={
-            isSubmitting ||
+            registerMutation.isPending ||
             (step === 'gender' && !formData.gender) ||
             (step === 'goal' && !formData.goal) ||
             (step === 'activityLevel' && !formData.activityLevel)
           }
           onClick={handleNext}
         >
-          {isSubmitting
+          {registerMutation.isPending
             ? t('custom-input.default.submit')
             : t(
                 step === 'activityLevel'
