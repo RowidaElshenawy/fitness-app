@@ -4,6 +4,7 @@
     "arabic": "العربية"
   },
   "welcome": "مرحبًا",
+
   "custom-input": {
     "default": {
       "first-name": "الاسم الأول",
@@ -13,9 +14,11 @@
       "next": "التالي",
       "submit": "إرسال"
     },
+
     "search": "بحث",
     "email": "الايميل",
     "phone": "رقم الهاتف",
+
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
@@ -34,6 +37,9 @@
     }
   },
   "profile": {
+    "goal": "الهدف",
+    "activity-level": "مستوى النشاط",
+    "weight": "الوزن",
     "change-password": {
       "title": "تغيير كلمة المرور",
       "current-password": "كلمة المرور الحالية",
@@ -59,7 +65,6 @@
     "height-title": "ما هو طولك ؟",
     "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
     "goal-title": "ما هو هدفك ؟",
-    "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
     "goal": {
       "gain-weight": "زيادة الوزن",
       "lose-weight": "خسارة الوزن",
@@ -74,6 +79,7 @@
       "advance": "متقدم",
       "true-beast": "وحش حقيقي"
     },
+    "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
     "units": {
       "years-old": "سنة",
       "kg": "كجم",

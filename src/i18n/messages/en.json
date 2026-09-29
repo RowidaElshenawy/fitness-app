@@ -37,6 +37,9 @@
     }
   },
   "profile": {
+    "goal": "Goal",
+    "activity-level": "Activity Level",
+    "weight": "Weight",
     "change-password": {
       "title": "Change Password",
       "current-password": "Current Password",
