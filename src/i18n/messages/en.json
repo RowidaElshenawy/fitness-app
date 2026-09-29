@@ -55,6 +55,11 @@
       "confirm-password-required": "Please confirm your password",
       "passwords-do-not-match": "Passwords do not match"
     },
+    "language": "Language",
+    "mood": "Mood",
+    "security": "Security",
+    "privacy-policy": "Privacy Policy",
+    "help": "Help",
     "logout": "Log Out"
   },
   "kyc": {

@@ -55,6 +55,11 @@
       "confirm-password-required": "يرجى تأكيد كلمة المرور",
       "passwords-do-not-match": "كلمتا المرور غير متطابقتين"
     },
+    "language": "اللغة",
+    "mood": "المظهر",
+    "security": "الأمان",
+    "privacy-policy": "سياسة الخصوصية",
+    "help": "المساعدة",
     "logout": "تسجيل الخروج"
   },
   "kyc": {

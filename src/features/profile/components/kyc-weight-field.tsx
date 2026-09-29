@@ -1,6 +1,7 @@
-import CustomInput from '@/shared/components/custom-ui/custom-input';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import CustomInput from '@/shared/components/custom-ui/custom-input';
 
 type KycWeightFieldProps = {
   value: number;
@@ -8,10 +9,14 @@ type KycWeightFieldProps = {
   disabled?: boolean;
 };
 
-function KycWeightField({ value, onSave, disabled = false }: KycWeightFieldProps) {
+const KycWeightField = ({ value, onSave, disabled = false }: KycWeightFieldProps) => {
+  // Translation
   const { t } = useTranslation();
+
+  // State
   const [weight, setWeight] = useState(String(value));
 
+  // Functions
   const handleBlur = () => {
     const parsedWeight = Number(weight);
 
@@ -37,6 +42,6 @@ function KycWeightField({ value, onSave, disabled = false }: KycWeightFieldProps
       />
     </div>
   );
-}
+};
 
 export default KycWeightField;
