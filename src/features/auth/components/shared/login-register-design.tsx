@@ -1,5 +1,5 @@
 import HeaderAuth from './header-auth';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Button } from '@/shared/components/ui/button';
 import type { TLoginRegisterDesignProps } from '../../types/login-register-design';
 
@@ -15,19 +15,20 @@ const LoginRegisterDesign = ({
   form,
   onSubmit,
 }: TLoginRegisterDesignProps) => {
+  const { locale } = useParams();
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
-      className="flex flex-col  items-center p-10 mt-12.5 border border-border-muted max-w-121.5 rounded-xl"
+      className="flex flex-col  items-center p-4 sm:p-10 mt-12.5 border border-border-muted h-116.75 lg:w-121.5 rounded-xl"
     >
-      <div className="flex flex-col gap-6 items-center w-full px-10">
+      <div className="flex flex-col gap-6 items-center w-full px-4 sm:px-10">
         <div className="w-full flex flex-col gap-2 ">
           <div className=" flex flex-col  gap-4 w-full">
             <HeaderAuth title={title} />
             {children}
           </div>
           <Link
-            to="/:locale/forgot-password"
+            to={`/${locale}/forgot-password`}
             className="self-end font-sans font-bold text-base  text-text-primary transition-all duration-300 ease-in-out hover:underline"
           >
             {forgotPassword}
