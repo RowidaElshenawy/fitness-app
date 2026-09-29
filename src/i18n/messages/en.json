@@ -55,45 +55,47 @@
       "password-mismatch": "Passwords do not match",
       "something-went-wrong": "Something went wrong. Please try again."
     },
-    "auth": {
-      "subtitle-login-register": "Hey There,",
-      "login": {
-        "subtitle": "WELCOME BACK!",
-        "title": "Login",
-        "forgot-password": "Forget Password ?",
-        "dont-have-an-account": "Dont have an account yet ? ",
-        "register": "Register",
-        "or": "Or"
-      },
+    "Already Have an account": "Already Have an account ?"
+  },
 
-      "kyc": {
-        "gender-title": "tell us about yourself!",
-        "gender-subtitle": "We Need To Know Your Gender,",
-        "age-title": "How Old Are you ?",
-        "weight-title": "what is your weight ?",
-        "height-title": "what is your height ?",
-        "hint": "this helps us create Your personalized plan",
-        "goal-title": "What Is Your Goal ?",
-        "goal": {
-          "gain-weight": "Gain Weight",
-          "lose-weight": "Lose Weight",
-          "get-fitter": "Get Fitter",
-          "gain-flexibility": "Gain More Flexible",
-          "learn-basics": "Learn The Basic"
-        },
-        "activity": {
-          "rookie": "Rookie",
-          "beginner": "Beginner",
-          "intermediate": "Intermediate",
-          "advance": "Advance",
-          "true-beast": "True Beast"
-        },
-        "activity-title": "Your Regular Physical Activity Level ?",
-        "units": {
-          "years-old": "Years Old",
-          "kg": "KG",
-          "cm": "CM"
-        }
+  "auth": {
+    "subtitle-login-register": "Hey There,",
+    "login": {
+      "subtitle": "WELCOME BACK!",
+      "title": "Login",
+      "forgot-password": "Forget Password ?",
+      "dont-have-an-account": "Dont have an account yet ? ",
+      "register": "Register",
+      "or": "Or"
+    },
+
+    "kyc": {
+      "gender-title": "tell us about yourself!",
+      "gender-subtitle": "We Need To Know Your Gender,",
+      "age-title": "How Old Are you ?",
+      "weight-title": "what is your weight ?",
+      "height-title": "what is your height ?",
+      "hint": "this helps us create Your personalized plan",
+      "goal-title": "What Is Your Goal ?",
+      "goal": {
+        "gain-weight": "Gain Weight",
+        "lose-weight": "Lose Weight",
+        "get-fitter": "Get Fitter",
+        "gain-flexibility": "Gain More Flexible",
+        "learn-basics": "Learn The Basic"
+      },
+      "activity": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advance": "Advance",
+        "true-beast": "True Beast"
+      },
+      "activity-title": "Your Regular Physical Activity Level ?",
+      "units": {
+        "years-old": "Years Old",
+        "kg": "KG",
+        "cm": "CM"
       }
     }
   }

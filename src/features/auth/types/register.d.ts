@@ -5,3 +5,17 @@ export type TUserInfoProps = {
   setUserInfo: (userInfo: TUserInfoData) => void;
   setStep: (step: TRegisterStepsProps) => void;
 };
+
+export type TRegisterFields = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  rePassword: string;
+  gender: 'male' | 'female';
+  height: number;
+  weight: number;
+  age: number;
+  goal: string;
+  activityLevel: string;
+};

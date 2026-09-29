@@ -37,9 +37,12 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
   };
   return (
     <LoginRegisterDesign
-      buttonTitle="Register"
-      spanTitle="Already Have an account ?"
-      linkTitle="Login" // was "Register" in your original — likely a copy-paste, should probably say "Login"
+      or={t('auth.login.or')}
+      buttonTitle={t('auth.login.register')}
+      spanTitle={t('register.Already Have an accoun')}
+      linkTitle={t('auth.login.register')}
+      title={t('auth.login.title')}
+      forgotPassword={t('auth.login.forgot-password')}
       href="/:locale/login"
       form={form}
       onSubmit={onSubmit}
