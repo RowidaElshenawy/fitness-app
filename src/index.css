@@ -16,7 +16,7 @@
   --bg-primary: var(--color-brand-orange-600);
   --bg-primary-faint: var(--color-brand-orange-800);
   --bg-primary-fade: var(--color-brand-orange-100);
-  --bg-overlay: color-mix(in srgb, var(--color-white) 60%, transparent);
+  --bg-overlay: color-mix(in srgb, var(--color-white) 30%, transparent);
   --blur-overlay: 86px;
 
   /* borders */
