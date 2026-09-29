@@ -4,6 +4,7 @@
     "arabic": "Arabic"
   },
   "welcome": "Welcome",
+
   "custom-input": {
     "default": {
       "first-name": "First Name",
@@ -30,5 +31,23 @@
       "register": "Register",
       "or": "Or"
     }
+  },
+  "profile": {
+    "change-password": {
+      "title": "Change Password",
+      "current-password": "Current Password",
+      "new-password": "New Password",
+      "confirm-password": "Confirm Password",
+      "cancel": "Cancel",
+      "change": "Change Password",
+      "changing": "Changing...",
+      "success": "Password changed successfully",
+      "something-went-wrong": "Something went wrong",
+      "current-password-required": "Current password is required",
+      "new-password-required": "New password is required",
+      "confirm-password-required": "Please confirm your password",
+      "passwords-do-not-match": "Passwords do not match"
+    },
+    "logout": "Log Out"
   }
 }

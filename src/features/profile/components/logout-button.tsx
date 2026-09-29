@@ -1,6 +1,10 @@
+import { Button } from '@/shared/components/ui/button';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const LogoutButton = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -9,9 +13,9 @@ const LogoutButton = () => {
   };
 
   return (
-    <button type="button" onClick={handleLogout}>
-      Sign out
-    </button>
+    <Button type="button" onClick={handleLogout} className="cursor-pointer">
+      {t('profile.logout')}
+    </Button>
   );
 };
 

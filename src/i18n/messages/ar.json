@@ -31,5 +31,23 @@
       "register": "إنشاء حساب",
       "or": "أو"
     }
+  },
+  "profile": {
+    "change-password": {
+      "title": "تغيير كلمة المرور",
+      "current-password": "كلمة المرور الحالية",
+      "new-password": "كلمة المرور الجديدة",
+      "confirm-password": "تأكيد كلمة المرور",
+      "cancel": "إلغاء",
+      "change": "تغيير كلمة المرور",
+      "changing": "جارٍ التغيير...",
+      "success": "تم تغيير كلمة المرور بنجاح",
+      "something-went-wrong": "حدث خطأ ما",
+      "current-password-required": "كلمة المرور الحالية مطلوبة",
+      "new-password-required": "كلمة المرور الجديدة مطلوبة",
+      "confirm-password-required": "يرجى تأكيد كلمة المرور",
+      "passwords-do-not-match": "كلمتا المرور غير متطابقتين"
+    },
+    "logout": "تسجيل الخروج"
   }
 }
