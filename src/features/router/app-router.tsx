@@ -13,6 +13,7 @@ import Healthy from '@/app/main-pages/healthy';
 import Login from '@/app/auth-pages/login';
 import Register from '@/app/auth-pages/register';
 import ForgotPassword from '@/app/auth-pages/forgot-password';
+import KycPage from '@/app/auth-pages/kyc-page';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
           { path: 'login', element: <Login /> },
           { path: 'register', element: <Register /> },
           { path: 'forgot-password', element: <ForgotPassword /> },
+          { path: 'kyc-page', element: <KycPage /> },
         ],
       },
     ],

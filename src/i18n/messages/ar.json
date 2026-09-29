@@ -4,17 +4,18 @@
     "arabic": "العربية"
   },
   "welcome": "مرحبًا",
-
   "custom-input": {
     "default": {
       "first-name": "الاسم الأول",
-      "last-name": "الاسم الاخير"
+      "last-name": "الاسم الاخير",
+      "male": "ذكر",
+      "female": "أنثى",
+      "next": "التالي",
+      "submit": "إرسال"
     },
-
     "search": "بحث",
     "email": "الايميل",
     "phone": "رقم الهاتف",
-
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
@@ -49,5 +50,34 @@
       "passwords-do-not-match": "كلمتا المرور غير متطابقتين"
     },
     "logout": "تسجيل الخروج"
+  },
+  "kyc": {
+    "gender-title": "اخبرنا عن نفسك!",
+    "gender-subtitle": "نحتاج لمعرفة جنسك،",
+    "age-title": "كم عمرك ؟",
+    "weight-title": "ما هو وزنك ؟",
+    "height-title": "ما هو طولك ؟",
+    "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
+    "goal-title": "ما هو هدفك ؟",
+    "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
+    "goal": {
+      "gain-weight": "زيادة الوزن",
+      "lose-weight": "خسارة الوزن",
+      "get-fitter": "زيادة اللياقة",
+      "gain-flexibility": "زيادة المرونة",
+      "learn-basics": "تعلم الأساسيات"
+    },
+    "activity": {
+      "rookie": "مبتدئ",
+      "beginner": "بداية",
+      "intermediate": "متوسط",
+      "advance": "متقدم",
+      "true-beast": "وحش حقيقي"
+    },
+    "units": {
+      "years-old": "سنة",
+      "kg": "كجم",
+      "cm": "سم"
+    }
   }
 }
