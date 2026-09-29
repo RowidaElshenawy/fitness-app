@@ -19,7 +19,7 @@ const LoginRegisterDesign = ({
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
-      className="flex flex-col  items-center p-4 sm:p-10 mt-12.5 border border-border-muted h-116.75 lg:w-121.5 rounded-xl"
+      className="flex flex-col  items-center p-4 sm:p-10 mt-12.5 border border-border-muted  lg:w-121.5 rounded-xl"
     >
       <div className="flex flex-col gap-6 items-center w-full px-4 sm:px-10">
         <div className="w-full flex flex-col gap-2 ">
