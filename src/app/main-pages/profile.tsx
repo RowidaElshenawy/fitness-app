@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import ChangePasswordModal from '@/features/profile/components/change-password-modal';
 import LogoutButton from '@/features/profile/components/logout-button';
+import ThemeToggle from '@/features/profile/components/theme-toggle';
 import { Button } from '@/shared/components/ui/button';
 import LanguageSwitcher from '@/shared/components/custom-ui/language-switcher/language-switcher';
 
@@ -22,6 +23,7 @@ const Profile = () => {
       </Button>
       <ChangePasswordModal open={isChangePasswordOpen} onOpenChange={setIsChangePasswordOpen} />
       <LanguageSwitcher />
+      <ThemeToggle />
       <LogoutButton />;
     </>
   );

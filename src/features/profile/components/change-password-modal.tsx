@@ -4,13 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 import { Button } from '@/shared/components/ui/button';
 import CustomInput from '@/shared/components/custom-ui/custom-input';
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/shared/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/shared/components/ui/dialog';
 import { getChangePasswordSchema } from '../lib/schemas/change-password.schema';
 import type { ChangePasswordField } from '../lib/types/change-password';
 import { useChangePassword } from '../hooks/use-change-password';
@@ -55,7 +49,7 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="rounded-lg bg-white" showCloseButton={false}>
+      <DialogContent className="rounded-lg bg-bg-plain text-text-plain" showCloseButton={false}>
         <DialogHeader>
           <DialogTitle>{t('profile.change-password.title')}</DialogTitle>
         </DialogHeader>
@@ -85,7 +79,7 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
             errorMessage={form.formState.errors.confirmPassword?.message}
           />
 
-          <DialogFooter className="mt-2">
+          <div className="mt-2 flex justify-between">
             <Button
               type="button"
               variant="outline"
@@ -101,7 +95,7 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
                 ? t('profile.change-password.changing')
                 : t('profile.change-password.change')}
             </Button>
-          </DialogFooter>
+          </div>
         </form>
       </DialogContent>
     </Dialog>
