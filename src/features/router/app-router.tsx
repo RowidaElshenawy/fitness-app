@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
+import Profile from '@/app/main-pages/profile';
 
 import Home from '@/app/main-pages/home';
 import About from '@/app/main-pages/about';
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
           { path: 'about', element: <About /> },
           { path: 'classes', element: <Classes /> },
           { path: 'healthy', element: <Healthy /> },
+          { path: 'profile', element: <Profile /> },
         ],
       },
       {

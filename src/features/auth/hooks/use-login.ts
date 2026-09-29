@@ -8,6 +8,7 @@ export function useLogin() {
   return useMutation({
     mutationFn: (userData: TLoginField) => login(userData),
     onSuccess: (data) => {
+      localStorage.setItem('token', data.token);
       console.log(data, 'success');
       navigate('/');
     },
