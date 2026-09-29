@@ -6,22 +6,14 @@ import { StepProgress } from '@/features/KYC/components/share/step-progress';
 import { Button } from '@/shared/components/ui/button';
 import HeaderAuth from '@/features/auth/components/shared/header-auth';
 import { useTranslation } from 'react-i18next';
-
-export interface KycFormData {
-  gender: 'male' | 'female' | null;
-  age: number;
-  weight: number;
-  height: number;
-  goal: string;
-  activityLevel: string;
-}
+import { GoalStep } from '@/features/KYC/components/goal-step';
+import { ActivityStep } from '@/features/KYC/components/activity-step';
+import type { KycFormData } from '@/features/KYC/types/kyc';
 
 export default function KycPage() {
   const { t } = useTranslation();
   // Current step
   const [currentStep, setCurrentStep] = useState(1);
-
-  // Total steps
   const totalSteps = 6;
 
   const [formData, setFormData] = useState<KycFormData>({
@@ -255,22 +247,28 @@ export default function KycPage() {
 
         {currentStep === 5 && (
           <div className="flex w-full max-w-md flex-col items-center space-y-6">
-            <h2 className="text-center text-2xl font-bold">What Is Your Goal?</h2>
+            <HeaderAuth
+              title={t('kyc.goal-title')}
+              subtitle={t('kyc.hint')}
+              subtitlePosition="after"
+            />
 
-            {/* 
-             Goal Component
-             
-            */}
+            <GoalStep goal={formData.goal} onSelectGoal={(goal) => updateFormData('goal', goal)} />
 
             <Button
-              variant="primary"
+              variant={formData.goal ? 'primary' : 'ghost'}
+              disabled={!formData.goal}
               onClick={handleNext}
               className="
-                      w-4/5
+                w-4/5
                 py-6
-                  font-bold
-                  text-lg
-                "
+                font-bold
+                transition
+                hover:opacity-90
+                disabled:cursor-not-allowed
+                disabled:opacity-50
+                text-lg
+              "
             >
               {t('custom-input.default.next')}
             </Button>
@@ -283,23 +281,33 @@ export default function KycPage() {
 
         {currentStep === 6 && (
           <div className="flex w-full max-w-md flex-col items-center space-y-6">
-            <h2 className="text-center text-2xl font-bold">
-              Your Regular Physical Activity Level?
-            </h2>
+            <HeaderAuth
+              title={t('kyc.activity-title')}
+              subtitle={t('kyc.hint')}
+              subtitlePosition="after"
+            />
 
-            {/* 
-             Physical Activity Level
-            */}
+            <ActivityStep
+              activityLevel={formData.activityLevel}
+              onSelectActivityLevel={(activityLevel) =>
+                updateFormData('activityLevel', activityLevel)
+              }
+            />
 
             <Button
-              variant="primary"
+              variant={formData.activityLevel ? 'primary' : 'ghost'}
+              disabled={!formData.activityLevel}
               onClick={handleNext}
               className="
-                     w-4/5
-                     py-6
-                     text-lg
-                  font-bold
-                "
+                w-4/5
+                py-6
+                font-bold
+                transition
+                hover:opacity-90
+                disabled:cursor-not-allowed
+                disabled:opacity-50
+                text-lg
+              "
             >
               {t('custom-input.default.submit')}
             </Button>

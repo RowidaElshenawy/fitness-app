@@ -44,6 +44,7 @@
       "register": "إنشاء حساب",
       "or": "أو"
     },
+
     "kyc": {
       "gender-title": "اخبرنا عن نفسك!",
       "gender-subtitle": "نحتاج لمعرفة جنسك،",
@@ -51,6 +52,22 @@
       "weight-title": "ما هو وزنك ؟",
       "height-title": "ما هو طولك ؟",
       "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
+      "goal-title": "ما هو هدفك ؟",
+      "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
+      "goal": {
+        "gain-weight": "زيادة الوزن",
+        "lose-weight": "خسارة الوزن",
+        "get-fitter": "زيادة اللياقة",
+        "gain-flexibility": "زيادة المرونة",
+        "learn-basics": "تعلم الأساسيات"
+      },
+      "activity": {
+        "rookie": "مبتدئ",
+        "beginner": "بداية",
+        "intermediate": "متوسط",
+        "advance": "متقدم",
+        "true-beast": "وحش حقيقي"
+      },
       "units": {
         "years-old": "سنة",
         "kg": "كجم",
