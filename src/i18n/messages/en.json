@@ -10,6 +10,7 @@
       "last-name": "Last Name",
       "male": "Male",
       "female": "Female",
+      "back": "Back",
       "next": "Next",
       "submit": "Submit"
     },
@@ -37,6 +38,8 @@
     "email-required": "Email is required"
   },
   "register": {
+    "title": "Create an account",
+    "already-have-account": "Already have an account? ",
     "errors": {
       "first-name": "First Name is required",
       "last-name": "Last Name is required",

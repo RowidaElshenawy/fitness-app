@@ -10,6 +10,7 @@
       "last-name": "الاسم الاخير",
       "male": "ذكر",
       "female": "أنثى",
+      "back": "رجوع",
       "next": "التالي",
       "submit": "إرسال"
     },
@@ -43,6 +44,10 @@
       "dont-have-an-account": "ليس لديك حساب حتى الآن؟ ",
       "register": "إنشاء حساب",
       "or": "أو"
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "already-have-account": "لديك حساب بالفعل؟ "
     },
 
     "kyc": {

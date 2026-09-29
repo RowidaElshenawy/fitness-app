@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import CustomInput from '@/shared/components/custom-ui/custom-input';
@@ -14,6 +15,7 @@ import { USER_INFO_SCHEMA } from '../../schemas/register.schema';
 
 export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
   const { t } = useTranslation();
+  const { locale = 'en' } = useParams();
 
   const SCHEMA = useMemo(() => USER_INFO_SCHEMA(t), [t]);
 
@@ -32,18 +34,17 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
 
   const onSubmit = (data: TUserInfoData) => {
     setUserInfo(data);
-    console.log(data);
     setStep('gender');
   };
   return (
     <LoginRegisterDesign
       or={t('auth.login.or')}
-      buttonTitle={t('auth.login.register')}
-      spanTitle={t('register.Already Have an accoun')}
+      buttonTitle={t('custom-input.default.next')}
+      spanTitle={t('auth.register.already-have-account')}
       linkTitle={t('auth.login.register')}
-      title={t('auth.login.title')}
+      title={t('auth.register.title')}
       forgotPassword={t('auth.login.forgot-password')}
-      href="/:locale/login"
+      href={`/${locale}/login`}
       form={form}
       onSubmit={onSubmit}
     >

@@ -1,9 +1,5 @@
-import HeaderAuth from '@/features/auth/components/shared/header-auth';
+import RegisterSteps from '@/features/auth/components/register/register-steps';
 
 export default function Register() {
-  return (
-    <>
-      <HeaderAuth subtitle="Hey There" title="create an account" />
-    </>
-  );
+  return <RegisterSteps />;
 }
