@@ -89,6 +89,13 @@
       "years-old": "Years Old",
       "kg": "KG",
       "cm": "CM"
+    },
+    "not-found": {
+      "title": "Page <highlight>not found</highlight>",
+      "title-plain": "Page not found",
+      "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
+      "back-home": "Back to Home",
+      "explore-classes": "Explore Classes"
     }
   }
 }
