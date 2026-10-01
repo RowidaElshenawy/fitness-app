@@ -11,7 +11,7 @@ import { FieldGroup, Field, FieldError } from '@/shared/components/ui/field';
 
 import LoginRegisterDesign from '../shared/login-register-design';
 import type { TUserInfoData, TUserInfoProps } from '../../types/register';
-import { USER_INFO_SCHEMA } from '../../schemas/register.schema';
+import { USER_INFO_SCHEMA } from '../../schema/register.schema';
 
 export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
   const { t } = useTranslation();
