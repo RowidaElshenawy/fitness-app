@@ -193,7 +193,7 @@ export default function CustomInput({
 
   return (
     <Field.Root
-      className={cn('items-start justify-start flex-col gap-2 m-w-375', className)}
+      className={cn('items-start justify-start flex-col gap-2 max-w-375', className)}
       dir={computedIsRtl ? 'rtl' : 'ltr'}
     >
       <div className="relative flex items-center w-full isolate">
@@ -231,7 +231,7 @@ export default function CustomInput({
               'focus-visible:outline-none focus-visible:ring-0',
               leadingIconKind && 'ps-9',
               variant === 'search' && 'pe-3',
-              variant === 'password' && 'pe-9',
+              variant === 'password',
               !leadingIconKind && variant !== 'password' && 'px-3',
               '[&::-webkit-search-decoration]:appearance-none [&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-results-button]:appearance-none [&::-webkit-search-results-decoration]:appearance-none',
               inputStyle
