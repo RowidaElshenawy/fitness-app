@@ -11,7 +11,7 @@ const MainLayout = () => {
         <AiChat />
       </div>
       {/* footer */}
-      <div className="h-40 w-full bg-amber-950 "></div>
+      <div className="h-35 w-full bg-amber-950 "></div>
     </div>
   );
 };
