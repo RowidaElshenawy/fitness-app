@@ -4,16 +4,16 @@ import * as React from 'react';
 import { Input as InputPrimitive } from '@base-ui/react/input';
 import { Field } from '@base-ui/react/field';
 import { useTranslation } from 'react-i18next';
-import { Eye, EyeOff, Search, X, User, Mail, Lock } from 'lucide-react';
+import { Eye, EyeOff, Search, X, User, Mail, Lock, PencilLine } from 'lucide-react';
 import { cn } from '@/shared/lib/utils/tailwind-cn';
 import OTPVariant from '../ui/otp-variant';
 import { PhoneVariant } from '../ui/phone-variant.';
 import ErrorAlert from './error-alert';
 
 export type TInputValue = string | number | null;
-export type TInputVariant = 'default' | 'search' | 'password' | 'otp' | 'phone' | 'email';
+export type TInputVariant = 'default' | 'search' | 'password' | 'otp' | 'phone' | 'email' | 'ai';
 
-type TLeadingIconKind = 'search' | 'email' | 'password' | 'name' | null;
+type TLeadingIconKind = 'search' | 'email' | 'password' | 'name' | 'ai' | null;
 
 interface InputProps {
   variant: TInputVariant;
@@ -66,6 +66,7 @@ function resolveLeadingIconKind(variant: TInputVariant, subVariant?: string): TL
   if (variant === 'default' && (subVariant === 'first-name' || subVariant === 'last-name')) {
     return 'name';
   }
+  if (variant === 'ai') return 'ai';
   return null;
 }
 
@@ -84,6 +85,9 @@ function resolveDefaultPlaceholder(
   if (variant === 'email' || variant === 'search') {
     return t(variant);
   }
+  if (variant === 'ai') {
+    return subVariant ? t(`ai.${subVariant}`) : t('ask-me-any-thing');
+  }
   return undefined;
 }
 
@@ -91,6 +95,7 @@ function resolveInputType(variant: TInputVariant, isPasswordVisible: boolean) {
   if (variant === 'password') return isPasswordVisible ? 'text' : 'password';
   if (variant === 'search') return 'search';
   if (variant === 'email') return 'email';
+  if (variant === 'ai') return 'text';
   return 'text';
 }
 
@@ -210,7 +215,13 @@ export default function CustomInput({
         {!isError && leadingIconKind === 'name' && (
           <User className={leadingIconClassName} aria-hidden="true" strokeWidth={2} />
         )}
-
+        {!isError && leadingIconKind === 'ai' && (
+          <PencilLine
+            className={cn(leadingIconClassName, 'text-text-primary')}
+            aria-hidden="true"
+            strokeWidth={2}
+          />
+        )}
         {/* Default, search, password and email variants */}
         {variant !== 'phone' && variant !== 'otp' && (
           <InputPrimitive

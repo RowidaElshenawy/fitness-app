@@ -51,6 +51,7 @@
     color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
   --app-shadow-primary-lg: 0px 6px 30px
     color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+  --app-shadow-ai-chat: 0px 4px 217.4px 0px #000000;
 
   /* Ring */
 
@@ -241,6 +242,7 @@ code {
   --shadow-shadow-primary-sm: var(--app-shadow-primary-sm);
   --shadow-shadow-primary: var(--app-shadow-primary);
   --shadow-shadow-primary-lg: var(--app-shadow-primary-lg);
+  --shadow-shadow-ai-chat: var(--app-shadow-ai-chat);
 
   /* Ring */
   --color-ring-default: var(--ring-default);
