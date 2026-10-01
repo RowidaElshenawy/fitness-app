@@ -12,7 +12,8 @@
       "female": "Female",
       "back": "Back",
       "next": "Next",
-      "submit": "Submit"
+      "submit": "Submit",
+      "loading": "Loading..."
     },
 
     "search": "Search",
@@ -25,51 +26,40 @@
       "confirm-new-password": "Confirm New Password"
     }
   },
-  "forgot-password": {
-    "find-account": "Find your account",
-    "enter-email": "Enter your email",
-    "send-otp": "Send OTP",
-    "verify-account": "Verify Account",
-    "enter-code": "Enter the verification code sent to your email",
-    "verify-code": "Verify Code",
-    "reset-password": "Reset your password",
-    "enter-new-password": "Enter your new password",
-    "reset-password-button": "Reset Password",
-    "email-required": "Email is required"
-  },
-  "register": {
-    "title": "Create an account",
-    "already-have-account": "Already have an account? ",
-    "errors": {
-      "first-name": "First Name is required",
-      "last-name": "Last Name is required",
-      "user-name": "User Name must be at least 2 characters.",
-      "first-name-max": "First Name must not be more than 15 characters ",
-      "last-name-max": "Last Name must not be more than 15 characters ",
-      "email-required": "Email is required.",
-      "invalid-email": "Please enter a valid email address.",
-      "email-already-registered": "This email is already registered.",
-      "password-min-length": "Password must be at least 8 characters.",
-      "password-uppercase": "Password must contain at least one uppercase letter.",
-      "password-lowercase": "Password must contain at least one lowercase letter.",
-      "password-number": "Password must contain at least one number.",
-      "password-special": "Password must contain at least one special character.",
-      "re-password-required": "confirm password is required.",
-      "password-mismatch": "Passwords do not match",
-      "something-went-wrong": "Something went wrong. Please try again."
-    },
-    "Already Have an account": "Already Have an account ?"
-  },
 
   "auth": {
     "subtitle-login-register": "Hey There,",
+    "or": "Or",
     "login": {
       "subtitle": "WELCOME BACK!",
       "title": "Login",
       "forgot-password": "Forget Password ?",
       "dont-have-an-account": "Dont have an account yet ? ",
-      "register": "Register",
-      "or": "Or"
+      "register": "Register"
+    },
+    "register": {
+      "title": "Create an account",
+      "login": "Login",
+      "already-have-account": "Already have an account? ",
+      "errors": {
+        "first-name": "First Name is required",
+        "last-name": "Last Name is required",
+        "user-name": "User Name must be at least 2 characters.",
+        "first-name-max": "First Name must not be more than 15 characters ",
+        "last-name-max": "Last Name must not be more than 15 characters ",
+        "email-required": "Email is required.",
+        "invalid-email": "Please enter a valid email address.",
+        "email-already-registered": "This email is already registered.",
+        "password-min-length": "Password must be at least 8 characters.",
+        "password-uppercase": "Password must contain at least one uppercase letter.",
+        "password-lowercase": "Password must contain at least one lowercase letter.",
+        "password-number": "Password must contain at least one number.",
+        "password-special": "Password must contain at least one special character.",
+        "re-password-required": "confirm password is required.",
+        "password-mismatch": "Passwords do not match",
+        "something-went-wrong": "Something went wrong. Please try again."
+      },
+      "Already Have an account": "Already Have an account ?"
     },
 
     "kyc": {
@@ -100,6 +90,18 @@
         "kg": "KG",
         "cm": "CM"
       }
+    },
+    "forgot-password": {
+      "find-account": "Find your account",
+      "enter-email": "Enter your email",
+      "send-otp": "Send OTP",
+      "verify-account": "Verify Account",
+      "enter-code": "Enter the verification code sent to your email",
+      "verify-code": "Verify Code",
+      "reset-password": "Reset your password",
+      "enter-new-password": "Enter your new password",
+      "reset-password-button": "Reset Password",
+      "email-required": "Email is required"
     }
   }
 }

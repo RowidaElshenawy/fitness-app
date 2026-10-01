@@ -38,10 +38,10 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
   };
   return (
     <LoginRegisterDesign
-      or={t('auth.login.or')}
+      or={t('auth.or')}
       buttonTitle={t('custom-input.default.next')}
       spanTitle={t('auth.register.already-have-account')}
-      linkTitle={t('auth.login.register')}
+      linkTitle={t('auth.register.login')}
       title={t('auth.register.title')}
       forgotPassword={t('auth.login.forgot-password')}
       href={`/${locale}/login`}

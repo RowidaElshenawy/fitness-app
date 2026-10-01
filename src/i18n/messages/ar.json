@@ -12,7 +12,8 @@
       "female": "أنثى",
       "back": "رجوع",
       "next": "التالي",
-      "submit": "إرسال"
+      "submit": "إرسال",
+      "loading": "جاري التحميل..."
     },
     "search": "بحث",
     "email": "الايميل",
@@ -23,18 +24,7 @@
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
     }
   },
-  "forgot-password": {
-    "find-account": "البحث عن حسابك",
-    "enter-email": "أدخل بريدك الإلكتروني",
-    "send-otp": "إرسال رمز التحقق",
-    "verify-account": "تأكيد حسابك",
-    "enter-code": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني",
-    "verify-code": "التحقق من الرمز",
-    "reset-password": "إعادة تعيين كلمة المرور",
-    "enter-new-password": "أدخل كلمة المرور الجديدة",
-    "reset-password-button": "إعادة تعيين كلمة المرور",
-    "email-required": "البريد الإلكتروني مطلوب"
-  },
+
   "auth": {
     "subtitle-login-register": "مرحبًا بك,",
     "login": {
@@ -47,7 +37,26 @@
     },
     "register": {
       "title": "إنشاء حساب",
-      "already-have-account": "لديك حساب بالفعل؟ "
+      "already-have-account": "لديك حساب بالفعل؟ ",
+      "login": "تسجيل دخول",
+      "errors": {
+        "first-name": "الاسم الأول مطلوب",
+        "last-name": "اسم العائلة مطلوب",
+        "user-name": "اسم المستخدم يجب أن يكون حرفين على الأقل",
+        "first-name-max": "يجب ألا يزيد الاسم الأول عن 15 حرفًا",
+        "last-name-max": "يجب ألا يزيد اسم العائلة عن 15 حرفًا",
+        "email-required": "البريد الإلكتروني مطلوب",
+        "invalid-email": "يرجى إدخال بريد إلكتروني صالح",
+        "email-already-registered": "هذا البريد الإلكتروني مسجل بالفعل",
+        "password-min-length": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+        "password-uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+        "password-lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+        "password-number": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+        "password-special": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+        "re-password-required": "تأكيد كلمة المرور مطلوب",
+        "password-mismatch": "كلمتا المرور غير متطابقتين",
+        "something-went-wrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى"
+      }
     },
 
     "kyc": {
@@ -78,6 +87,18 @@
         "kg": "كجم",
         "cm": "سم"
       }
+    },
+    "forgot-password": {
+      "find-account": "البحث عن حسابك",
+      "enter-email": "أدخل بريدك الإلكتروني",
+      "send-otp": "إرسال رمز التحقق",
+      "verify-account": "تأكيد حسابك",
+      "enter-code": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني",
+      "verify-code": "التحقق من الرمز",
+      "reset-password": "إعادة تعيين كلمة المرور",
+      "enter-new-password": "أدخل كلمة المرور الجديدة",
+      "reset-password-button": "إعادة تعيين كلمة المرور",
+      "email-required": "البريد الإلكتروني مطلوب"
     }
   }
 }
