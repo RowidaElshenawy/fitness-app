@@ -13,11 +13,19 @@
     "search": "Search",
     "email": "Email",
     "phone": "phone number",
+    "ask-me-any-thing": "Ask Me Any Things",
 
     "password": {
       "password": "Password",
       "new-password": "New Password",
       "confirm-new-password": "Confirm New Password"
+    }
+  },
+  "main": {
+    "ai": {
+      "ask": "Hey Ask Me",
+      "smart-coach": "Smart coach",
+      "close": "Tap to Close"
     }
   }
 }

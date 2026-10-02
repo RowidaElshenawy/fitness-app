@@ -14,11 +14,19 @@
     "search": "بحث",
     "email": "الايميل",
     "phone": "رقم الهاتف",
+    "ask-me-any-thing": "اسألني عن أي شيء",
 
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
+    }
+  },
+  "main": {
+    "ai": {
+      "ask": "مرحبًا، اسألني",
+      "smart-coach": "المدرب الذكي",
+      "close": "اضغط للإغلاق"
     }
   }
 }
