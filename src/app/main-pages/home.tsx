@@ -1,23 +1,26 @@
-import { Button } from '@/shared/components/ui/button';
-import { useState } from 'react';
+import RegisterSteps from '@/features/auth/components/register/register-steps';
+// import { Button } from '@/shared/components/ui/button';
+// import { useState } from 'react';
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const handleClick = async () => {
-    setIsLoading(true);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const handleClick = async () => {
+  //   setIsLoading(true);
 
-    // محاكاة API request
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+  //   // محاكاة API request
+  //   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    setIsLoading(false);
-  };
+  //   setIsLoading(false);
+  // };
 
   return (
-    <div>
-      <Button type="submit" loading={isLoading} onClick={handleClick}>
-        NEXT
-      </Button>
-    </div>
+    // <div>
+    //   <Button type="submit" loading={isLoading} onClick={handleClick}>
+    //     NEXT
+    //   </Button>
+    // </div>
+
+    <RegisterSteps />
   );
 };
 
