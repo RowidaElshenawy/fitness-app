@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { store, type RootState } from '@/store/store';
+import { type RootState } from '@/store/store';
 import { logout } from '@/store/slices/auth.slice';
 import {
   Languages,
@@ -53,9 +53,6 @@ const ProfileContent = () => {
   // Functions
   const handleLogout = () => {
     dispatch(logout());
-
-    console.log('after logout:', store.getState().auth);
-
     navigate('/auth/login');
   };
 
