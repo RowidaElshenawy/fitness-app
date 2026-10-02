@@ -58,6 +58,7 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
           <CustomInput
             variant="password"
             subVariant="password"
+            placeholder={t('custom-input.password.password')}
             {...form.register('password')}
             error={!!form.formState.errors.password}
             errorMessage={form.formState.errors.password?.message}
@@ -66,6 +67,7 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
           <CustomInput
             variant="password"
             subVariant="password"
+            placeholder={t('custom-input.password.new-password')}
             {...form.register('newPassword')}
             error={!!form.formState.errors.newPassword}
             errorMessage={form.formState.errors.newPassword?.message}
@@ -74,6 +76,7 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
           <CustomInput
             variant="password"
             subVariant="password"
+            placeholder={t('custom-input.password.confirm-new-password')}
             {...form.register('confirmPassword')}
             error={!!form.formState.errors.confirmPassword}
             errorMessage={form.formState.errors.confirmPassword?.message}

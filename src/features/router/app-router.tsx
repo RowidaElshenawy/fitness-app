@@ -4,12 +4,12 @@ import { lazy, Suspense } from 'react';
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
-import Profile from '@/app/main-pages/profile';
 
 const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));
 const Classes = lazy(() => import('@/app/main-pages/classes'));
 const Healthy = lazy(() => import('@/app/main-pages/healthy'));
+const Profile = lazy(() => import('@/app/main-pages/profile'));
 
 const Login = lazy(() => import('@/app/auth-pages/login'));
 const Register = lazy(() => import('@/app/auth-pages/register'));
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
           { path: 'about', element: withSuspense(<About />) },
           { path: 'classes', element: withSuspense(<Classes />) },
           { path: 'healthy', element: withSuspense(<Healthy />) },
-          { path: 'healthy', element: withSuspense(<Profile />) },
+          { path: 'profile', element: withSuspense(<Profile />) },
         ],
       },
       {

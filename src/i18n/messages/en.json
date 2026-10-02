@@ -42,9 +42,6 @@
     "weight": "Weight",
     "change-password": {
       "title": "Change Password",
-      "current-password": "Current Password",
-      "new-password": "New Password",
-      "confirm-password": "Confirm Password",
       "cancel": "Cancel",
       "change": "Change Password",
       "changing": "Changing...",

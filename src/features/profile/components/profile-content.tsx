@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { store, type RootState } from '@/store/store';
+import { logout } from '@/store/slices/auth.slice';
 import {
   Languages,
   LifeBuoy,
@@ -16,7 +19,6 @@ import KycSelectField from '@/features/profile/components/kyc-select-field';
 import KycWeightField from '@/features/profile/components/kyc-weight-field';
 import ProfileActionCard from '@/features/profile/components/profile-action-card';
 import { useEditProfile } from '@/features/profile/hooks/use-edit-profile';
-import { useProfileData } from '@/features/profile/hooks/use-profile-data';
 import { useTheme } from '@/features/profile/hooks/use-theme';
 import type { ActivityLevel, Goal } from '@/features/KYC/types/kyc';
 import { ACTIVITY_LEVEL_OPTIONS, GOAL_OPTIONS } from '@/features/KYC/constants/kyc-options';
@@ -32,21 +34,28 @@ const ProfileContent = () => {
   // State
   const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
 
+  // Redux state
+  const user = useSelector((state: RootState) => state.auth.user);
+  const dispatch = useDispatch();
+
   // Custom hooks
-  const { data } = useProfileData();
   const { mutate: editProfileMutation, isPending } = useEditProfile();
   const { theme, changeTheme } = useTheme();
 
-  // Variables
-  if (!data) {
+  // Authentication guard
+  if (!user) {
     return null;
   }
 
-  const { goal, activityLevel, weight } = data.user;
+  // Variables
+  const { goal, activityLevel, weight } = user;
 
   // Functions
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    dispatch(logout());
+
+    console.log('after logout:', store.getState().auth);
+
     navigate('/auth/login');
   };
 

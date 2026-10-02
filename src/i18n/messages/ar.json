@@ -42,9 +42,6 @@
     "weight": "الوزن",
     "change-password": {
       "title": "تغيير كلمة المرور",
-      "current-password": "كلمة المرور الحالية",
-      "new-password": "كلمة المرور الجديدة",
-      "confirm-password": "تأكيد كلمة المرور",
       "cancel": "إلغاء",
       "change": "تغيير كلمة المرور",
       "changing": "جارٍ التغيير...",

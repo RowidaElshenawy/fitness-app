@@ -1,29 +1,27 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import { useTranslation } from 'react-i18next';
 import { toast } from 'sonner';
+import { useMutation } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import type { RootState } from '@/store/store';
+import { updateUser } from '@/store/slices/auth.slice';
+
 import { editProfile } from '../lib/apis/edit-profile.api';
-import type { IEditProfileResponse } from '../lib/types/edit-profile';
+import type { IEditProfilePayload } from '../lib/types/edit-profile';
 
 export function useEditProfile() {
+  // Translation
   const { t } = useTranslation();
-  const queryClient = useQueryClient();
+
+  // Redux state
+  const token = useSelector((state: RootState) => state.auth.token);
+  const dispatch = useDispatch();
 
   return useMutation({
-    mutationFn: editProfile,
+    mutationFn: (payload: IEditProfilePayload) => editProfile(payload, token),
 
     onSuccess: (data) => {
-      queryClient.setQueryData<IEditProfileResponse>(['profile-data'], (currentData) =>
-        currentData
-          ? {
-              ...currentData,
-              user: {
-                ...currentData.user,
-                ...data.user,
-              },
-            }
-          : currentData
-      );
+      dispatch(updateUser(data.user));
 
       toast.success(data.message);
     },
