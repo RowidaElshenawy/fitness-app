@@ -16,16 +16,15 @@
       "submit": "Submit",
       "loading": "Loading..."
     },
-
-    "search": "Search",
-    "email": "Email",
-    "phone": "phone number",
-
     "password": {
       "password": "Password",
       "new-password": "New Password",
-      "confirm-new-password": "Confirm New Password"
-    }
+      "confirm-password": "Confirm Password"
+    },
+
+    "search": "Search",
+    "email": "Email",
+    "phone": "phone number"
   },
 
   "auth": {
@@ -39,19 +38,21 @@
       "register": "Register"
     },
     "register": {
-      "title": "Create an account",
+      "title": "Create An Account",
       "login": "Login",
+
       "already-have-account": "Already have an account? ",
       "errors": {
         "first-name": "First Name is required",
         "last-name": "Last Name is required",
         "user-name": "User Name must be at least 2 characters.",
-        "first-name-max": "First Name must not be more than 15 characters ",
-        "last-name-max": "Last Name must not be more than 15 characters ",
+        "first-name-max": "First Name must not be more than 50 characters.",
+        "last-name-max": "Last Name must not be more than 50 characters.",
         "email-required": "Email is required.",
         "invalid-email": "Please enter a valid email address.",
         "email-already-registered": "This email is already registered.",
         "password-min-length": "Password must be at least 8 characters.",
+        "password-max-length": "Password must not be more than 50 characters.",
         "password-uppercase": "Password must contain at least one uppercase letter.",
         "password-lowercase": "Password must contain at least one lowercase letter.",
         "password-number": "Password must contain at least one number.",
