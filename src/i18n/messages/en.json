@@ -4,10 +4,15 @@
     "arabic": "Arabic"
   },
   "welcome": "Welcome",
+
   "custom-input": {
     "default": {
       "first-name": "First Name",
-      "last-name": "Last Name"
+      "last-name": "Last Name",
+      "male": "Male",
+      "female": "Female",
+      "next": "Next",
+      "submit": "Submit"
     },
 
     "search": "Search",
@@ -26,6 +31,76 @@
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",
       "close": "Tap to Close"
+    },
+    "auth": {
+      "subtitle-login-register": "Hey There,",
+      "login": {
+        "subtitle": "WELCOME BACK!",
+        "title": "Login",
+        "forgot-password": "Forget Password ?",
+        "dont-have-an-account": "Dont have an account yet ? ",
+        "register": "Register",
+        "or": "Or"
+      }
+    },
+    "profile": {
+      "goal": "Goal",
+      "activity-level": "Activity Level",
+      "weight": "Weight",
+      "change-password": {
+        "title": "Change Password",
+        "cancel": "Cancel",
+        "change": "Change Password",
+        "changing": "Changing...",
+        "success": "Password changed successfully",
+        "something-went-wrong": "Something went wrong",
+        "current-password-required": "Current password is required",
+        "new-password-required": "New password is required",
+        "confirm-password-required": "Please confirm your password",
+        "passwords-do-not-match": "Passwords do not match"
+      },
+      "language": "Language",
+      "mood": "Mood",
+      "security": "Security",
+      "privacy-policy": "Privacy Policy",
+      "help": "Help",
+      "logout": "Log Out"
+    },
+    "kyc": {
+      "gender-title": "tell us about yourself!",
+      "gender-subtitle": "We Need To Know Your Gender,",
+      "age-title": "How Old Are you ?",
+      "weight-title": "what is your weight ?",
+      "height-title": "what is your height ?",
+      "hint": "this helps us create Your personalized plan",
+      "goal-title": "What Is Your Goal ?",
+      "goal": {
+        "gain-weight": "Gain Weight",
+        "lose-weight": "Lose Weight",
+        "get-fitter": "Get Fitter",
+        "gain-flexibility": "Gain More Flexible",
+        "learn-basics": "Learn The Basic"
+      },
+      "activity": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advance": "Advance",
+        "true-beast": "True Beast"
+      },
+      "activity-title": "Your Regular Physical Activity Level ?",
+      "units": {
+        "years-old": "Years Old",
+        "kg": "KG",
+        "cm": "CM"
+      },
+      "not-found": {
+        "title": "Page <highlight>not found</highlight>",
+        "title-plain": "Page not found",
+        "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
+        "back-home": "Back to Home",
+        "explore-classes": "Explore Classes"
+      }
     }
   }
 }
