@@ -44,14 +44,27 @@ export default function AiChat() {
           </div>
           <div className="relative z-10 flex-1 px-4">
             {/* ai messages */}
-            <div>
+            <div className="flex gap-4 pb-6 justify-start">
+              <img
+                src={aiPhoto}
+                alt="ai-photo"
+                className="w-9 h-9 rounded-full shadow-shadow-primary"
+              />
+              <p className="text-text-inverse font-normal text-lg w-52.5 rounded-tr-lg rounded-b-lg p-2 gap-2 bg-bg-ai-chat backdrop-blur-ai-chat shadow-shadow-ai-chat">
+                Hello How Can I Assist You Today ?
+              </p>
+            </div>
+            {/* user messages */}
+            <div className="flex gap-4 justify-end">
+              <p className="text-text-inverse font-normal text-lg w-52.5 rounded-tl-lg rounded-b-lg p-2 gap-2  bg-bg-chat-user backdrop-blur-chat-user shadow-shadow-chat-user">
+                Hello How Can I Assist You Today ?
+              </p>
               <img
                 src={aiPhoto}
                 alt="ai-photo"
                 className="w-9 h-9 rounded-full shadow-shadow-primary"
               />
             </div>
-            {/* user messages */}
           </div>
           <CustomInput variant="ai" className="px-8" />
         </form>

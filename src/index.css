@@ -48,7 +48,7 @@
   --app-shadow-primary-sm: 0px 2px 10px
     color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
   --app-shadow-primary: 0px 4px 20px
-    color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
+    color-mix(in srgb, var(--color-brand-orange-800) 25%, transparent);
   --app-shadow-primary-lg: 0px 6px 30px
     color-mix(in srgb, var(--color-brand-orange-800) 7%, transparent);
   --app-shadow-ai-chat: 0px 4px 217.4px 0px #000000;
@@ -58,6 +58,15 @@
   --ring-default: var(--color-brand-orange-300);
   --ring-danger: var(--color-brand-orange-600);
   --ring-width-default: 3px;
+  /* ai Chat Message */
+  --bg-ai-chat: #24242480;
+  --blur-ai-chat: 30px;
+  --shadow-ai-chat: 0 0 10px 0 #00000040;
+
+  /* user Chat Message */
+  --bg-chat-user: #ff6a0080;
+  --blur-chat-user: 30px;
+  --shadow-chat-user: 0 0 10px 0 #00000040;
 
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -264,6 +273,15 @@ code {
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  /* ai Chat Message */
+  --color-bg-ai-chat: var(--bg-ai-chat);
+  --blur-ai-chat: var(--blur-ai-chat);
+  --shadow-shadow-ai-chat: var(--shadow-ai-chat);
+
+  /* user Chat Message */
+  --color-bg-chat-user: var(--bg-chat-user);
+  --blur-chat-user: var(--blur-chat-user);
+  --shadow-shadow-chat-user: var(--shadow-chat-user);
 }
 
 .dark {
@@ -320,6 +338,15 @@ code {
   --ring-default: var(--color-brand-orange-300);
   --ring-danger: var(--color-brand-dark);
   --ring-width-default: 3px;
+  /* ai Chat Message */
+  --bg-ai-chat: #f4f4f580;
+  --blur-ai-chat: 30px;
+  --shadow-ai-chat: 0 0 10px 0 #00000080;
+
+  /* user Chat Message */
+  --bg-chat-user: #9f2b0080;
+  --blur-chat-user: 30px;
+  --shadow-chat-user: 0 0 10px 0 #00000080;
 }
 
 @utility ring-default {
