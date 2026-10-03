@@ -20,10 +20,16 @@ export function useEditProfile() {
   return useMutation({
     mutationFn: (payload: IEditProfilePayload) => editProfile(payload, token),
 
-    onSuccess: (data) => {
+    onSuccess: (data, variables) => {
       dispatch(updateUser(data.user));
 
-      toast.success(data.message);
+      if ('goal' in variables) {
+        toast.success(t('profile.kyc-updated.goal'));
+      } else if ('activityLevel' in variables) {
+        toast.success(t('profile.kyc-updated.activity-level'));
+      } else {
+        toast.success(t('profile.kyc-updated.weight'));
+      }
     },
 
     onError: (error) => {

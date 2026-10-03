@@ -40,6 +40,13 @@
     "goal": "الهدف",
     "activity-level": "مستوى النشاط",
     "weight": "الوزن",
+    "tap-to-change": "اضغط للتغيير",
+    "save": "حفظ",
+    "kyc-updated": {
+      "goal": "تم تحديث الهدف بنجاح",
+      "activity-level": "تم تحديث مستوى النشاط بنجاح",
+      "weight": "تم تحديث الوزن بنجاح"
+    },
     "change-password": {
       "title": "تغيير كلمة المرور",
       "cancel": "إلغاء",

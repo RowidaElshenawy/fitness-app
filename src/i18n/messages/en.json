@@ -40,6 +40,13 @@
     "goal": "Goal",
     "activity-level": "Activity Level",
     "weight": "Weight",
+    "tap-to-change": "TAP TO CHANGE",
+    "save": "Save",
+    "kyc-updated": {
+      "goal": "Goal updated successfully",
+      "activity-level": "Activity level updated successfully",
+      "weight": "Weight updated successfully"
+    },
     "change-password": {
       "title": "Change Password",
       "cancel": "Cancel",

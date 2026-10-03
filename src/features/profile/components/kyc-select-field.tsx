@@ -14,7 +14,7 @@ type KycOption = {
 };
 
 type KycSelectFieldProps = {
-  label: string;
+  label?: string;
   value: string;
   options: readonly KycOption[];
   onChange: (value: string) => void;
@@ -32,7 +32,7 @@ const KycSelectField = ({
 
   return (
     <div className="flex w-full items-center justify-between gap-4">
-      <span className="text-white">{label}</span>
+      <span className="text-background">{label}</span>
 
       <Select
         value={value}
@@ -43,7 +43,7 @@ const KycSelectField = ({
         }}
         disabled={disabled}
       >
-        <SelectTrigger className="h-10 w-full max-w-48 cursor-pointer border border-white bg-transparent text-white">
+        <SelectTrigger className="h-10 w-full max-w-48 cursor-pointer border border-background bg-transparent text-background">
           <SelectValue />
         </SelectTrigger>
 
@@ -51,7 +51,7 @@ const KycSelectField = ({
           side="bottom"
           align="start"
           sideOffset={4}
-          className="border border-white bg-bg-plain"
+          className="border border-background bg-bg-plain"
         >
           {options.map((option) => (
             <SelectItem
