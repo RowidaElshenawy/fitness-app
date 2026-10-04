@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 :root {
   /* Background */
-
+  --bg-white-faint: var(--color-white-faint);
   --bg-plain: var(--color-white);
   --bg-subtle: var(--color-zinc-50);
   --bg-muted: var(--color-zinc-100);
@@ -133,7 +133,8 @@ body {
 }
 @theme inline {
   /* primitive colors */
-
+  --color-overlay-tint: #242424f2;
+  --color-white-faint: #fffffff2;
   --color-brand-orange-50: #fff3ec;
   --color-brand-orange-100: #ffdcc6;
   --color-brand-orange-200: #ffc199;
@@ -147,7 +148,7 @@ body {
   --color-brand-dark: #452b2c;
 
   /* Background */
-
+  --color-bg-white-faint: var(--bg-white-faint);
   --color-bg-plain: var(--bg-plain);
   --color-bg-subtle: var(--bg-subtle);
   --color-bg-muted: var(--bg-muted);
@@ -215,7 +216,7 @@ body {
 
 .dark {
   /* Background */
-
+  --bg-white-faint: var(--color-overlay-tint);
   --bg-plain: var(--color-zinc-700);
   --bg-subtle: var(--color-zinc-800);
   --bg-muted: var(--color-zinc-900);
