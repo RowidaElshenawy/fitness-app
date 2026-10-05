@@ -12,10 +12,10 @@ export const FORGOT_PASSWORD_SCHEMA = (t: Translate) => {
       email,
       resetCode: z.string().min(1, t('forgot-password.otp-required')),
       newPassword: password,
-      confirmPassword: z.string().min(1, t('forgot-password.confirm-password-required')),
+      confirmPassword: z.string().min(1, t('register.errors.re-password-required')),
     })
     .refine((data) => data.newPassword === data.confirmPassword, {
-      message: t('forgot-password.passwords-do-not-match'),
+      message: t('register.errors.password-mismatch'),
       path: ['confirmPassword'],
     });
 };
