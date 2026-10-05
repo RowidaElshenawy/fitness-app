@@ -1,7 +1,9 @@
+import HeaderAuth from '@/features/auth/components/shared/header-auth';
+
 export default function Register() {
   return (
     <>
-      <h2 className="text-black">register page</h2>
+      <HeaderAuth subtitle="Hey There" title="create an account" />
     </>
   );
 }

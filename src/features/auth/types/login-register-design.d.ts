@@ -5,6 +5,9 @@ export type TLoginRegisterDesignProps = {
   buttonTitle: string;
   spanTitle: string;
   linkTitle: string;
+  title: string;
+  forgotPassword: string;
+  or: string;
   href: string;
   form: UseFormReturn<T>;
   onSubmit: SubmitHandler<T>;

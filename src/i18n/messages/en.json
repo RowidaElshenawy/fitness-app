@@ -8,7 +8,11 @@
   "custom-input": {
     "default": {
       "first-name": "First Name",
-      "last-name": "Last Name"
+      "last-name": "Last Name",
+      "male": "Male",
+      "female": "Female",
+      "next": "Next",
+      "submit": "Submit"
     },
 
     "search": "Search",
@@ -37,6 +41,70 @@
     "confirm-password-required": "Please confirm your password",
     "passwords-do-not-match": "Passwords do not match",
     "didnt-receive-code": "Didn't receive the verification code?",
-    "resend-code": "Resend Code"
+    "resend-code": "Resend Code",
+    "email-required": "Email is required"
+  },
+  "register": {
+    "errors": {
+      "first-name": "First Name is required",
+      "last-name": "Last Name is required",
+      "user-name": "User Name must be at least 2 characters.",
+      "first-name-max": "First Name must not be more than 15 characters ",
+      "last-name-max": "Last Name must not be more than 15 characters ",
+      "email-required": "Email is required.",
+      "invalid-email": "Please enter a valid email address.",
+      "email-already-registered": "This email is already registered.",
+      "password-min-length": "Password must be at least 8 characters.",
+      "password-uppercase": "Password must contain at least one uppercase letter.",
+      "password-lowercase": "Password must contain at least one lowercase letter.",
+      "password-number": "Password must contain at least one number.",
+      "password-special": "Password must contain at least one special character.",
+      "re-password-required": "confirm password is required.",
+      "password-mismatch": "Passwords do not match",
+      "something-went-wrong": "Something went wrong. Please try again."
+    },
+    "Already Have an account": "Already Have an account ?"
+  },
+
+  "auth": {
+    "subtitle-login-register": "Hey There,",
+    "login": {
+      "subtitle": "WELCOME BACK!",
+      "title": "Login",
+      "forgot-password": "Forget Password ?",
+      "dont-have-an-account": "Dont have an account yet ? ",
+      "register": "Register",
+      "or": "Or"
+    },
+
+    "kyc": {
+      "gender-title": "tell us about yourself!",
+      "gender-subtitle": "We Need To Know Your Gender,",
+      "age-title": "How Old Are you ?",
+      "weight-title": "what is your weight ?",
+      "height-title": "what is your height ?",
+      "hint": "this helps us create Your personalized plan",
+      "goal-title": "What Is Your Goal ?",
+      "goal": {
+        "gain-weight": "Gain Weight",
+        "lose-weight": "Lose Weight",
+        "get-fitter": "Get Fitter",
+        "gain-flexibility": "Gain More Flexible",
+        "learn-basics": "Learn The Basic"
+      },
+      "activity": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advance": "Advance",
+        "true-beast": "True Beast"
+      },
+      "activity-title": "Your Regular Physical Activity Level ?",
+      "units": {
+        "years-old": "Years Old",
+        "kg": "KG",
+        "cm": "CM"
+      }
+    }
   }
 }
