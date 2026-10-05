@@ -25,9 +25,6 @@ const EmailStep = ({ isPending, error }: EmailStepProps) => {
       <Controller
         name="email"
         control={control}
-        rules={{
-          required: t('forgot-password.email-required'),
-        }}
         render={({ field, fieldState }) => (
           <CustomInput
             variant="email"

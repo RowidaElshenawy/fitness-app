@@ -38,8 +38,7 @@
     "confirm-password-required": "يرجى تأكيد كلمة المرور",
     "passwords-do-not-match": "كلمتا المرور غير متطابقتين",
     "didnt-receive-code": "لم تستلم رمز التحقق؟",
-    "resend-code": "إعادة إرسال الرمز",
-    "email-required": "البريد الإلكتروني مطلوب"
+    "resend-code": "إعادة إرسال الرمز"
   },
   "auth": {
     "subtitle-login-register": "مرحبًا بك,",

@@ -2,14 +2,16 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import CustomInput from '@/shared/components/custom-ui/custom-input';
+import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import HeaderAuth from '../shared/header-auth';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
 
 interface VerifyCodeStepProps {
   isPending: boolean;
+  error?: string;
 }
 
-const VerifyCodeStep = ({ isPending }: VerifyCodeStepProps) => {
+const VerifyCodeStep = ({ isPending, error }: VerifyCodeStepProps) => {
   // Translation
   const { t } = useTranslation();
 
@@ -23,9 +25,6 @@ const VerifyCodeStep = ({ isPending }: VerifyCodeStepProps) => {
       <Controller
         name="resetCode"
         control={control}
-        rules={{
-          required: t('forgot-password.otp-required'),
-        }}
         render={({ field, fieldState }) => (
           <CustomInput
             variant="otp"
@@ -37,6 +36,7 @@ const VerifyCodeStep = ({ isPending }: VerifyCodeStepProps) => {
           />
         )}
       />
+      {error && <ErrorAlert errorMessage={error} />}
     </>
   );
 };
