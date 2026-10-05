@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { TLoginField } from '../types/login-field';
+import type { TLoginField } from '../../types/login-field';
 
 export async function login(userData: TLoginField) {
   try {

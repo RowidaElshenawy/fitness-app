@@ -34,7 +34,6 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
   });
 
   const onSubmit = (data: TUserInfoData) => {
-    console.log(data);
     setUserInfo(data);
     setStep('gender');
   };

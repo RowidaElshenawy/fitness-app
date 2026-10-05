@@ -1,4 +1,5 @@
-export type TUserInfoData = z.infer<ReturnType<typeof USER_INFO_SCHEMA>>;
+export type TUserInfoData = z.infer<typeof USER_INFO_SCHEMA>;
+
 export type TRegisterStepsProps =
   'user-info' | 'gender' | 'height' | 'weight' | 'age' | 'goal' | 'activityLevel';
 export type Gender = 'male' | 'female';
