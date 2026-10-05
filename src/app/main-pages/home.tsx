@@ -1,18 +1,26 @@
-import CustomInput from '@/shared/components/custom-ui/custom-input';
+import RegisterSteps from '@/features/auth/components/register/register-steps';
+// import { Button } from '@/shared/components/ui/button';
+// import { useState } from 'react';
 
 const Home = () => {
+  // const [isLoading, setIsLoading] = useState(false);
+  // const handleClick = async () => {
+  //   setIsLoading(true);
+
+  //   // محاكاة API request
+  //   await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  //   setIsLoading(false);
+  // };
+
   return (
-    <div>
-      Home page
-      <CustomInput variant="default" subVariant="first-name" />
-      <CustomInput variant="default" subVariant="last-name" />
-      <CustomInput variant="email" />
-      <CustomInput variant="otp" error={true} />
-      <CustomInput variant="search" />
-      <CustomInput variant="password" subVariant="password" />
-      <CustomInput variant="password" subVariant="new-password" />
-      <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
-    </div>
+    // <div>
+    //   <Button type="submit" loading={isLoading} onClick={handleClick}>
+    //     NEXT
+    //   </Button>
+    // </div>
+
+    <RegisterSteps />
   );
 };
 
