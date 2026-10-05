@@ -4,22 +4,24 @@ import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
-
 import CustomInput from '@/shared/components/custom-ui/custom-input';
 import { FieldGroup, Field } from '@/shared/components/ui/field';
-
-import LoginRegisterDesign from '../shared/login-register-design';
-import type { TUserInfoData, TUserInfoProps } from '../../types/register';
-import { USER_INFO_SCHEMA } from '../../schema/register.schema';
-import HeaderAuth from '../shared/header-auth';
+import LoginRegisterDesign from '../../shared/login-register-design';
+import type { TUserInfoData, TUserInfoProps } from '../../../types/register';
+import { USER_INFO_SCHEMA } from '../../../schema/register.schema';
+import HeaderAuth from '../../shared/header-auth';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
+  // Translation
   const { t } = useTranslation();
+
+  // Navigation
   const { locale = 'en' } = useParams();
 
   const translateError = (message?: string) => (message ? t(message) : undefined);
 
+  // Form
   const form = useForm<TUserInfoData>({
     mode: 'onChange',
     reValidateMode: 'onChange',
@@ -33,6 +35,7 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
     resolver: zodResolver(USER_INFO_SCHEMA),
   });
 
+  // Functions
   const onSubmit = (data: TUserInfoData) => {
     setUserInfo(data);
     setStep('gender');

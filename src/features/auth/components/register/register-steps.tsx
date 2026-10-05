@@ -13,7 +13,7 @@ import { Button } from '@/shared/components/ui/button';
 import HeaderAuth from '../shared/header-auth';
 import type { KycFormData, TRegisterStepsProps, TUserInfoData } from '../../types/register';
 import { registerUser } from '../../lib/apis/register.api';
-import UserInfoForm from './user-info-form';
+import UserInfoForm from './steps/user-info-form';
 import { useMutation } from '@tanstack/react-query';
 
 const PROFILE_STEPS: Exclude<TRegisterStepsProps, 'user-info'>[] = [
