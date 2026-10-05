@@ -8,7 +8,7 @@ type ErrorAlertProps = {
 
 export default function ErrorAlert({ errorMessage = 'Something went wrong' }: ErrorAlertProps) {
   return (
-    <Alert className="w-full mt-1 h-10  radius-lg  relative flex items-center justify-start ">
+    <Alert className="w-full mt-1 border-border-danger text-text-danger h-10  radius-lg  relative flex items-center justify-start ">
       <AlertCircleIcon />
       <AlertDescription>{errorMessage}</AlertDescription>
       <AlertAction></AlertAction>
