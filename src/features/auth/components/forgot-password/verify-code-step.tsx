@@ -5,6 +5,7 @@ import CustomInput from '@/shared/components/custom-ui/custom-input';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import HeaderAuth from '../shared/header-auth';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { translateError } from '../../lib/utils/translate-error';
 
 interface VerifyCodeStepProps {
   isPending: boolean;
@@ -20,7 +21,7 @@ const VerifyCodeStep = ({ isPending, error }: VerifyCodeStepProps) => {
 
   return (
     <>
-      <HeaderAuth subtitle={t('forgot-password.enter-code')} />
+      <HeaderAuth subtitle={t('auth.forgot-password.enter-code')} />
 
       <Controller
         name="resetCode"
@@ -32,10 +33,11 @@ const VerifyCodeStep = ({ isPending, error }: VerifyCodeStepProps) => {
             onChange={field.onChange}
             disabled={isPending}
             error={!!fieldState.error}
-            errorMessage={fieldState.error?.message}
+            errorMessage={translateError(t)(fieldState.error?.message)}
           />
         )}
       />
+
       {error && <ErrorAlert errorMessage={error} />}
     </>
   );

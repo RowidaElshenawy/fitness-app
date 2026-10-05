@@ -5,6 +5,7 @@ import CustomInput from '@/shared/components/custom-ui/custom-input';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import HeaderAuth from '../shared/header-auth';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { translateError } from '../../lib/utils/translate-error';
 
 interface ResetPasswordStepProps {
   isPending: boolean;
@@ -20,7 +21,7 @@ const ResetPasswordStep = ({ isPending, error }: ResetPasswordStepProps) => {
 
   return (
     <>
-      <HeaderAuth subtitle={t('forgot-password.enter-new-password')} />
+      <HeaderAuth subtitle={t('auth.forgot-password.enter-new-password')} />
 
       <Controller
         name="newPassword"
@@ -33,7 +34,7 @@ const ResetPasswordStep = ({ isPending, error }: ResetPasswordStepProps) => {
             onChange={field.onChange}
             disabled={isPending}
             error={!!fieldState.error}
-            errorMessage={fieldState.error?.message}
+            errorMessage={translateError(t)(fieldState.error?.message)}
           />
         )}
       />
@@ -49,10 +50,11 @@ const ResetPasswordStep = ({ isPending, error }: ResetPasswordStepProps) => {
             onChange={field.onChange}
             disabled={isPending}
             error={!!fieldState.error}
-            errorMessage={fieldState.error?.message}
+            errorMessage={translateError(t)(fieldState.error?.message)}
           />
         )}
       />
+
       {error && <ErrorAlert errorMessage={error} />}
     </>
   );

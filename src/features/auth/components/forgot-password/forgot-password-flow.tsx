@@ -1,6 +1,5 @@
-import { ArrowLeft, Loader2 } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -18,7 +17,7 @@ const ForgotPasswordFlow = () => {
   const { t } = useTranslation();
 
   // Form
-  const schema = useMemo(() => FORGOT_PASSWORD_SCHEMA(t), [t]);
+  const schema = FORGOT_PASSWORD_SCHEMA;
 
   const form = useForm<ForgotPasswordForm>({
     mode: 'onChange',
@@ -46,15 +45,15 @@ const ForgotPasswordFlow = () => {
 
   // Variables
   const stepTitle = {
-    email: t('forgot-password.find-account'),
-    code: t('forgot-password.verify-account'),
-    password: t('forgot-password.reset-password'),
+    email: t('auth.forgot-password.find-account'),
+    code: t('auth.forgot-password.verify-account'),
+    password: t('auth.forgot-password.reset-password'),
   }[step];
 
   const stepButtonTitle = {
-    email: t('forgot-password.send-otp'),
-    code: t('forgot-password.verify-code'),
-    password: t('forgot-password.reset-password-button'),
+    email: t('auth.forgot-password.send-otp'),
+    code: t('auth.forgot-password.verify-code'),
+    password: t('auth.forgot-password.reset-password-button'),
   }[step];
 
   // Functions
@@ -87,7 +86,7 @@ const ForgotPasswordFlow = () => {
 
   return (
     <FormProvider {...form}>
-      <div className="mx-auto mt-12.5 flex max-w-121.5 flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div className="flex items-center gap-2">
           <Button
             type="button"
@@ -114,16 +113,15 @@ const ForgotPasswordFlow = () => {
               type="submit"
               variant="primary"
               className="w-full cursor-pointer"
-              disabled={isPending}
+              loading={isPending}
             >
-              {isPending && <Loader2 className="h-4 w-4 animate-spin me-1" />}
               {stepButtonTitle}
             </Button>
 
             {step === 'code' && (
               <div className="flex flex-col items-center gap-1 text-center">
                 <span className="text-sm text-text-subtle">
-                  {t('forgot-password.didnt-receive-code')}
+                  {t('auth.forgot-password.didnt-receive-code')}
                 </span>
 
                 <button
@@ -132,7 +130,7 @@ const ForgotPasswordFlow = () => {
                   disabled={isPending}
                   className="w-fit cursor-pointer text-sm font-bold text-text-primary hover:underline"
                 >
-                  {t('forgot-password.resend-code')}
+                  {t('auth.forgot-password.resend-code')}
                 </button>
               </div>
             )}
