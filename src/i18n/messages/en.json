@@ -117,6 +117,14 @@
         "title": "State-Of-The-Art Equipment",
         "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
       }
+    },
+    "sec-title": {
+      "why-us-": "Elevate fitness with the <highlight>best way</highlight> possible",
+      "home": "Your body can <highlight>stand almost</highlight> anything",
+      "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
+      "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
+      "fitness-": "Elevate fitness with the <highlight>best way</highlight> possible",
+      "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
     }
   }
 }

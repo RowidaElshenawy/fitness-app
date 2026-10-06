@@ -7,7 +7,7 @@ export default function FeatureList({ className = '', ...props }: ComponentProps
   const { t } = useTranslation();
 
   return (
-    <ol className={`mx-auto max-w-md list-none p-0 ${className}`} {...props}>
+    <ol className={` max-w-md list-none p-0 ${className}`} {...props}>
       {stepKeys.map((key, i) => {
         const isLast = i === stepKeys.length - 1;
         return (
