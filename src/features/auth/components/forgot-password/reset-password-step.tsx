@@ -2,30 +2,30 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import CustomInput from '@/shared/components/custom-ui/custom-input';
+import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import HeaderAuth from '../shared/header-auth';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { translateError } from '../../lib/utils/translate-error';
 
 interface ResetPasswordStepProps {
   isPending: boolean;
+  error?: string;
 }
 
-const ResetPasswordStep = ({ isPending }: ResetPasswordStepProps) => {
+const ResetPasswordStep = ({ isPending, error }: ResetPasswordStepProps) => {
   // Translation
   const { t } = useTranslation();
 
   // Context
-  const { control, getValues } = useFormContext<ForgotPasswordForm>();
+  const { control } = useFormContext<ForgotPasswordForm>();
 
   return (
     <>
-      <HeaderAuth subtitle={t('forgot-password.enter-new-password')} />
+      <HeaderAuth subtitle={t('auth.forgot-password.enter-new-password')} />
 
       <Controller
         name="newPassword"
         control={control}
-        rules={{
-          required: t('forgot-password.password-required'),
-        }}
         render={({ field, fieldState }) => (
           <CustomInput
             variant="password"
@@ -34,7 +34,7 @@ const ResetPasswordStep = ({ isPending }: ResetPasswordStepProps) => {
             onChange={field.onChange}
             disabled={isPending}
             error={!!fieldState.error}
-            errorMessage={fieldState.error?.message}
+            errorMessage={translateError(t)(fieldState.error?.message)}
           />
         )}
       />
@@ -42,11 +42,6 @@ const ResetPasswordStep = ({ isPending }: ResetPasswordStepProps) => {
       <Controller
         name="confirmPassword"
         control={control}
-        rules={{
-          required: t('forgot-password.confirm-password-required'),
-          validate: (value) =>
-            value === getValues('newPassword') || t('forgot-password.passwords-do-not-match'),
-        }}
         render={({ field, fieldState }) => (
           <CustomInput
             variant="password"
@@ -55,10 +50,12 @@ const ResetPasswordStep = ({ isPending }: ResetPasswordStepProps) => {
             onChange={field.onChange}
             disabled={isPending}
             error={!!fieldState.error}
-            errorMessage={fieldState.error?.message}
+            errorMessage={translateError(t)(fieldState.error?.message)}
           />
         )}
       />
+
+      {error && <ErrorAlert errorMessage={error} />}
     </>
   );
 };

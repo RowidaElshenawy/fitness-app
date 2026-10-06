@@ -2,14 +2,17 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import CustomInput from '@/shared/components/custom-ui/custom-input';
+import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import HeaderAuth from '../shared/header-auth';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { translateError } from '../../lib/utils/translate-error';
 
 interface VerifyCodeStepProps {
   isPending: boolean;
+  error?: string;
 }
 
-const VerifyCodeStep = ({ isPending }: VerifyCodeStepProps) => {
+const VerifyCodeStep = ({ isPending, error }: VerifyCodeStepProps) => {
   // Translation
   const { t } = useTranslation();
 
@@ -18,14 +21,11 @@ const VerifyCodeStep = ({ isPending }: VerifyCodeStepProps) => {
 
   return (
     <>
-      <HeaderAuth subtitle={t('forgot-password.enter-code')} />
+      <HeaderAuth subtitle={t('auth.forgot-password.enter-code')} />
 
       <Controller
         name="resetCode"
         control={control}
-        rules={{
-          required: t('forgot-password.otp-required'),
-        }}
         render={({ field, fieldState }) => (
           <CustomInput
             variant="otp"
@@ -33,10 +33,12 @@ const VerifyCodeStep = ({ isPending }: VerifyCodeStepProps) => {
             onChange={field.onChange}
             disabled={isPending}
             error={!!fieldState.error}
-            errorMessage={fieldState.error?.message}
+            errorMessage={translateError(t)(fieldState.error?.message)}
           />
         )}
       />
+
+      {error && <ErrorAlert errorMessage={error} />}
     </>
   );
 };
