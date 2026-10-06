@@ -11,8 +11,10 @@
       "last-name": "الاسم الاخير",
       "male": "ذكر",
       "female": "أنثى",
+      "back": "رجوع",
       "next": "التالي",
-      "submit": "إرسال"
+      "submit": "إرسال",
+      "loading": "جاري التحميل..."
     },
 
     "search": "بحث",
@@ -25,8 +27,9 @@
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
     }
   },
+
   "auth": {
-    "subtitle-login-register": "مرحبًا بك,",
+    "subtitle-login-register": "مرحبًا بك",
     "login": {
       "subtitle": "أهلًا بعودتك!",
       "title": "تسجيل الدخول",
@@ -100,6 +103,79 @@
       "description": "هذه الصفحة غير موجودة أو تم نقلها. عد إلى الصفحة الرئيسية أو تابع رحلتك مع إحدى حصصنا التدريبية.",
       "back-home": "العودة إلى الرئيسية",
       "explore-classes": "استكشف الحصص"
+    },
+    "register": {
+      "title": "إنشاء حساب",
+      "already-have-account": "لديك حساب بالفعل؟ ",
+      "login": "تسجيل دخول",
+      "errors": {
+        "first-name": "الاسم الأول مطلوب",
+        "last-name": "اسم العائلة مطلوب",
+        "user-name": "اسم المستخدم يجب أن يكون حرفين على الأقل",
+        "first-name-max": "يجب ألا يزيد الاسم الأول عن 50 حرفًا",
+        "last-name-max": "يجب ألا يزيد اسم العائلة عن 50 حرفًا",
+        "email-required": "البريد الإلكتروني مطلوب",
+        "invalid-email": "يرجى إدخال بريد إلكتروني صالح",
+        "email-already-registered": "هذا البريد الإلكتروني مسجل بالفعل",
+        "password-min-length": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+        "password-max-length": "يجب ألا تزيد كلمة المرور عن 50 حرفًا",
+        "password-uppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+        "password-lowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+        "password-number": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+        "password-special": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
+        "re-password-required": "تأكيد كلمة المرور مطلوب",
+        "password-mismatch": "كلمتا المرور غير متطابقتين",
+        "something-went-wrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى"
+      }
+    },
+
+    "kyc": {
+      "gender-title": "اخبرنا عن نفسك!",
+      "gender-subtitle": "نحتاج لمعرفة جنسك،",
+      "age-title": "كم عمرك ؟",
+      "weight-title": "ما هو وزنك ؟",
+      "height-title": "ما هو طولك ؟",
+      "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
+      "goal-title": "ما هو هدفك ؟",
+      "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
+      "goal": {
+        "gain-weight": "زيادة الوزن",
+        "lose-weight": "خسارة الوزن",
+        "get-fitter": "زيادة اللياقة",
+        "gain-flexibility": "زيادة المرونة",
+        "learn-basics": "تعلم الأساسيات"
+      },
+      "activity": {
+        "rookie": "مبتدئ",
+        "beginner": "بداية",
+        "intermediate": "متوسط",
+        "advance": "متقدم",
+        "true-beast": "وحش حقيقي"
+      },
+      "units": {
+        "years-old": "سنة",
+        "kg": "كجم",
+        "cm": "سم"
+      }
+    },
+
+    "forgot-password": {
+      "find-account": "البحث عن حسابك",
+      "enter-email": "أدخل بريدك الإلكتروني",
+      "send-otp": "إرسال رمز التحقق",
+      "verify-account": "تأكيد حسابك",
+      "enter-code": "أدخل رمز التحقق المرسل إلى بريدك الإلكتروني",
+      "verify-code": "التحقق من الرمز",
+      "reset-password": "إعادة تعيين كلمة المرور",
+      "enter-new-password": "أدخل كلمة المرور الجديدة",
+      "reset-password-button": "إعادة تعيين كلمة المرور",
+      "email-required": "البريد الإلكتروني مطلوب",
+      "otp-required": "رمز التحقق مطلوب",
+      "password-required": "كلمة المرور مطلوبة",
+      "confirm-password-required": "يرجى تأكيد كلمة المرور",
+      "passwords-do-not-match": "كلمتا المرور غير متطابقتين",
+      "didnt-receive-code": "لم تستلم رمز التحقق؟",
+      "resend-code": "إعادة إرسال الرمز"
     }
   }
 }

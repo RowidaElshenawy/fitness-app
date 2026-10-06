@@ -7,12 +7,11 @@ type ErrorAlertProps = {
   isRtl?: boolean;
 };
 
-export default function ErrorAlert({ errorMessage, beError }: ErrorAlertProps) {
+export default function ErrorAlert({ errorMessage }: ErrorAlertProps) {
   return (
-    <Alert className="w-full mt-1   radius-lg  relative flex items-center justify-start ">
-      <AlertCircleIcon className="!text-text-danger" />
-      {errorMessage && <AlertDescription>{errorMessage}</AlertDescription>}
-      {beError && <AlertDescription>{beError}</AlertDescription>}
+    <Alert className="w-full mt-1 border-border-danger text-text-danger h-10  radius-lg  relative flex items-center justify-start ">
+      <AlertCircleIcon />
+      <AlertDescription>{errorMessage}</AlertDescription>
       <AlertAction></AlertAction>
     </Alert>
   );

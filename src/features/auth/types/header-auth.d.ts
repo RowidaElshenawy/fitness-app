@@ -1,6 +1,6 @@
 export type THeaderAuthProps = {
   subtitle?: string;
   subtitlePosition?: 'before' | 'after';
-  title: string;
+  title?: string;
   className?: string;
 };

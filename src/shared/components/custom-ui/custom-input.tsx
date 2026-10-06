@@ -79,7 +79,7 @@ function resolveDefaultPlaceholder(
     return subVariant ? t(`default.${subVariant}`) : undefined;
   }
   if (variant === 'password') {
-    return subVariant ? t(`password.${subVariant}`) : t('password');
+    return subVariant ? t(`password.${subVariant}`) : t('password.password');
   }
   if (variant === 'email' || variant === 'search') {
     return t(variant);
