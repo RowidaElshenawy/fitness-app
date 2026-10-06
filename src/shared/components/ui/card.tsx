@@ -38,7 +38,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="card-title"
       className={cn(
-        'font-heading text-xl leading-8 font-bold tracking-wide uppercase text-text-plain group-data-[size=sm]/card:text-sm',
+        'font-sans text-xl leading-8 font-bold tracking-wide uppercase text-text-plain group-data-[size=sm]/card:text-sm',
         className
       )}
       {...props}
@@ -121,7 +121,7 @@ function CardAction({ className, href, children, ...props }: CardActionProps) {
       data-slot="card-action"
       href={href}
       className={cn(
-        'group/action flex shrink-0 items-center  font-heading text-xl leading-none font-medium capitalize text-text-primary',
+        'group/action flex shrink-0 items-center  font-sans text-xl leading-none font-medium capitalize text-text-primary',
         className
       )}
       {...(props as React.ComponentProps<'a'>)}
@@ -133,7 +133,7 @@ function CardAction({ className, href, children, ...props }: CardActionProps) {
       type="button"
       data-slot="card-action"
       className={cn(
-        'group/action flex shrink-0 items-center gap-4 font-heading text-xl leading-none font-medium capitalize text-text-primary',
+        'group/action flex shrink-0 items-center gap-4  text-xl leading-none font-medium capitalize text-text-primary',
         className
       )}
       {...(props as React.ComponentProps<'button'>)}

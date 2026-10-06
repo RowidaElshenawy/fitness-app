@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import SelectableOption from './selectable-option';
 import type { ActivityLevel } from '../../../types/register';
 
-const ACTIVITY_LEVEL_OPTIONS = [
+export const ACTIVITY_LEVEL_OPTIONS = [
   { value: 'level1', labelKey: 'auth.kyc.activity.rookie' },
   { value: 'level2', labelKey: 'auth.kyc.activity.beginner' },
   { value: 'level3', labelKey: 'auth.kyc.activity.intermediate' },
