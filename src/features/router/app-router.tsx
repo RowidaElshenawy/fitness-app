@@ -4,11 +4,12 @@ import { lazy, Suspense } from 'react';
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
+import { Home } from 'lucide-react';
 
-const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));
 const Classes = lazy(() => import('@/app/main-pages/classes'));
 const Healthy = lazy(() => import('@/app/main-pages/healthy'));
+const Profile = lazy(() => import('@/app/main-pages/profile'));
 
 const Login = lazy(() => import('@/app/auth-pages/login'));
 const Register = lazy(() => import('@/app/auth-pages/register'));
@@ -37,14 +38,15 @@ const router = createBrowserRouter([
           { path: 'about', element: withSuspense(<About />) },
           { path: 'classes', element: withSuspense(<Classes />) },
           { path: 'healthy', element: withSuspense(<Healthy />) },
+          { path: 'profile', element: withSuspense(<Profile />) },
         ],
       },
       {
         element: <AuthLayout />,
         children: [
-          { path: 'login', element: <Login /> },
-          { path: 'register', element: <Register /> },
-          { path: 'forgot-password', element: <ForgotPassword /> },
+          { path: 'login', element: withSuspense(<Login />) },
+          { path: 'register', element: withSuspense(<Register />) },
+          { path: 'forgot-password', element: withSuspense(<ForgotPassword />) },
         ],
       },
       { path: '*', element: withSuspense(<NotFound />) },

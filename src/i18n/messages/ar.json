@@ -4,6 +4,7 @@
     "arabic": "العربية"
   },
   "welcome": "مرحبًا",
+
   "custom-input": {
     "default": {
       "first-name": "الاسم الأول",
@@ -14,9 +15,12 @@
       "next": "التالي",
       "submit": "إرسال"
     },
+
     "search": "بحث",
     "email": "الايميل",
     "phone": "رقم الهاتف",
+    "ask-me-any-thing": "اسألني عن أي شيء",
+
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
@@ -58,7 +62,6 @@
       "height-title": "ما هو طولك ؟",
       "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
       "goal-title": "ما هو هدفك ؟",
-      "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
       "goal": {
         "gain-weight": "زيادة الوزن",
         "lose-weight": "خسارة الوزن",
@@ -73,10 +76,18 @@
         "advance": "متقدم",
         "true-beast": "وحش حقيقي"
       },
+      "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
       "units": {
         "years-old": "سنة",
         "kg": "كجم",
         "cm": "سم"
+      },
+      "not-found": {
+        "title": "الصفحة <highlight>غير موجودة</highlight>",
+        "title-plain": "الصفحة غير موجودة",
+        "description": "هذه الصفحة غير موجودة أو تم نقلها. عد إلى الصفحة الرئيسية أو تابع رحلتك مع إحدى حصصنا التدريبية.",
+        "back-home": "العودة إلى الرئيسية",
+        "explore-classes": "استكشف الحصص"
       }
     }
   }

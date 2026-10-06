@@ -1,31 +1,36 @@
-import { Link, useParams } from 'react-router-dom';
+// import WhyUs from '@/features/main/components/why-us-section/why-us';
+// import CustomInput from '@/shared/components/custom-ui/custom-input';
+// import { Button } from '@/shared/components/ui/button';
+// import type { RootState } from '@/store/store';
+// import { ArrowUpRight } from 'lucide-react';
+// import { useSelector } from 'react-redux';
+// import { Link, useParams } from 'react-router-dom';
 
-import CustomInput from '@/shared/components/custom-ui/custom-input';
-import { Button } from '@/shared/components/ui/button';
-import { ArrowUpRight } from 'lucide-react';
+// const Home = () => {
+//   const user = useSelector((state: RootState) => state.auth.user);
+//   const { locale } = useParams();
+//   return (
+//     <div>
+//       <h1>{user?.firstName}</h1>
 
-const Home = () => {
-  const { locale = 'en' } = useParams();
-  return (
-    <div>
-      Home page
-      <CustomInput variant="default" subVariant="first-name" />
-      <CustomInput variant="default" subVariant="last-name" />
-      <CustomInput variant="email" />
-      <Link to={`/${locale}/forgot-password`}>Forgot Password?</Link>
-      <CustomInput variant="otp" error={true} />
-      <CustomInput variant="search" />
-      <CustomInput variant="password" subVariant="password" />
-      <CustomInput variant="password" subVariant="new-password" />
-      <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
-      <Button variant="outline" icon={<ArrowUpRight />}>
-        Explore More
-      </Button>
-      <Button variant="ghost" icon={<ArrowUpRight />}>
-        Get Started
-      </Button>
-    </div>
-  );
-};
+//       <CustomInput variant="default" subVariant="first-name" />
+//       <CustomInput variant="default" subVariant="last-name" />
+//       <CustomInput variant="email" />
+//       <CustomInput variant="otp" error={true} />
+//       <CustomInput variant="search" />
+//       <CustomInput variant="password" subVariant="password" />
+//       <CustomInput variant="password" subVariant="new-password" />
+//       <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
+//       <Button variant="outline" icon={<ArrowUpRight />}>
+//         Explore More
+//       </Button>
+//       <Button variant="ghost" icon={<ArrowUpRight />}>
+//         Get Started
+//       </Button>
+//       <Link to={`/${locale}/profile`}>Profile</Link>
+//     <WhyUs/>
+//     </div>
+//   );
+// };
 
-export default Home;
+// export default Home;
