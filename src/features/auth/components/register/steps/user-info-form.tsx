@@ -10,7 +10,6 @@ import LoginRegisterDesign from '../../shared/login-register-design';
 import type { TUserInfoData, TUserInfoProps } from '../../../types/register';
 import { USER_INFO_SCHEMA } from '../../../schema/register.schema';
 import HeaderAuth from '../../shared/header-auth';
-import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
   // Translation
@@ -69,9 +68,6 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
                   subVariant="first-name"
                   errorMessage={translateError(fieldState.error?.message)}
                 />
-                {fieldState.invalid && (
-                  <ErrorAlert errorMessage={translateError(fieldState.error?.message)} />
-                )}
               </Field>
             )}
           />
@@ -89,9 +85,6 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
                   subVariant="last-name"
                   errorMessage={translateError(fieldState.error?.message)}
                 />
-                {fieldState.invalid && (
-                  <ErrorAlert errorMessage={translateError(fieldState.error?.message)} />
-                )}
               </Field>
             )}
           />
@@ -108,9 +101,6 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
                   variant="email"
                   errorMessage={translateError(fieldState.error?.message)}
                 />
-                {fieldState.invalid && (
-                  <ErrorAlert errorMessage={translateError(fieldState.error?.message)} />
-                )}
               </Field>
             )}
           />
@@ -128,9 +118,6 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
                   subVariant="password"
                   errorMessage={translateError(fieldState.error?.message)}
                 />
-                {fieldState.invalid && (
-                  <ErrorAlert errorMessage={translateError(fieldState.error?.message)} />
-                )}
               </Field>
             )}
           />
@@ -148,9 +135,6 @@ export default function UserInfoForm({ setUserInfo, setStep }: TUserInfoProps) {
                   subVariant="confirm-password"
                   errorMessage={translateError(fieldState.error?.message)}
                 />
-                {fieldState.invalid && (
-                  <ErrorAlert errorMessage={translateError(fieldState.error?.message)} />
-                )}
               </Field>
             )}
           />
