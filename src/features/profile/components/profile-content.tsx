@@ -53,7 +53,7 @@ const ProfileContent = () => {
   // Functions
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/auth/login');
+    navigate('/login');
   };
 
   const handleThemeChange = () => {
@@ -73,7 +73,7 @@ const ProfileContent = () => {
         {/* Goal */}
         <div className="flex flex-col gap-2 items-center">
           <span className="text-background text-2xl font-semibold">{t('profile.goal')}</span>
-          <span className="text-xs text-background/60">{t('profile.tap-to-change')}</span>
+          <span className="text-xs text-background/60 uppercase">{t('profile.tap-to-change')}</span>
           <KycSelectField
             value={goal}
             options={GOAL_OPTIONS}
@@ -87,7 +87,7 @@ const ProfileContent = () => {
           <span className="text-background text-2xl font-semibold">
             {t('profile.activity-level')}
           </span>
-          <span className="text-xs text-background/60">{t('profile.tap-to-change')}</span>
+          <span className="text-xs text-background/60 uppercase">{t('profile.tap-to-change')}</span>
           <KycSelectField
             value={activityLevel}
             options={ACTIVITY_LEVEL_OPTIONS}
@@ -99,7 +99,7 @@ const ProfileContent = () => {
         {/* Weight */}
         <div className="flex flex-col gap-2 items-center">
           <span className="text-background text-2xl font-semibold">{t('profile.weight')}</span>
-          <span className="text-xs text-background/60">{t('profile.tap-to-change')}</span>
+          <span className="text-xs text-background/60 uppercase">{t('profile.tap-to-change')}</span>
           <KycWeightField
             value={weight}
             onSave={(value) => editProfileMutation({ weight: value })}

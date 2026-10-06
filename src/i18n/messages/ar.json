@@ -24,21 +24,11 @@
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
+      "confirm-password": "تأكيد كلمة المرور",
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
     }
   },
 
-  "auth": {
-    "subtitle-login-register": "مرحبًا بك",
-    "login": {
-      "subtitle": "أهلًا بعودتك!",
-      "title": "تسجيل الدخول",
-      "forgot-password": "هل نسيت كلمة المرور؟",
-      "dont-have-an-account": "ليس لديك حساب حتى الآن؟ ",
-      "register": "إنشاء حساب",
-      "or": "أو"
-    }
-  },
   "profile": {
     "goal": "الهدف",
     "activity-level": "مستوى النشاط",
@@ -69,45 +59,22 @@
     "help": "المساعدة",
     "logout": "تسجيل الخروج"
   },
-  "kyc": {
-    "gender-title": "اخبرنا عن نفسك!",
-    "gender-subtitle": "نحتاج لمعرفة جنسك،",
-    "age-title": "كم عمرك ؟",
-    "weight-title": "ما هو وزنك ؟",
-    "height-title": "ما هو طولك ؟",
-    "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
-    "goal-title": "ما هو هدفك ؟",
-    "goal": {
-      "gain-weight": "زيادة الوزن",
-      "lose-weight": "خسارة الوزن",
-      "get-fitter": "زيادة اللياقة",
-      "gain-flexibility": "زيادة المرونة",
-      "learn-basics": "تعلم الأساسيات"
-    },
-    "activity": {
-      "rookie": "مبتدئ",
-      "beginner": "بداية",
-      "intermediate": "متوسط",
-      "advance": "متقدم",
-      "true-beast": "وحش حقيقي"
-    },
-    "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
-    "units": {
-      "years-old": "سنة",
-      "kg": "كجم",
-      "cm": "سم"
-    },
-    "not-found": {
-      "title": "الصفحة <highlight>غير موجودة</highlight>",
-      "title-plain": "الصفحة غير موجودة",
-      "description": "هذه الصفحة غير موجودة أو تم نقلها. عد إلى الصفحة الرئيسية أو تابع رحلتك مع إحدى حصصنا التدريبية.",
-      "back-home": "العودة إلى الرئيسية",
-      "explore-classes": "استكشف الحصص"
+
+  "auth": {
+    "subtitle-login-register": "مرحبًا بك",
+    "login": {
+      "subtitle": "أهلًا بعودتك!",
+      "title": "تسجيل الدخول",
+      "forgot-password": "هل نسيت كلمة المرور؟",
+      "dont-have-an-account": "ليس لديك حساب حتى الآن؟ ",
+      "register": "إنشاء حساب",
+      "or": "أو"
     },
     "register": {
       "title": "إنشاء حساب",
-      "already-have-account": "لديك حساب بالفعل؟ ",
       "login": "تسجيل دخول",
+
+      "already-have-account": "لديك حساب بالفعل؟ ",
       "errors": {
         "first-name": "الاسم الأول مطلوب",
         "last-name": "اسم العائلة مطلوب",
@@ -126,7 +93,8 @@
         "re-password-required": "تأكيد كلمة المرور مطلوب",
         "password-mismatch": "كلمتا المرور غير متطابقتين",
         "something-went-wrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى"
-      }
+      },
+      "Already Have an account": "لديك حساب بالفعل؟"
     },
 
     "kyc": {

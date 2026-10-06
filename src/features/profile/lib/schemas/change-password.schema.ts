@@ -1,16 +1,16 @@
 import { z } from 'zod';
-import type { TFunction } from 'i18next';
 
-import { loginSchema } from '../../../auth/schema/login.schema';
+import { USER_INFO_SCHEMA } from '../../../auth/schema/register.schema';
 
-export const getChangePasswordSchema = (t: TFunction) =>
-  z
-    .object({
-      password: z.string().nonempty(t('profile.change-password.current-password-required')),
-      newPassword: loginSchema.shape.password,
-      confirmPassword: z.string().nonempty(t('profile.change-password.confirm-password-required')),
-    })
-    .refine((data) => data.newPassword === data.confirmPassword, {
-      message: t('profile.change-password.passwords-do-not-match'),
-      path: ['confirmPassword'],
-    });
+const { password } = USER_INFO_SCHEMA.sourceType().shape;
+
+export const CHANGE_PASSWORD_SCHEMA = z
+  .object({
+    password: z.string().min(1, 'profile.change-password.current-password-required'),
+    newPassword: password,
+    confirmPassword: z.string().min(1, 'auth.register.errors.re-password-required'),
+  })
+  .refine((data) => data.newPassword === data.confirmPassword, {
+    message: 'auth.register.errors.password-mismatch',
+    path: ['confirmPassword'],
+  });

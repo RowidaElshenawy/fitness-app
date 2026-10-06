@@ -69,7 +69,7 @@ const LoginForm = () => {
             </div>
           )}
         />
-        {backendError && <ErrorAlert beError={backendError} />}
+        {backendError && <ErrorAlert errorMessage={backendError} />}
       </LoginRegisterDesign>
     </>
   );

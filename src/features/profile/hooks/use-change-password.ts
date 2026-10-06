@@ -29,7 +29,12 @@ export function useChangePassword() {
     onError: (error) => {
       const message = axios.isAxiosError(error) ? error.response?.data?.error : undefined;
 
-      toast.error(message ?? t('profile.change-password.something-went-wrong'));
+      if (message === 'incorrect email or password') {
+        toast.error(message);
+        return;
+      }
+
+      toast.error(t('profile.change-password.something-went-wrong'));
     },
   });
 }

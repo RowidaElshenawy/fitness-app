@@ -309,7 +309,7 @@ export default function CustomInput({
         )}
       </div>
 
-      {errorMessage && <ErrorAlert errorMessage={errorMessage} isRtl={computedIsRtl} />}
+      {errorMessage && <ErrorAlert errorMessage={errorMessage} />}
     </Field.Root>
   );
 }
