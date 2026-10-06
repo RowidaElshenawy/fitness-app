@@ -39,6 +39,19 @@
     "reset-password-button": "إعادة تعيين كلمة المرور",
     "email-required": "البريد الإلكتروني مطلوب"
   },
+  "main": {
+    "workouts": {
+      "bg-word": "التمارين",
+      "badge": "حصص اللياقة",
+      "title": "غيّر جسمك مع <highlight>تمارينا القادمة</highlight> المتنوعة",
+      "explore": "استكشف",
+      "go-to-page": "اذهب إلى الصفحة {{page}}",
+      "empty": "لا توجد عضلات في هذه المجموعة.",
+      "error": "تعذر تحميل التمارين.",
+      "retry": "حاول مرة أخرى"
+    }
+  },
+
   "auth": {
     "subtitle-login-register": "مرحبًا بك,",
     "login": {

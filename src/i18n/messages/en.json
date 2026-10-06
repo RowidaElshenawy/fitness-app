@@ -28,6 +28,16 @@
     }
   },
   "main": {
+    "workouts": {
+      "bg-word": "Workouts",
+      "badge": "Fitness Class",
+      "title": "Transform your body with our dynamic <highlight>upcoming workouts</highlight>",
+      "explore": "Explore",
+      "go-to-page": "Go to page {{page}}",
+      "empty": "No muscles found for this group.",
+      "error": "Couldn't load the workouts.",
+      "retry": "Try again"
+    },
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",

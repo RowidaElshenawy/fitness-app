@@ -4,8 +4,8 @@ import { lazy, Suspense } from 'react';
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
-import { Home } from 'lucide-react';
 
+const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));
 const Classes = lazy(() => import('@/app/main-pages/classes'));
 const Healthy = lazy(() => import('@/app/main-pages/healthy'));
