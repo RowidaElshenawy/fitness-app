@@ -7,7 +7,8 @@ import { Button } from '@/shared/components/ui/button';
 import workoutsBg from '@/assets/workouts-bg.png';
 import { useMuscleGroups } from '@/features/main/hooks/use-muscle-groups';
 import { useMusclesByGroup } from '@/features/main/hooks/use-muscles-by-group';
-import WorkoutsCarousel from './workouts-carousel';
+import { Card, CardAction, CardImage, CardOverlay, CardTitle } from '@/shared/components/ui/card';
+
 import SecHeader from '../../shared/sec-header';
 import SecTitle from '../../shared/sec-title';
 import SectionBgWord from '../../shared/sec-bg-word';
@@ -84,11 +85,26 @@ export default function Workouts() {
           ) : muscles.data.length === 0 ? (
             <p className="py-16 text-center text-text-plain">{t('main.workouts.empty')}</p>
           ) : (
-            <WorkoutsCarousel
-              key={activeId}
-              items={muscles.data}
-              onExplore={() => navigate(`/${locale}/classes`)}
-            />
+            <div className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {muscles.data.map((item) => (
+                <div
+                  key={item._id}
+                  className="basis-full shrink-0 snap-start px-4 md:basis-1/2 lg:basis-1/3"
+                >
+                  <Card className="aspect-square w-full max-w-none">
+                    <CardImage src={item.image} alt={item.name} />
+
+                    <CardOverlay className="flex-col items-start justify-normal gap-2">
+                      <CardTitle className="text-lg tracking-widest">{item.name}</CardTitle>
+
+                      <CardAction className="gap-3" onClick={() => navigate(`/${locale}/classes`)}>
+                        {t('main.workouts.explore')}
+                      </CardAction>
+                    </CardOverlay>
+                  </Card>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
