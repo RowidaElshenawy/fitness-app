@@ -20,8 +20,9 @@ import KycWeightField from '@/features/profile/components/kyc-weight-field';
 import ProfileActionCard from '@/features/profile/components/profile-action-card';
 import { useEditProfile } from '@/features/profile/hooks/use-edit-profile';
 import { useTheme } from '@/features/profile/hooks/use-theme';
-import type { ActivityLevel, Goal } from '@/features/KYC/types/kyc';
-import { ACTIVITY_LEVEL_OPTIONS, GOAL_OPTIONS } from '@/features/KYC/constants/kyc-options';
+import type { ActivityLevel, Goal } from '@/features/auth/types/register';
+import { ACTIVITY_LEVEL_OPTIONS } from '@/features/auth/components/register/steps/activity-step';
+import { GOAL_OPTIONS } from '@/features/auth/components/register/steps/goal-step';
 
 const ProfileContent = () => {
   // Translation
