@@ -15,6 +15,7 @@ const Home = () => {
       <CustomInput variant="default" subVariant="first-name" />
       <CustomInput variant="default" subVariant="last-name" />
       <CustomInput variant="email" />
+      <Link to={`/${locale}/forgot-password`}>Forgot Password?</Link>
       <CustomInput variant="otp" error={true} />
       <CustomInput variant="search" />
       <CustomInput variant="password" subVariant="password" />

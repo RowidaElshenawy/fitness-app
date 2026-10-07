@@ -10,9 +10,9 @@ import { useParams } from 'react-router-dom';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 const LoginForm = () => {
-  const { locale } = useParams();
   //translation
   const { t } = useTranslation();
+  const { locale = 'en' } = useParams();
   //mutation
   const { mutate: login, backendError } = useLogin();
   //form
