@@ -11,8 +11,6 @@ interface MasterDetailLayoutProps {
   children: ReactNode;
 }
 
-// Shared by Healthy (meals) and Classes (exercises)
-
 export default function MasterDetailLayout({
   bgWord,
 

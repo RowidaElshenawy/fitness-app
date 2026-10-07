@@ -9,7 +9,6 @@ export type TMealCategoriesResponse = {
   categories: TMealCategory[];
 };
 
-// filter.php returns a short version of each meal
 export type TMealSummary = {
   idMeal: string;
   strMeal: string;
@@ -22,7 +21,6 @@ export type TMealsByCategoryResponse = {
   meals: TMealSummary[] | null;
 };
 
-// lookup.php returns the full meal (strIngredient1..20 / strMeasure1..20)
 export type TMealDetails = {
   idMeal: string;
   strMeal: string;

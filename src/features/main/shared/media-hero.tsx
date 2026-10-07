@@ -8,7 +8,6 @@ interface MediaHeroProps {
   footer?: ReactNode;
 }
 
-// Big card on the right
 export default function MediaHero({ image, title, description }: MediaHeroProps) {
   return (
     <div className="relative isolate flex min-h-128 items-end overflow-hidden rounded-lg border border-border-subtle bg-[#242424]">
