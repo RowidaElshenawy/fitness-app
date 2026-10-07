@@ -38,6 +38,15 @@
       "error": "Couldn't load the workouts.",
       "retry": "Try again"
     },
+    "healthy": {
+      "bg-word": "Healthy",
+      "ingredients": "Ingredients",
+      "show-more": "Show more",
+      "show-less": "Show less",
+      "empty": "No meals found in this category.",
+      "error": "Couldn't load the meals.",
+      "retry": "Try again"
+    },
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",

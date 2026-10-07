@@ -1,0 +1,105 @@
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
+import MasterDetailLayout from '@/features/main/shared/detail-layout';
+import TabsSkeleton from '@/features/main/skeleton/tabs-skeleton';
+
+import { useMealCategories } from '../hooks/use-meal-categories';
+import { useMealsByCategory } from '../hooks/use-meals-by-category';
+import { useMealDetails } from '../hooks/use-meal-details';
+import { getIngredients } from '../lib/get-ingredients';
+import ErrorState from './error-state';
+import IngredientsTable from './ingredients-table';
+import MealHero from './meal-hero';
+import MealListItem from './meal-list-item';
+import { MealDetailsSkeleton, MealsListSkeleton } from '../../main/skeleton/healthy-skeletons';
+
+export default function HealthySection() {
+  //translation
+  const { t } = useTranslation();
+  //state
+  const [selectedCategory, setSelectedCategory] = useState<string>();
+  const [selectedMealId, setSelectedMealId] = useState<string>();
+  //queries
+  const categories = useMealCategories();
+  const activeCategory = selectedCategory ?? categories.data?.[0]?.strCategory;
+  const meals = useMealsByCategory(activeCategory);
+
+  const activeMealId =
+    meals.data?.find((m) => m.idMeal === selectedMealId)?.idMeal ?? meals.data?.[0]?.idMeal;
+  const meal = useMealDetails(activeMealId);
+  //derived
+  const listError = categories.isError || meals.isError;
+  const listLoading = categories.isPending || meals.isPending;
+
+  const handleListRetry = () => {
+    if (categories.isError) categories.refetch();
+    if (meals.isError) meals.refetch();
+  };
+
+  const renderList = () => {
+    if (listError) return <ErrorState onRetry={handleListRetry} />;
+    if (listLoading) return <MealsListSkeleton />;
+    if (meals.data.length === 0) {
+      return <p className="py-16 text-center text-text-plain">{t('main.healthy.empty')}</p>;
+    }
+
+    return (
+      <ul>
+        {meals.data.map((item) => (
+          <MealListItem
+            key={item.idMeal}
+            meal={item}
+            active={item.idMeal === activeMealId}
+            onSelect={setSelectedMealId}
+          />
+        ))}
+      </ul>
+    );
+  };
+
+  const renderDetails = () => {
+    if (listError) return null;
+    if (listLoading || (activeMealId && meal.isPending)) return <MealDetailsSkeleton />;
+    if (meal.isError) return <ErrorState onRetry={() => meal.refetch()} />;
+    if (!meal.data) return null;
+
+    return (
+      <>
+        <MealHero key={meal.data.idMeal} meal={meal.data} />
+        <IngredientsTable ingredients={getIngredients(meal.data)} />
+      </>
+    );
+  };
+
+  return (
+    <MasterDetailLayout
+      bgImage={meal.data?.strMealThumb}
+      bgWord={t('main.healthy.bg-word')}
+      sidebar={
+        <>
+          <div className="overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {categories.isPending ? (
+              <TabsSkeleton />
+            ) : (
+              <Tabs value={activeCategory} onValueChange={setSelectedCategory} className="w-max">
+                <TabsList variant="pill">
+                  {categories.data?.map((category) => (
+                    <TabsTrigger key={category.idCategory} value={category.strCategory}>
+                      {category.strCategory}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </Tabs>
+            )}
+          </div>
+
+          <div className="max-h-168 overflow-y-auto scrollbar-hide">{renderList()}</div>
+        </>
+      }
+    >
+      {renderDetails()}
+    </MasterDetailLayout>
+  );
+}
