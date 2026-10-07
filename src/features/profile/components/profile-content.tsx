@@ -20,8 +20,10 @@ import KycWeightField from '@/features/profile/components/kyc-weight-field';
 import ProfileActionCard from '@/features/profile/components/profile-action-card';
 import { useEditProfile } from '@/features/profile/hooks/use-edit-profile';
 import { useTheme } from '@/features/profile/hooks/use-theme';
-import type { ActivityLevel, Goal } from '@/features/KYC/types/kyc';
-import { ACTIVITY_LEVEL_OPTIONS, GOAL_OPTIONS } from '@/features/KYC/constants/kyc-options';
+
+import { ACTIVITY_LEVEL_OPTIONS } from '@/features/auth/components/register/steps/activity-step';
+import { GOAL_OPTIONS } from '@/features/auth/components/register/steps/goal-step';
+import type { ActivityLevel, Goal } from '@/features/auth/types/register';
 
 const ProfileContent = () => {
   // Translation
@@ -69,39 +71,43 @@ const ProfileContent = () => {
   return (
     <div className="w-full px-4 py-6 sm:px-6 lg:px-8">
       {/* KYC */}
-      <div className="mb-10 mx-auto grid w-full max-w-4xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-10 mx-auto grid w-full gap-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {/* Goal */}
-        <KycSelectField
-          label={t('profile.goal')}
-          value={goal}
-          options={GOAL_OPTIONS}
-          onChange={(value) =>
-            editProfileMutation({
-              goal: value as Goal,
-            })
-          }
-          disabled={isPending}
-        />
+        <div className="flex flex-col gap-2 items-center">
+          <span className="text-background text-2xl font-semibold">{t('profile.goal')}</span>
+          <span className="text-xs text-background/60">{t('profile.tap-to-change')}</span>
+          <KycSelectField
+            value={goal}
+            options={GOAL_OPTIONS}
+            onChange={(value) => editProfileMutation({ goal: value as Goal })}
+            disabled={isPending}
+          />
+        </div>
 
         {/* Activity level */}
-        <KycSelectField
-          label={t('profile.activity-level')}
-          value={activityLevel}
-          options={ACTIVITY_LEVEL_OPTIONS}
-          onChange={(value) =>
-            editProfileMutation({
-              activityLevel: value as ActivityLevel,
-            })
-          }
-          disabled={isPending}
-        />
+        <div className="flex flex-col gap-2 items-center">
+          <span className="text-background text-2xl font-semibold">
+            {t('profile.activity-level')}
+          </span>
+          <span className="text-xs text-background/60">{t('profile.tap-to-change')}</span>
+          <KycSelectField
+            value={activityLevel}
+            options={ACTIVITY_LEVEL_OPTIONS}
+            onChange={(value) => editProfileMutation({ activityLevel: value as ActivityLevel })}
+            disabled={isPending}
+          />
+        </div>
 
         {/* Weight */}
-        <KycWeightField
-          value={weight}
-          onSave={(value) => editProfileMutation({ weight: value })}
-          disabled={isPending}
-        />
+        <div className="flex flex-col gap-2 items-center">
+          <span className="text-background text-2xl font-semibold">{t('profile.weight')}</span>
+          <span className="text-xs text-background/60">{t('profile.tap-to-change')}</span>
+          <KycWeightField
+            value={weight}
+            onSave={(value) => editProfileMutation({ weight: value })}
+            disabled={isPending}
+          />
+        </div>
       </div>
 
       {/* Actions */}
@@ -135,7 +141,9 @@ const ProfileContent = () => {
         <ProfileActionCard icon={LifeBuoy} title={t('profile.help')} />
 
         {/* Logout */}
-        <ProfileActionCard icon={LogOut} title={t('profile.logout')} onClick={handleLogout} />
+        <div className="sm:col-span-2 lg:col-span-1 lg:col-start-2">
+          <ProfileActionCard icon={LogOut} title={t('profile.logout')} onClick={handleLogout} />
+        </div>
       </div>
 
       <ChangePasswordModal open={isChangePasswordOpen} onOpenChange={setIsChangePasswordOpen} />

@@ -20,7 +20,6 @@ export default function SelectableOption({ label, isSelected, onSelect }: Select
       )}
     >
       {label}
-
       <span
         className={cn(
           'flex size-5 shrink-0 items-center justify-center rounded-full border-2',

@@ -11,6 +11,7 @@
       "last-name": "Last Name",
       "male": "Male",
       "female": "Female",
+      "back": "Back",
       "next": "Next",
       "submit": "Submit"
     },
@@ -27,6 +28,25 @@
     }
   },
   "main": {
+    "workouts": {
+      "bg-word": "Workouts",
+      "badge": "Fitness Class",
+      "title": "Transform your body with our dynamic <highlight>upcoming workouts</highlight>",
+      "explore": "Explore",
+      "go-to-page": "Go to page {{page}}",
+      "empty": "No muscles found for this group.",
+      "error": "Couldn't load the workouts.",
+      "retry": "Try again"
+    },
+    "healthy": {
+      "bg-word": "Healthy",
+      "ingredients": "Ingredients",
+      "show-more": "Show more",
+      "show-less": "Show less",
+      "empty": "No meals found in this category.",
+      "error": "Couldn't load the meals.",
+      "retry": "Try again"
+    },
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",

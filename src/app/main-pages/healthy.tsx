@@ -1,5 +1,7 @@
+import HealthySection from '@/features/healthy/components/healthy-section-detail';
+
 const Healthy = () => {
-  return <div>Healthy page</div>;
+  return <HealthySection />;
 };
 
 export default Healthy;

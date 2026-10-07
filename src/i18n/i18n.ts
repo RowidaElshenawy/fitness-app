@@ -5,6 +5,7 @@ import en from './messages/en.json';
 import ar from './messages/ar.json';
 
 i18n.use(initReactI18next).init({
+  lng: 'en',
   resources: {
     en: {
       translation: en,
