@@ -8,12 +8,12 @@ import TabsSkeleton from '@/features/main/skeleton/tabs-skeleton';
 import { useMealCategories } from '../hooks/use-meal-categories';
 import { useMealsByCategory } from '../hooks/use-meals-by-category';
 import { useMealDetails } from '../hooks/use-meal-details';
-import { getIngredients } from '../lib/get-ingredients';
 import ErrorState from './error-state';
 import IngredientsTable from './ingredients-table';
 import MealHero from './meal-hero';
 import MealListItem from './meal-list-item';
 import { MealDetailsSkeleton, MealsListSkeleton } from '../../main/skeleton/healthy-skeletons';
+import { getIngredients } from '../lib/get-ingredients';
 
 export default function HealthySection() {
   //translation
