@@ -4,20 +4,135 @@
     "arabic": "Arabic"
   },
   "welcome": "Welcome",
+
   "custom-input": {
     "default": {
       "first-name": "First Name",
-      "last-name": "Last Name"
+      "last-name": "Last Name",
+      "male": "Male",
+      "female": "Female",
+      "next": "Next",
+      "submit": "Submit"
     },
 
     "search": "Search",
     "email": "Email",
     "phone": "phone number",
+    "ask-me-any-thing": "Ask Me Any Things",
 
     "password": {
       "password": "Password",
       "new-password": "New Password",
       "confirm-new-password": "Confirm New Password"
     }
+  },
+  "main": {
+    "ai": {
+      "ask": "Hey Ask Me",
+      "smart-coach": "Smart coach",
+      "close": "Tap to Close"
+    },
+    "auth": {
+      "subtitle-login-register": "Hey There,",
+      "login": {
+        "subtitle": "WELCOME BACK!",
+        "title": "Login",
+        "forgot-password": "Forget Password ?",
+        "dont-have-an-account": "Dont have an account yet ? ",
+        "register": "Register",
+        "or": "Or"
+      }
+    },
+    "profile": {
+      "goal": "Goal",
+      "activity-level": "Activity Level",
+      "weight": "Weight",
+      "change-password": {
+        "title": "Change Password",
+        "cancel": "Cancel",
+        "change": "Change Password",
+        "changing": "Changing...",
+        "success": "Password changed successfully",
+        "something-went-wrong": "Something went wrong",
+        "current-password-required": "Current password is required",
+        "new-password-required": "New password is required",
+        "confirm-password-required": "Please confirm your password",
+        "passwords-do-not-match": "Passwords do not match"
+      },
+      "language": "Language",
+      "mood": "Mood",
+      "security": "Security",
+      "privacy-policy": "Privacy Policy",
+      "help": "Help",
+      "logout": "Log Out"
+    },
+    "kyc": {
+      "gender-title": "tell us about yourself!",
+      "gender-subtitle": "We Need To Know Your Gender,",
+      "age-title": "How Old Are you ?",
+      "weight-title": "what is your weight ?",
+      "height-title": "what is your height ?",
+      "hint": "this helps us create Your personalized plan",
+      "goal-title": "What Is Your Goal ?",
+      "goal": {
+        "gain-weight": "Gain Weight",
+        "lose-weight": "Lose Weight",
+        "get-fitter": "Get Fitter",
+        "gain-flexibility": "Gain More Flexible",
+        "learn-basics": "Learn The Basic"
+      },
+      "activity": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advance": "Advance",
+        "true-beast": "True Beast"
+      },
+      "activity-title": "Your Regular Physical Activity Level ?",
+      "units": {
+        "years-old": "Years Old",
+        "kg": "KG",
+        "cm": "CM"
+      },
+      "not-found": {
+        "title": "Page <highlight>not found</highlight>",
+        "title-plain": "Page not found",
+        "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
+        "back-home": "Back to Home",
+        "explore-classes": "Explore Classes"
+      }
+    }
+  },
+  "why-us": {
+    "features": {
+      "personalized-plans": {
+        "title": "Personalized Fitness Plans",
+        "description": "We tailor every workout to fit your unique goals and fitness level ensuring that you make the most progress."
+      },
+      "results-driven": {
+        "title": "Results-Driven Focus",
+        "description": "Everything we do is designed to help you achieve measurable results, whether you're aiming for weight loss."
+      },
+      "equipment": {
+        "title": "State-Of-The-Art Equipment",
+        "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
+      }
+    },
+
+    "sec-title": {
+      "why-us": "Elevate fitness with the <highlight>best way</highlight> possible",
+      "home": "Your body can <highlight>stand almost</highlight> anything",
+      "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
+      "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
+      "fitness-": "Elevate fitness with the <highlight>best way</highlight> possible",
+      "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
+    }
+  },
+  "sec-header": {
+    "why-us": "Why us",
+    "about-us": "About us",
+    "fitness-classes": "fitness class",
+    "work-outs": "Workouts",
+    "healthy-nutritions": "Healthy Nutritions"
   }
 }

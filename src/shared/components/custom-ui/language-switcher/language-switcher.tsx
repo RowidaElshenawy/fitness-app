@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Button } from '../../ui/button';
 
 export default function LanguageSwitcher() {
   const { t } = useTranslation();
@@ -15,8 +16,8 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <button type="button" onClick={changeLanguage}>
+    <Button type="button" onClick={changeLanguage} className="cursor-pointer">
       {locale === 'ar' ? t('language.english') : t('language.arabic')}
-    </button>
+    </Button>
   );
 }
