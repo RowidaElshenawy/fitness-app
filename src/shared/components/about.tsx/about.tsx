@@ -1,5 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/shared/components/ui/button';
+import SecHeader from '@/features/main/shared/sec-header';
+import SecTitle from '@/features/main/shared/sec-title';
 
 export default function AboutSection() {
   const featureList = [
@@ -51,7 +53,14 @@ export default function AboutSection() {
         </div>
 
         <div className="">
-          <div className="mt-10 grid gap-x-12 gap-y-8 md:grid-cols-2 border-b border">
+          <SecHeader titleKey="sec-header.why-us" className="pb-6" />
+          <SecTitle translationKey="why-us.sec-title.why-us" />
+          <p className="font-rubik pb-4 md:pb-10 text-lg leading-7 text-text-plain">
+            We offer a fitness journey that's tailored to your goals, supported by professional
+            trainers and a welcoming community. Whether it's weight loss, strength building, or
+            overall wellness, our proven methods.
+          </p>
+          <div className=" grid gap-x-12 gap-y-8 md:grid-cols-2 border-b border">
             {featureList.map((feature) => (
               <div key={feature.title} className="flex items-start gap-3">
                 <svg
