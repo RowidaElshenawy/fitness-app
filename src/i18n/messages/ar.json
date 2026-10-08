@@ -129,12 +129,12 @@
       }
     },
     "sec-title": {
-      "why-us-": "Elevate fitness with the <highlight>best way</highlight> possible",
-      "home": "Your body can <highlight>stand almost</highlight> anything",
-      "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
-      "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
-      "fitness-": "Elevate fitness with the <highlight>best way</highlight> possible",
-      "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
+      "why-us": "ارتقِ باللياقة بـ<highlight>أفضل طريقة</highlight> ممكنة",
+      "home": "جسمك يقدر <highlight>يتحمل أي</highlight> شيء",
+      "about-us": "نمكّنك من تحقيق <highlight>أهداف لياقتك</highlight>",
+      "fitness-classes": "غيّر جسمك مع <highlight>تمارينا القادمة</highlight> المتنوعة",
+      "fitness-": "ارتقِ باللياقة بـ<highlight>أفضل طريقة</highlight> ممكنة",
+      "healthy-nutritions": "غذّي رحلة لياقتك بـ<highlight>خطط وجبات</highlight> مخصصة لك"
     }
   }
 }

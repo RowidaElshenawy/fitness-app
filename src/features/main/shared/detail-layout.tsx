@@ -34,7 +34,7 @@ export default function MasterDetailLayout({
         {header && <div className="mb-6">{header}</div>}
 
         <div className="grid items-start gap-6 md:grid-cols-8">
-          <aside className="min-w-0 h-full rounded-lg border border-border-subtle bg-bg-subtle/60 p-4 backdrop-blur-md md:col-span-3 ">
+          <aside className="flex min-w-0 flex-col rounded-lg border border-border-subtle bg-bg-subtle/60 p-4 backdrop-blur-md md:col-span-3 md:h-0 md:min-h-full">
             {sidebar}
           </aside>
           <div className="min-w-0 md:col-span-5">{children}</div>

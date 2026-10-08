@@ -1,5 +1,4 @@
 import Workouts from '@/features/main/components/workouts-section/workouts';
-
 const Home = () => {
   return (
     <>

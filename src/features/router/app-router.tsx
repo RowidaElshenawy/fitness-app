@@ -9,6 +9,7 @@ const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));
 const Classes = lazy(() => import('@/app/main-pages/classes'));
 const Healthy = lazy(() => import('@/app/main-pages/healthy'));
+const HealthyDetails = lazy(() => import('@/app/main-pages/healthy-details'));
 const Profile = lazy(() => import('@/app/main-pages/profile'));
 
 const Login = lazy(() => import('@/app/auth-pages/login'));
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
           { path: 'about', element: withSuspense(<About />) },
           { path: 'classes', element: withSuspense(<Classes />) },
           { path: 'healthy', element: withSuspense(<Healthy />) },
+          { path: 'healthy/:mealId', element: withSuspense(<HealthyDetails />) },
           { path: 'profile', element: withSuspense(<Profile />) },
         ],
       },

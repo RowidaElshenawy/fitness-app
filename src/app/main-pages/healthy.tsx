@@ -1,7 +1,7 @@
-import HealthySection from '@/features/healthy/components/healthy-section-detail';
+import MealSection from '@/features/healthy/components/meal-section';
 
 const Healthy = () => {
-  return <HealthySection />;
+  return <MealSection />;
 };
 
 export default Healthy;
