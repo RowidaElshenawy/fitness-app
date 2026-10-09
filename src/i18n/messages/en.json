@@ -25,7 +25,40 @@
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",
-      "close": "Tap to Close"
+      "close": "Tap to Close",
+      "chat-ai": {
+        "menu": "Menu",
+        "new-chat": "New chat",
+        "no-history": "No conversations yet",
+        "login-required": "Please log in to continue chatting.",
+        "login": "Log in"
+      }
+    },
+    "header": {
+      "nav": {
+        "home": "Home",
+        "about": "About",
+        "classes": "Classes",
+        "healthy": "Healthy",
+        "login": "LOGIN",
+        "signup": "SIGN UP"
+      },
+      "hero": {
+        "title": {
+          "part1": "YOUR BODY CAN",
+          "highlight1": "STAND",
+          "highlight2": "ALMOST",
+          "part2": "ANYTHING"
+        },
+        "description": "It's your mind that needs convincing. Push past your limits, stay committed, and watch as your body transforms into a powerhouse of strength and resilience.Start your journey today & truly capable of!",
+        "stats": {
+          "members": "Active Members",
+          "trainers": "Certified Trainers",
+          "experience": "Years Of Experience"
+        },
+        "getStarted": "Get Started",
+        "exploreMore": "Explore More"
+      }
     }
   }
 }
