@@ -332,6 +332,9 @@ code {
   * {
     border-color: var(--border, var(--color-border-subtle));
     outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   body {
     background-color: var(--background);
