@@ -4,13 +4,17 @@ import AuthLogo from '/images/auth-logo.png';
 
 const LayoutComponent: React.FC = () => {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden flex flex-col items-center py-32 px-8 max-h-180.25 ">
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center p-2">
-        <img src={Favicon} alt="Super Fitness" className="w-55 h-auto" />
-        <img src={AuthLogo} alt="Fitness character" className="w-157 h-auto" />
-      </div>
-    </div>
+    <section className="relative hidden flex-col items-center justify-center gap-10 px-8 py-16 lg:flex">
+      <img src={Favicon} alt="Super Fitness" className="h-auto w-55" />
+      <img src={AuthLogo} alt="Fitness character" className="h-auto w-full max-w-157" />
+
+      {/* Divider: primary line with glow on both sides */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 inset-e-0 w-px bg-border-primary shadow-[0_0_14px_2px_color-mix(in_srgb,var(--border-primary)_55%,transparent)]"
+      />
+    </section>
   );
 };
+
 export default LayoutComponent;
