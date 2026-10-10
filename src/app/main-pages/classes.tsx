@@ -1,5 +1,7 @@
+import ClassesSection from '@/features/classes/components/classes-section';
+
 const Classes = () => {
-  return <div>Classes page</div>;
+  return <ClassesSection />;
 };
 
 export default Classes;

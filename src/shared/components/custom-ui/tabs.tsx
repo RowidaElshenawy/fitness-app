@@ -1,34 +1,45 @@
-import { useState } from 'react';
+import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
+import type { VariantProps } from 'class-variance-authority';
+import type { tabsListVariants } from '@/shared/components/ui/tabs';
 
-const categories = ['Full Body', 'Chest', 'Arm', 'Shoulder', 'Back', 'Legs', 'Stomach'];
+interface FilterOption {
+  _id: string;
+  name: string;
+}
 
-export default function WorkoutTabs() {
-  const [activeTab, setActiveTab] = useState('Full Body');
+interface FilterTabsProps {
+  options: FilterOption[];
+  value?: string;
+  onChange: (value: string) => void;
+  variant?: VariantProps<typeof tabsListVariants>['variant'];
+  allLabel?: string;
+}
+
+export default function FilterTabs({
+  options,
+  value,
+  onChange,
+  variant = 'pill',
+  allLabel,
+}: FilterTabsProps) {
+  if (!options.length) return null;
 
   return (
-    <div className="flex items-center gap-8 overflow-x-auto scrollbar-hide justify-center">
-      {categories.map((category) => (
-        <button
-          key={category}
-          onClick={() => setActiveTab(category)}
-          className={`
-              whitespace-nowrap
-              hover:cursor-pointer
-              px-5 py-2
-              rounded-full
-              text-lg
-              font-bold
-              transition-all duration-300
-              ${
-                activeTab === category
-                  ? 'bg-bg-primary text-white'
-                  : 'bg-transparent text-black hover:text-text-primary hover:bg-bg-primary-fade'
-              }
-            `}
-        >
-          {category}
-        </button>
-      ))}
+    <div className="overflow-x-auto scrollbar-none">
+      <Tabs
+        value={value ?? (allLabel ? 'all' : options[0]._id)}
+        onValueChange={onChange}
+        className="mx-auto w-max"
+      >
+        <TabsList variant={variant}>
+          {allLabel && <TabsTrigger value="all">{allLabel}</TabsTrigger>}
+          {options.map(({ _id, name }) => (
+            <TabsTrigger key={_id} value={_id}>
+              {name}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      </Tabs>
     </div>
   );
 }

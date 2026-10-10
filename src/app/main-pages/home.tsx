@@ -1,4 +1,6 @@
+import MealSection from '@/features/healthy/components/meal-section';
 import WhyUs from '@/features/main/components/why-us-section/why-us';
+import Workouts from '@/features/main/components/workouts-section/workouts';
 import { Button } from '@/shared/components/ui/button';
 import type { RootState } from '@/store/store';
 import { ArrowUpRight } from 'lucide-react';
@@ -20,6 +22,8 @@ const Home = () => {
       </Button>
       <Link to={`/${locale}/profile`}>Profile</Link>
       <WhyUs />
+      <Workouts />
+      <MealSection />
     </div>
   );
 };
