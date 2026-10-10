@@ -15,13 +15,13 @@ const LoginRegisterDesign = ({
   form,
   onSubmit,
 }: TLoginRegisterDesignProps) => {
-  const { locale = 'en' } = useParams();
+  const { locale } = useParams();
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}
-      className="flex flex-col  items-center p-10 mt-12.5 border border-border-muted max-w-121.5 rounded-xl"
+      className="flex flex-col  items-center p-4  sm:p-10 mt-12.5 border border-border-muted w-full   lg:w-121.5 rounded-xl"
     >
-      <div className="flex flex-col gap-6 items-center w-full px-10">
+      <div className="flex flex-col gap-6 items-center w-full px-4 sm:px-10">
         <div className="w-full flex flex-col gap-2 ">
           <div className=" flex flex-col  gap-4 w-full">
             <HeaderAuth title={title} />

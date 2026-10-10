@@ -7,13 +7,14 @@ import type { TLoginField } from '../../types/login-field';
 import { useLogin } from '../../hooks/use-login';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 const LoginForm = () => {
+  const { locale } = useParams();
   //translation
   const { t } = useTranslation();
-  const { locale = 'en' } = useParams();
   //mutation
-  const { mutate: login } = useLogin();
+  const { mutate: login, backendError } = useLogin();
   //form
   const form = useForm<TLoginField>({
     resolver: zodResolver(loginSchema),
@@ -26,7 +27,6 @@ const LoginForm = () => {
 
   //function
   const onSubmit = async (userData: TLoginField) => {
-    console.log(userData);
     login(userData);
   };
 
@@ -38,7 +38,7 @@ const LoginForm = () => {
         linkTitle={t('auth.login.register')}
         title={t('auth.login.title')}
         forgotPassword={t('auth.login.forgot-password')}
-        or={t('auth.or')}
+        or={t('auth.login.or')}
         href={`/${locale}/register`}
         form={form}
         onSubmit={onSubmit}
@@ -48,21 +48,28 @@ const LoginForm = () => {
           name="email"
           control={form.control}
           render={({ field, fieldState }) => (
-            <CustomInput variant="email" {...field} error={fieldState.invalid} />
+            <>
+              <CustomInput variant="email" {...field} error={fieldState.invalid} />
+              {fieldState.error && <ErrorAlert errorMessage={fieldState.error?.message} />}
+            </>
           )}
         />
         <Controller
           name="password"
           control={form.control}
           render={({ field, fieldState }) => (
-            <CustomInput
-              variant="password"
-              {...field}
-              subVariant="password"
-              error={fieldState.invalid}
-            />
+            <div>
+              <CustomInput
+                variant="password"
+                {...field}
+                subVariant="password"
+                error={fieldState.invalid}
+              />
+              {fieldState.error && <ErrorAlert errorMessage={fieldState.error?.message} />}
+            </div>
           )}
         />
+        {backendError && <ErrorAlert beError={backendError} />}
       </LoginRegisterDesign>
     </>
   );
