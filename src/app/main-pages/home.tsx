@@ -1,28 +1,27 @@
-import CustomInput from '@/shared/components/custom-ui/custom-input';
 import { Button } from '@/shared/components/ui/button';
 import type { RootState } from '@/store/store';
-import { ArrowUpRight } from 'lucide-react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const user = useSelector((state: RootState) => state.auth.user);
+
+  const handleClick = async () => {
+    setIsLoading(true);
+
+    // محاكاة API request
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    setIsLoading(false);
+  };
+
   return (
     <div>
       <h1>{user?.firstName}</h1>
-      Home page
-      <CustomInput variant="default" subVariant="first-name" />
-      <CustomInput variant="default" subVariant="last-name" />
-      <CustomInput variant="email" />
-      <CustomInput variant="otp" error={true} />
-      <CustomInput variant="search" />
-      <CustomInput variant="password" subVariant="password" />
-      <CustomInput variant="password" subVariant="new-password" />
-      <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
-      <Button variant="outline" icon={<ArrowUpRight />}>
-        Explore More
-      </Button>
-      <Button variant="ghost" icon={<ArrowUpRight />}>
-        Get Started
+      <Button type="submit" loading={isLoading} onClick={handleClick}>
+        NEXT
       </Button>
     </div>
   );
