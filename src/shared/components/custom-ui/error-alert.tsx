@@ -3,6 +3,7 @@ import { Alert, AlertDescription } from '../ui/alert';
 
 type ErrorAlertProps = {
   errorMessage?: string;
+  isRtl?: boolean;
 };
 
 export default function ErrorAlert({ errorMessage = 'Something went wrong' }: ErrorAlertProps) {
