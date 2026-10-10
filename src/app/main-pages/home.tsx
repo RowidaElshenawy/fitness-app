@@ -1,8 +1,14 @@
 import CustomInput from '@/shared/components/custom-ui/custom-input';
+import { Button } from '@/shared/components/ui/button';
+import type { RootState } from '@/store/store';
+import { ArrowUpRight } from 'lucide-react';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
   return (
     <div>
+      <h1>{user?.firstName}</h1>
       Home page
       <CustomInput variant="default" subVariant="first-name" />
       <CustomInput variant="default" subVariant="last-name" />
@@ -12,6 +18,12 @@ const Home = () => {
       <CustomInput variant="password" subVariant="password" />
       <CustomInput variant="password" subVariant="new-password" />
       <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
+      <Button variant="outline" icon={<ArrowUpRight />}>
+        Explore More
+      </Button>
+      <Button variant="ghost" icon={<ArrowUpRight />}>
+        Get Started
+      </Button>
     </div>
   );
 };
