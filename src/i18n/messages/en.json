@@ -48,6 +48,14 @@
       "error": "Couldn't load the meals.",
       "retry": "Try again"
     },
+    "classes": {
+      "bg-word": "Classes",
+      "explore": "Explore",
+      "empty": "No exercises found.",
+      "error": "Couldn't load the exercises.",
+      "retry": "Try again",
+      "recommendation": "Recommendation For You"
+    },
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",

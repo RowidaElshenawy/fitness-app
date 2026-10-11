@@ -82,7 +82,7 @@ export default function Workouts() {
             </div>
           ) : groups.isPending || muscles.isPending ? (
             <CardsSkeleton />
-          ) : muscles.data.length === 0 ? (
+          ) : !muscles.data?.length ? (
             <p className="py-16 text-center text-text-plain">{t('main.workouts.empty')}</p>
           ) : (
             <div className="flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

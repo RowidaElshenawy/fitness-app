@@ -1,19 +1,30 @@
-import axiosInstance from '@/lib/axios';
-import type { TMuscleGroupsResponse, TMusclesByGroupResponse } from '../types/muscle';
+import axios from 'axios';
 
-export const getMuscleGroups = async (lang: string): Promise<TMuscleGroupsResponse> => {
-  const res = await axiosInstance.get('/muscles', {
-    headers: { 'accept-language': lang },
-  });
-  return res.data;
-};
+import type {
+  TMuscleGroup,
+  TMuscle,
+  TMuscleGroupsResponse,
+  TMusclesByGroupResponse,
+} from '../types/muscle';
 
-export const getMusclesByGroup = async (
-  groupId: string,
-  lang: string
-): Promise<TMusclesByGroupResponse> => {
-  const res = await axiosInstance.get(`/musclesGroup/${groupId}`, {
-    headers: { 'accept-language': lang },
+const API_URL = import.meta.env.VITE_API_URL;
+
+export async function getMuscleGroups(lang: string): Promise<TMuscleGroup[]> {
+  const { data } = await axios.get<TMuscleGroupsResponse>(`${API_URL}/muscles`, {
+    headers: {
+      'Accept-Language': lang,
+    },
   });
-  return res.data;
-};
+
+  return data.musclesGroup ?? [];
+}
+
+export async function getMusclesByGroup(groupId: string, lang: string): Promise<TMuscle[]> {
+  const { data } = await axios.get<TMusclesByGroupResponse>(`${API_URL}/musclesGroup/${groupId}`, {
+    headers: {
+      'Accept-Language': lang,
+    },
+  });
+
+  return data.muscles ?? [];
+}
