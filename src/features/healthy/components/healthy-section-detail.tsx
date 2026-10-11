@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { useParams, useSearchParams } from 'react-router-dom';
 import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
 import MasterDetailLayout from '@/features/main/shared/detail-layout';
 import TabsSkeleton from '@/features/main/skeleton/tabs-skeleton';
@@ -18,16 +18,28 @@ import { getIngredients } from '../lib/get-ingredients';
 export default function HealthySection() {
   //translation
   const { t } = useTranslation();
+  //initial selection coming from the url: /healthy/:mealId?category=...
+  const { mealId } = useParams();
+  const [searchParams] = useSearchParams();
   //state
-  const [selectedCategory, setSelectedCategory] = useState<string>();
-  const [selectedMealId, setSelectedMealId] = useState<string>();
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
+    () => searchParams.get('category') ?? undefined
+  );
+  const [selectedMealId, setSelectedMealId] = useState<string | undefined>(mealId);
   //queries
   const categories = useMealCategories();
-  const activeCategory = selectedCategory ?? categories.data?.[0]?.strCategory;
+
+  // the meal from the url, used to find its category when ?category is missing
+  const requestedMeal = useMealDetails(selectedMealId);
+  const waitingForMeal = !!selectedMealId && !selectedCategory && requestedMeal.isPending;
+
+  const activeCategory =
+    selectedCategory ??
+    requestedMeal.data?.strCategory ??
+    (waitingForMeal ? undefined : categories.data?.[0]?.strCategory);
   const meals = useMealsByCategory(activeCategory);
 
-  const activeMealId =
-    meals.data?.find((m) => m.idMeal === selectedMealId)?.idMeal ?? meals.data?.[0]?.idMeal;
+  const activeMealId = selectedMealId ?? meals.data?.[0]?.idMeal;
   const meal = useMealDetails(activeMealId);
   //derived
   const listError = categories.isError || meals.isError;
@@ -83,7 +95,14 @@ export default function HealthySection() {
             {categories.isPending ? (
               <TabsSkeleton />
             ) : (
-              <Tabs value={activeCategory} onValueChange={setSelectedCategory} className="w-max">
+              <Tabs
+                value={activeCategory}
+                onValueChange={(value) => {
+                  setSelectedCategory(value);
+                  setSelectedMealId(undefined);
+                }}
+                className="w-max"
+              >
                 <TabsList variant="pill">
                   {categories.data?.map((category) => (
                     <TabsTrigger key={category.idCategory} value={category.strCategory}>
@@ -95,7 +114,9 @@ export default function HealthySection() {
             )}
           </div>
 
-          <div className="max-h-168 overflow-y-auto scrollbar-hide">{renderList()}</div>
+          <div className="max-h-160 min-h-0 flex-1 overflow-y-auto scrollbar-hide md:max-h-none">
+            {renderList()}
+          </div>
         </>
       }
     >
