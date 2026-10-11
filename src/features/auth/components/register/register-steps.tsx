@@ -13,7 +13,7 @@ import { Button } from '@/shared/components/ui/button';
 import HeaderAuth from '../shared/header-auth';
 import type { KycFormData, TRegisterStepsProps, TUserInfoData } from '../../types/register';
 import { registerUser } from '../../lib/apis/register.api';
-import UserInfoForm from './user-info-form';
+import UserInfoForm from './steps/user-info-form';
 import { useMutation } from '@tanstack/react-query';
 
 const PROFILE_STEPS: Exclude<TRegisterStepsProps, 'user-info'>[] = [
@@ -42,16 +42,22 @@ export default function RegisterSteps() {
   const registerMutation = useMutation({
     mutationFn: registerUser,
     onSuccess: () => {
-      navigate(`/${locale}/login`);
+      navigate(`/${locale}/login`, { replace: true });
+    },
+    onError: (error) => {
+      console.error(isAxiosError(error) ? [error.response?.status, error.response?.data] : error);
     },
   });
+
   const registerError = isAxiosError(registerMutation.error)
     ? String(
         registerMutation.error.response?.data?.message ??
           registerMutation.error.response?.data?.error ??
-          ''
+          registerMutation.error.message
       )
-    : '';
+    : registerMutation.error
+      ? 'Something went wrong. Please try again.'
+      : '';
 
   const updateFormData = <K extends keyof KycFormData>(key: K, value: KycFormData[K]) => {
     setFormData((previous) => ({ ...previous, [key]: value }));
