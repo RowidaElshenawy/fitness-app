@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react';
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
+// import AuthLayout from './layouts/auth-layout/auth-layout';
 
 const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));
@@ -42,9 +43,9 @@ const router = createBrowserRouter([
       {
         element: <AuthLayout />,
         children: [
-          { path: 'login', element: withSuspense(<Login />) },
-          { path: 'register', element: withSuspense(<Register />) },
-          { path: 'forgot-password', element: withSuspense(<ForgotPassword />) },
+          { path: 'login', element: <Login /> },
+          { path: 'register', element: <Register /> },
+          { path: 'forgot-password', element: <ForgotPassword /> },
         ],
       },
       { path: '*', element: withSuspense(<NotFound />) },
