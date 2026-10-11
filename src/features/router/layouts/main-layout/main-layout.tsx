@@ -1,15 +1,13 @@
-import LanguageSwitcher from '@/shared/components/custom-ui/language-switcher/language-switcher';
-import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
+import Footer from '@/shared/components/custom-ui/footer/footer';
 
 const MainLayout = () => {
-  const { t } = useTranslation();
-
   return (
-    <div className="flex flex-col items-center justify-center">
-      <LanguageSwitcher />
-      <h1>{t('welcome')}</h1>
-      <Outlet />
+    <div className="flex min-h-screen flex-col">
+      <main className="flex flex-1 flex-col items-center justify-center">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 };

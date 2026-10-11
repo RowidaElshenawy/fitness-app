@@ -134,13 +134,10 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-#root {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
 }
+
 @theme inline {
   /* primitive colors */
   --color-overlay-tint: #242424f2;
@@ -226,15 +223,17 @@ body {
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  /* ai Chat Message */
-  --color-bg-ai-chat: var(--bg-ai-chat);
-  --blur-ai-chat: var(--blur-ai-chat);
-  --shadow-shadow-ai-chat: var(--shadow-ai-chat);
 
-  /* user Chat Message */
-  --color-bg-chat-user: var(--bg-chat-user);
-  --blur-chat-user: var(--blur-chat-user);
-  --shadow-shadow-chat-user: var(--shadow-chat-user);
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 .dark {
@@ -314,6 +313,9 @@ body {
   * {
     border-color: var(--border, var(--color-border-subtle));
     outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   body {
     background-color: var(--background);

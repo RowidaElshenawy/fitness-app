@@ -219,6 +219,13 @@
         "back-home": "Back to Home",
         "explore-classes": "Explore Classes"
       }
+    },
+    "footer": {
+      "contact-us": "CONTACT US",
+      "our-locations": "OUR LOCATIONS",
+      "our-timing": "OUR GYM TIMING",
+      "slogan": "Do more effort, and go further. Your journey towards fitness starts today!",
+      "location": "2715 Ash Dr. San Jose, South Dakota 83475"
     }
   }
 }
