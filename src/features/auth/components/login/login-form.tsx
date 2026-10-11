@@ -38,7 +38,7 @@ const LoginForm = () => {
         linkTitle={t('auth.login.register')}
         title={t('auth.login.title')}
         forgotPassword={t('auth.login.forgot-password')}
-        or={t('auth.or')}
+        or={t('auth.login.or')}
         href={`/${locale}/register`}
         form={form}
         onSubmit={onSubmit}
