@@ -42,9 +42,9 @@ const router = createBrowserRouter([
       {
         element: <AuthLayout />,
         children: [
-          { path: 'login', element: withSuspense(<Login />) },
-          { path: 'register', element: withSuspense(<Register />) },
-          { path: 'forgot-password', element: withSuspense(<ForgotPassword />) },
+          { path: 'login', element: <Login /> },
+          { path: 'register', element: <Register /> },
+          { path: 'forgot-password', element: <ForgotPassword /> },
         ],
       },
       { path: '*', element: withSuspense(<NotFound />) },

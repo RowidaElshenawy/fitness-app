@@ -5,9 +5,12 @@ import AuthLogo from '/images/auth-logo.png';
 const LayoutComponent: React.FC = () => {
   return (
     <section className="relative hidden flex-col items-center justify-center gap-10 px-8 py-16 lg:flex">
-      <img src={Favicon} alt="Super Fitness" className="h-auto w-55" />
-      <img src={AuthLogo} alt="Fitness character" className="h-auto w-full max-w-157" />
-
+      <div className="relative  w-full overflow-hidden flex flex-col items-center  px-8">
+        <div className="relative z-10 flex flex-col items-center  gap-20">
+          <img src={Favicon} alt="Super Fitness" className="h-auto w-55" />
+          <img src={AuthLogo} alt="Fitness character" className="h-auto w-full max-w-157" />
+         </div>
+      </div>
       {/* Divider: primary line with glow on both sides */}
       <span
         aria-hidden

@@ -2,30 +2,22 @@ import React from 'react';
 import LayoutBackground from '@/shared/components/auth/layout-background';
 import LayoutComponent from '@/shared/components/auth/layout-frame';
 
-interface AuthLayoutProps {
-  children?: React.ReactNode; // or use <Outlet /> with React Router
-}
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
+
+const AuthLayout = () => {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-hidden flex flex-col md:flex-row ">
+      {/* Background blur overlay */}
       <LayoutBackground />
 
-      <div className="relative z-10 grid min-h-screen grid-cols-1 lg:grid-cols-2">
-        {/* Left: logo + character */}
+      {/* Left panel — branding */}
+      <div className="relative z-10 w-full md:w-1/2 py-10">
         <LayoutComponent />
 
-        {/* Right: heading + glass card */}
-        <section className="flex flex-col items-center justify-center px-6 py-16">
-          <p className="text-xl text-foreground">Hey There</p>
-          <h1 className="mb-10 mt-6 text-center text-4xl font-extrabold text-foreground">
-            Create An Account
-          </h1>
-
-          <div className="w-full max-w-121 rounded-[64px] border border-foreground/40 px-10 py-10 backdrop-blur-sm sm:px-20">
-            {children}
-          </div>
-        </section>
+      {/* Right panel — auth form content */}
+      <div className="relative z-10 flex flex-col  md:w-1/2 items-center justify-center px-6 py-12  border-l border-border-primary shadow-shadow-primary-lg">
+        <LanguageSwitcher />
+        <Outlet />
       </div>
     </main>
   );
