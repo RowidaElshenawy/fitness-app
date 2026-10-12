@@ -27,7 +27,6 @@ export default function AiChat() {
   const [loading, setLoading] = useState(false);
 
   const user = useSelector((state: RootState) => state.auth.user);
-  console.log(user, 'user');
   useEffect(() => {
     saveChats({ conversations, activeId });
   }, [conversations, activeId]);
@@ -224,7 +223,7 @@ export default function AiChat() {
                       className="w-9 h-9 rounded-full object-cover shadow-shadow-primary"
                     />
                   ) : (
-                    <div className="w-9 h-9 shrink-0 rounded-full bg-bg-primary text-text-inverse flex items-center justify-center font-bold">
+                    <div className="w-9 h-9 shrink-0 rounded-full bg-bg-primary text-text-inverse flex items-center justify-center font-bold shadow-shadow-primary">
                       {user?.firstName?.charAt(0).toUpperCase() ?? '?'}
                     </div>
                   ))}
