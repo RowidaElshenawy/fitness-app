@@ -117,6 +117,36 @@
       }
     }
   },
+  "profile": {
+    "goal": "الهدف",
+    "activity-level": "مستوى النشاط",
+    "weight": "الوزن",
+    "tap-to-change": "اضغط للتغيير",
+    "save": "حفظ",
+    "kyc-updated": {
+      "goal": "تم تحديث الهدف بنجاح",
+      "activity-level": "تم تحديث مستوى النشاط بنجاح",
+      "weight": "تم تحديث الوزن بنجاح"
+    },
+    "change-password": {
+      "title": "تغيير كلمة المرور",
+      "cancel": "إلغاء",
+      "change": "تغيير كلمة المرور",
+      "changing": "جارٍ التغيير...",
+      "success": "تم تغيير كلمة المرور بنجاح",
+      "something-went-wrong": "حدث خطأ ما",
+      "current-password-required": "كلمة المرور الحالية مطلوبة",
+      "new-password-required": "كلمة المرور الجديدة مطلوبة",
+      "confirm-password-required": "يرجى تأكيد كلمة المرور",
+      "passwords-do-not-match": "كلمتا المرور غير متطابقتين"
+    },
+    "language": "اللغة",
+    "mood": "المظهر",
+    "security": "الأمان",
+    "privacy-policy": "سياسة الخصوصية",
+    "help": "المساعدة",
+    "logout": "تسجيل الخروج"
+  },
   "auth": {
     "subtitle-login-register": "مرحبًا بك",
     "or": "أو",

@@ -125,6 +125,37 @@
       }
     }
   },
+
+  "profile": {
+    "goal": "Goal",
+    "activity-level": "Activity Level",
+    "weight": "Weight",
+    "tap-to-change": "Tap to change",
+    "save": "Save",
+    "kyc-updated": {
+      "goal": "Goal updated successfully",
+      "activity-level": "Activity level updated successfully",
+      "weight": "Weight updated successfully"
+    },
+    "change-password": {
+      "title": "Change Password",
+      "cancel": "Cancel",
+      "change": "Change Password",
+      "changing": "Changing...",
+      "success": "Password changed successfully",
+      "something-went-wrong": "Something went wrong",
+      "current-password-required": "Current password is required",
+      "new-password-required": "New password is required",
+      "confirm-password-required": "Please confirm your password",
+      "passwords-do-not-match": "Passwords do not match"
+    },
+    "language": "Language",
+    "mood": "Mood",
+    "security": "Security",
+    "privacy-policy": "Privacy Policy",
+    "help": "Help",
+    "logout": "Log Out"
+  },
   "auth": {
     "subtitle-login-register": "Hey There",
     "or": "Or",
