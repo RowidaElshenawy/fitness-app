@@ -15,7 +15,7 @@ const LoginRegisterDesign = ({
   form,
   onSubmit,
 }: TLoginRegisterDesignProps) => {
-  const { locale } = useParams();
+  const { locale = 'en' } = useParams();
   return (
     <form
       onSubmit={form.handleSubmit(onSubmit)}

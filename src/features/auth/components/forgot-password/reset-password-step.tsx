@@ -1,18 +1,18 @@
-import { ArrowLeft } from 'lucide-react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/shared/components/ui/button';
 import CustomInput from '@/shared/components/custom-ui/custom-input';
-import type { ForgotPasswordForm } from './forgot-password-flow';
+import ErrorAlert from '@/shared/components/custom-ui/error-alert';
+import HeaderAuth from '../shared/header-auth';
+import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { translateError } from '../../lib/utils/translate-error';
 
 interface ResetPasswordStepProps {
-  onSubmit: () => void;
-  onBack: () => void;
   isPending: boolean;
+  error?: string;
 }
 
-const ResetPasswordStep = ({ onSubmit, onBack, isPending }: ResetPasswordStepProps) => {
+const ResetPasswordStep = ({ isPending, error }: ResetPasswordStepProps) => {
   // Translation
   const { t } = useTranslation();
 
@@ -20,67 +20,43 @@ const ResetPasswordStep = ({ onSubmit, onBack, isPending }: ResetPasswordStepPro
   const { control } = useFormContext<ForgotPasswordForm>();
 
   return (
-    <div className="mx-auto flex w-96 flex-col gap-4">
-      <div className="flex items-center gap-2">
-        <Button
-          type="button"
-          variant="outline"
-          className="cursor-pointer"
-          onClick={onBack}
-          disabled={isPending}
-        >
-          <ArrowLeft className="rtl:rotate-180" />
-        </Button>
+    <>
+      <HeaderAuth subtitle={t('auth.forgot-password.enter-new-password')} />
 
-        <h1 className="text-2xl font-bold">{t('forgot-password.reset-password')}</h1>
-      </div>
+      <Controller
+        name="newPassword"
+        control={control}
+        render={({ field, fieldState }) => (
+          <CustomInput
+            variant="password"
+            subVariant="new-password"
+            value={field.value}
+            onChange={field.onChange}
+            disabled={isPending}
+            error={!!fieldState.error}
+            errorMessage={translateError(t)(fieldState.error?.message)}
+          />
+        )}
+      />
 
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          onSubmit();
-        }}
-        className="flex flex-col gap-4"
-      >
-        <p>{t('forgot-password.enter-new-password')}</p>
+      <Controller
+        name="confirmPassword"
+        control={control}
+        render={({ field, fieldState }) => (
+          <CustomInput
+            variant="password"
+            subVariant="confirm-new-password"
+            value={field.value}
+            onChange={field.onChange}
+            disabled={isPending}
+            error={!!fieldState.error}
+            errorMessage={translateError(t)(fieldState.error?.message)}
+          />
+        )}
+      />
 
-        <Controller
-          name="newPassword"
-          control={control}
-          render={({ field, fieldState }) => (
-            <CustomInput
-              variant="password"
-              subVariant="new-password"
-              value={field.value}
-              onChange={field.onChange}
-              disabled={isPending}
-              error={!!fieldState.error}
-              errorMessage={fieldState.error?.message}
-            />
-          )}
-        />
-
-        <Controller
-          name="confirmPassword"
-          control={control}
-          render={({ field, fieldState }) => (
-            <CustomInput
-              variant="password"
-              subVariant="confirm-new-password"
-              value={field.value}
-              onChange={field.onChange}
-              disabled={isPending}
-              error={!!fieldState.error}
-              errorMessage={fieldState.error?.message}
-            />
-          )}
-        />
-
-        <Button type="submit" variant="primary" className="cursor-pointer" disabled={isPending}>
-          {t('forgot-password.reset-password-button')}
-        </Button>
-      </form>
-    </div>
+      {error && <ErrorAlert errorMessage={error} />}
+    </>
   );
 };
 

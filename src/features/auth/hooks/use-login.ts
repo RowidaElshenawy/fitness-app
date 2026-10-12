@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import type { TLoginField } from '../types/login-field';
-import { login } from '../api/login.api';
+import { login } from '../lib/apis/login.api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginAction } from '@/store/slices/auth.slice';

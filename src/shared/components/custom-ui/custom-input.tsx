@@ -80,7 +80,7 @@ function resolveDefaultPlaceholder(
     return subVariant ? t(`default.${subVariant}`) : undefined;
   }
   if (variant === 'password') {
-    return subVariant ? t(`password.${subVariant}`) : t('password');
+    return subVariant ? t(`password.${subVariant}`) : t('password.password');
   }
   if (variant === 'email' || variant === 'search') {
     return t(variant);
@@ -320,7 +320,7 @@ export default function CustomInput({
         )}
       </div>
 
-      {errorMessage && <ErrorAlert errorMessage={errorMessage} isRtl={computedIsRtl} />}
+      {errorMessage && <ErrorAlert errorMessage={errorMessage} />}
     </Field.Root>
   );
 }

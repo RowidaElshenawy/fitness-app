@@ -1,134 +1,144 @@
-import { useState } from 'react';
-import { isAxiosError } from 'axios';
-import { useMutation } from '@tanstack/react-query';
+import { ArrowLeft } from 'lucide-react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-import { forgotPassword, resetPassword, verifyResetCode } from '../../lib/apis/forgot-password.api';
+import { Button } from '@/shared/components/ui/button';
+import HeaderAuth from '../shared/header-auth';
 import EmailStep from './email-step';
 import ResetPasswordStep from './reset-password-step';
 import VerifyCodeStep from './verify-code-step';
+import useForgotPassword from '../../hooks/use-forgot-password';
+import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { FORGOT_PASSWORD_SCHEMA } from '../../lib/schemas/forgot-password.schema';
 
-type ForgotPasswordStep = 'email' | 'code' | 'password';
-
-export interface ForgotPasswordForm {
-  email: string;
-  resetCode: string;
-  newPassword: string;
-  confirmPassword: string;
-}
-
-const ForgotPasswordForm = () => {
-  // Navigation
-  const navigate = useNavigate();
-
-  const { locale } = useParams<{ locale: string }>();
-
-  // State
-  const [step, setStep] = useState<ForgotPasswordStep>('email');
-
-  // Mutation
-  const forgotPasswordMutation = useMutation({
-    mutationFn: forgotPassword,
-    onSuccess: () => {
-      setStep('code');
-    },
-  });
-
-  const verifyResetCodeMutation = useMutation({
-    mutationFn: verifyResetCode,
-    onSuccess: () => {
-      setStep('password');
-    },
-  });
-
-  const resetPasswordMutation = useMutation({
-    mutationFn: resetPassword,
-    onSuccess: () => {
-      navigate(`/${locale}`);
-    },
-  });
+const ForgotPasswordFlow = () => {
+  // Translation
+  const { t } = useTranslation();
 
   // Form
+  const schema = FORGOT_PASSWORD_SCHEMA;
+
   const form = useForm<ForgotPasswordForm>({
+    mode: 'onChange',
+    reValidateMode: 'onChange',
     defaultValues: {
       email: '',
       resetCode: '',
       newPassword: '',
       confirmPassword: '',
     },
+    resolver: zodResolver(schema),
   });
 
-  // Variables
-  const isPending =
-    forgotPasswordMutation.isPending ||
-    verifyResetCodeMutation.isPending ||
-    resetPasswordMutation.isPending;
+  // Custom hooks
+  const {
+    step,
+    handleEmailSubmit,
+    handleCodeSubmit,
+    handlePasswordSubmit,
+    handleResendCode,
+    handleBack,
+    isPending,
+    stepError,
+  } = useForgotPassword(form);
 
-  const forgotPasswordError = isAxiosError(forgotPasswordMutation.error)
-    ? String(forgotPasswordMutation.error.response?.data?.error ?? '')
-    : '';
+  // Variables
+  const stepTitle = {
+    email: t('auth.forgot-password.find-account'),
+    code: t('auth.forgot-password.verify-account'),
+    password: t('auth.forgot-password.reset-password'),
+  }[step];
+
+  const stepButtonTitle = {
+    email: t('auth.forgot-password.send-otp'),
+    code: t('auth.forgot-password.verify-code'),
+    password: t('auth.forgot-password.reset-password-button'),
+  }[step];
 
   // Functions
-  const handleEmailSubmit = () => {
-    const { email } = form.getValues();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-    forgotPasswordMutation.mutate({ email });
-  };
+    if (step === 'email') {
+      if (await form.trigger('email')) {
+        handleEmailSubmit();
+      }
 
-  const handleCodeSubmit = () => {
-    const { resetCode } = form.getValues();
+      return;
+    }
 
-    verifyResetCodeMutation.mutate({ resetCode });
-  };
-
-  const handlePasswordSubmit = () => {
-    const { email, newPassword } = form.getValues();
-
-    resetPasswordMutation.mutate({
-      email,
-      newPassword,
-    });
-  };
-
-  const handleBack = () => {
     if (step === 'code') {
-      setStep('email');
+      if (await form.trigger('resetCode')) {
+        handleCodeSubmit();
+      }
+
       return;
     }
 
-    if (step === 'password') {
-      setStep('code');
-      return;
-    }
+    const newPasswordValid = await form.trigger('newPassword');
+    const confirmPasswordValid = await form.trigger('confirmPassword');
 
-    navigate(`/${locale}`);
+    if (newPasswordValid && confirmPasswordValid) {
+      handlePasswordSubmit();
+    }
   };
 
   return (
     <FormProvider {...form}>
-      {step === 'email' && (
-        <EmailStep
-          onSubmit={handleEmailSubmit}
-          onBack={handleBack}
-          isPending={isPending}
-          error={forgotPasswordError}
-        />
-      )}
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            className="cursor-pointer"
+            onClick={handleBack}
+            disabled={isPending}
+          >
+            <ArrowLeft className="rtl:rotate-180" />
+          </Button>
 
-      {step === 'code' && (
-        <VerifyCodeStep onSubmit={handleCodeSubmit} onBack={handleBack} isPending={isPending} />
-      )}
+          <HeaderAuth title={stepTitle} />
+        </div>
 
-      {step === 'password' && (
-        <ResetPasswordStep
-          onSubmit={handlePasswordSubmit}
-          onBack={handleBack}
-          isPending={isPending}
-        />
-      )}
+        <div className="rounded-xl border border-border-muted p-10">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            {step === 'email' && <EmailStep isPending={isPending} error={stepError} />}
+
+            {step === 'code' && <VerifyCodeStep isPending={isPending} error={stepError} />}
+
+            {step === 'password' && <ResetPasswordStep isPending={isPending} error={stepError} />}
+
+            <Button
+              type="submit"
+              variant="primary"
+              className="w-full cursor-pointer"
+              loading={isPending}
+            >
+              {stepButtonTitle}
+            </Button>
+
+            {step === 'code' && (
+              <div className="flex flex-col items-center gap-1 text-center">
+                <span className="text-sm text-text-subtle">
+                  {t('auth.forgot-password.didnt-receive-code')}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={handleResendCode}
+                  disabled={isPending}
+                  className="w-fit cursor-pointer text-sm font-bold text-text-primary hover:underline"
+                >
+                  {t('auth.forgot-password.resend-code')}
+                </button>
+              </div>
+            )}
+          </form>
+        </div>
+      </div>
     </FormProvider>
   );
 };
 
-export default ForgotPasswordForm;
+export default ForgotPasswordFlow;
