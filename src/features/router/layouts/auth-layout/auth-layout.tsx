@@ -16,7 +16,8 @@ const AuthLayout = () => {
       </div>
 
       {/* Right panel — auth form content */}
-      <div className="relative z-10 flex flex-col  md:w-1/2 items-center justify-center px-6 py-12  border-l border-border-primary shadow-shadow-primary-lg">
+
+      <div className="relative z-10 flex flex-col  md:w-1/2 items-center justify-center px-6 py-12 border-l-2 border-border-primary shadow-[0_0_14px_2px_color-mix(in_srgb,var(--border-primary)_55%,transparent)]">
         <LanguageSwitcher />
         <Outlet />
       </div>

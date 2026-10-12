@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_QFqo3cyrF6qkZgvYFqjWu9ilPyNK",
+      "name": "fitness-app",
+      "directory": ".",
+      "orgId": "team_BaytM0FWsMMInv9q7aKFy7s5"
+    }
+  ]
+}
