@@ -1,4 +1,6 @@
-import CustomInput from '@/shared/components/custom-ui/custom-input';
+import MealSection from '@/features/healthy/components/meal-section';
+import WhyUs from '@/features/main/components/why-us-section/why-us';
+import Workouts from '@/features/main/components/workouts-section/workouts';
 import { Button } from '@/shared/components/ui/button';
 import type { RootState } from '@/store/store';
 import { ArrowUpRight } from 'lucide-react';
@@ -11,16 +13,7 @@ const Home = () => {
   return (
     <div>
       <h1>{user?.firstName}</h1>
-      Home page
-      <CustomInput variant="default" subVariant="first-name" />
-      <CustomInput variant="default" subVariant="last-name" />
-      <CustomInput variant="email" />
-      <Link to={`/${locale}/forgot-password`}>Forgot Password?</Link>
-      <CustomInput variant="otp" error={true} />
-      <CustomInput variant="search" />
-      <CustomInput variant="password" subVariant="password" />
-      <CustomInput variant="password" subVariant="new-password" />
-      <CustomInput variant="password" subVariant="confirm-new-password" disabled={true} />
+
       <Button variant="outline" icon={<ArrowUpRight />}>
         Explore More
       </Button>
@@ -28,6 +21,9 @@ const Home = () => {
         Get Started
       </Button>
       <Link to={`/${locale}/profile`}>Profile</Link>
+      <WhyUs />
+      <Workouts />
+      <MealSection />
     </div>
   );
 };

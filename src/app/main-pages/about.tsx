@@ -1,5 +1,7 @@
+import AboutSection from '@/shared/components/about.tsx/about';
+
 const About = () => {
-  return <div>About page</div>;
+  return <AboutSection />;
 };
 
 export default About;

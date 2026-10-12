@@ -14,6 +14,7 @@ const buttonVariants = cva(
           'border border-border-primary bg-transparent text-text-primary hover:bg-bg-primary-fade',
 
         ghost: 'bg-bg-soft text-text-inverse rounded-full hover:bg-bg-default',
+        ai: '  bg-bg-primary text-text-inverse font-bold text-lg',
       },
 
       size: {

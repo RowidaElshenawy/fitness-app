@@ -4,7 +4,6 @@
     "arabic": "العربية"
   },
   "welcome": "مرحبًا",
-
   "custom-input": {
     "default": {
       "first-name": "الاسم الأول",
@@ -16,11 +15,10 @@
       "submit": "إرسال",
       "loading": "جاري التحميل..."
     },
-
     "search": "بحث",
     "email": "الايميل",
     "phone": "رقم الهاتف",
-
+    "ask-me-any-thing": "اسألني عن أي شيء",
     "password": {
       "password": "كلمة المرور",
       "new-password": "كلمة المرور الجديده",
@@ -28,52 +26,109 @@
       "confirm-new-password": "تأكيد كلمة المرورالجديده"
     }
   },
-
-  "profile": {
-    "goal": "الهدف",
-    "activity-level": "مستوى النشاط",
-    "weight": "الوزن",
-    "tap-to-change": "اضغط للتغيير",
-    "save": "حفظ",
-    "kyc-updated": {
-      "goal": "تم تحديث الهدف بنجاح",
-      "activity-level": "تم تحديث مستوى النشاط بنجاح",
-      "weight": "تم تحديث الوزن بنجاح"
+  "main": {
+    "workouts": {
+      "bg-word": "التمارين",
+      "badge": "حصص اللياقة",
+      "title": "غيّر جسمك مع <highlight>تمارينا القادمة</highlight> المتنوعة",
+      "explore": "استكشف",
+      "go-to-page": "اذهب إلى الصفحة {{page}}",
+      "empty": "لا توجد عضلات في هذه المجموعة.",
+      "error": "تعذر تحميل التمارين.",
+      "retry": "حاول مرة أخرى"
     },
-    "change-password": {
-      "title": "تغيير كلمة المرور",
-      "cancel": "إلغاء",
-      "change": "تغيير كلمة المرور",
-      "changing": "جارٍ التغيير...",
-      "success": "تم تغيير كلمة المرور بنجاح",
-      "something-went-wrong": "حدث خطأ ما",
-      "current-password-required": "كلمة المرور الحالية مطلوبة",
-      "new-password-required": "كلمة المرور الجديدة مطلوبة",
-      "confirm-password-required": "يرجى تأكيد كلمة المرور",
-      "passwords-do-not-match": "كلمتا المرور غير متطابقتين"
+    "healthy": {
+      "bg-word": "صحي",
+      "ingredients": "المكونات",
+      "show-more": "عرض المزيد",
+      "show-less": "عرض أقل",
+      "empty": "لا توجد وجبات في هذا التصنيف.",
+      "error": "تعذر تحميل الوجبات.",
+      "retry": "حاول مرة أخرى"
     },
-    "language": "اللغة",
-    "mood": "المظهر",
-    "security": "الأمان",
-    "privacy-policy": "سياسة الخصوصية",
-    "help": "المساعدة",
-    "logout": "تسجيل الخروج"
+    "ai": {
+      "ask": "مرحبًا، اسألني",
+      "smart-coach": "المدرب الذكي",
+      "close": "اضغط للإغلاق",
+      "ai": {
+        "chat-ai": {
+          "menu": "القائمة",
+          "new-chat": "محادثة جديدة",
+          "no-history": "لا توجد محادثات بعد",
+          "login-required": "سجّلي الدخول لتكملي المحادثة.",
+          "login": "تسجيل الدخول"
+        }
+      }
+    },
+    "header": {
+      "nav": {
+        "home": "الرئيسية",
+        "about": "من نحن",
+        "classes": "الحصص",
+        "healthy": "الصحة",
+        "login": "تسجيل الدخول",
+        "signup": "إنشاء حساب"
+      },
+      "hero": {
+        "title": {
+          "part1": "جسمك يتحمل",
+          "highlight1": "",
+          "highlight2": "أي شيء",
+          "part2": "تقريباً"
+        },
+        "description": "عقلك هو اللي محتاج يقتنع. تخطَّ حدودك، وأكمل بإصرار، وشوف جسمك يتحول لقوة وصلابة.ابدأ رحلتك اليوم وأنت قادر حقًا على ذلك!",
+        "stats": {
+          "members": "عضو نشط",
+          "trainers": "مدرب معتمد",
+          "experience": "سنة خبرة"
+        },
+        "getStarted": "ابدأ الآن",
+        "exploreMore": "اكتشف المزيد"
+      },
+      "profile": {
+        "goal": "الهدف",
+        "activity-level": "مستوى النشاط",
+        "weight": "الوزن",
+        "tap-to-change": "اضغط للتغيير",
+        "save": "حفظ",
+        "kyc-updated": {
+          "goal": "تم تحديث الهدف بنجاح",
+          "activity-level": "تم تحديث مستوى النشاط بنجاح",
+          "weight": "تم تحديث الوزن بنجاح"
+        },
+        "change-password": {
+          "title": "تغيير كلمة المرور",
+          "cancel": "إلغاء",
+          "change": "تغيير كلمة المرور",
+          "changing": "جارٍ التغيير...",
+          "success": "تم تغيير كلمة المرور بنجاح",
+          "something-went-wrong": "حدث خطأ ما",
+          "current-password-required": "كلمة المرور الحالية مطلوبة",
+          "new-password-required": "كلمة المرور الجديدة مطلوبة",
+          "confirm-password-required": "يرجى تأكيد كلمة المرور",
+          "passwords-do-not-match": "كلمتا المرور غير متطابقتين"
+        },
+        "language": "اللغة",
+        "mood": "المظهر",
+        "security": "الأمان",
+        "privacy-policy": "سياسة الخصوصية",
+        "help": "المساعدة",
+        "logout": "تسجيل الخروج"
+      }
+    }
   },
-
   "auth": {
     "subtitle-login-register": "مرحبًا بك",
+    "or": "أو",
     "login": {
       "subtitle": "أهلًا بعودتك!",
       "title": "تسجيل الدخول",
       "forgot-password": "هل نسيت كلمة المرور؟",
-      "dont-have-an-account": "ليس لديك حساب حتى الآن؟ ",
-      "register": "إنشاء حساب",
-      "or": "أو"
+      "dont-have-an-account": "ليس لديك حساب حتى الآن؟ "
     },
     "register": {
       "title": "إنشاء حساب",
       "login": "تسجيل دخول",
-
       "already-have-account": "لديك حساب بالفعل؟ ",
       "errors": {
         "first-name": "الاسم الأول مطلوب",
@@ -93,40 +148,8 @@
         "re-password-required": "تأكيد كلمة المرور مطلوب",
         "password-mismatch": "كلمتا المرور غير متطابقتين",
         "something-went-wrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى"
-      },
-      "Already Have an account": "لديك حساب بالفعل؟"
-    },
-
-    "kyc": {
-      "gender-title": "اخبرنا عن نفسك!",
-      "gender-subtitle": "نحتاج لمعرفة جنسك،",
-      "age-title": "كم عمرك ؟",
-      "weight-title": "ما هو وزنك ؟",
-      "height-title": "ما هو طولك ؟",
-      "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
-      "goal-title": "ما هو هدفك ؟",
-      "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
-      "goal": {
-        "gain-weight": "زيادة الوزن",
-        "lose-weight": "خسارة الوزن",
-        "get-fitter": "زيادة اللياقة",
-        "gain-flexibility": "زيادة المرونة",
-        "learn-basics": "تعلم الأساسيات"
-      },
-      "activity": {
-        "rookie": "مبتدئ",
-        "beginner": "بداية",
-        "intermediate": "متوسط",
-        "advance": "متقدم",
-        "true-beast": "وحش حقيقي"
-      },
-      "units": {
-        "years-old": "سنة",
-        "kg": "كجم",
-        "cm": "سم"
       }
     },
-
     "forgot-password": {
       "find-account": "البحث عن حسابك",
       "enter-email": "أدخل بريدك الإلكتروني",
@@ -137,9 +160,83 @@
       "reset-password": "إعادة تعيين كلمة المرور",
       "enter-new-password": "أدخل كلمة المرور الجديدة",
       "reset-password-button": "إعادة تعيين كلمة المرور",
+      "email-required": "البريد الإلكتروني مطلوب",
       "otp-required": "رمز التحقق مطلوب",
       "didnt-receive-code": "لم تستلم رمز التحقق؟",
       "resend-code": "إعادة إرسال الرمز"
     }
+  },
+  "kyc": {
+    "gender-title": "اخبرنا عن نفسك!",
+    "gender-subtitle": "نحتاج لمعرفة جنسك،",
+    "age-title": "كم عمرك ؟",
+    "weight-title": "ما هو وزنك ؟",
+    "height-title": "ما هو طولك ؟",
+    "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
+    "goal-title": "ما هو هدفك ؟",
+    "goal": {
+      "gain-weight": "زيادة الوزن",
+      "lose-weight": "خسارة الوزن",
+      "get-fitter": "زيادة اللياقة",
+      "gain-flexibility": "زيادة المرونة",
+      "learn-basics": "تعلم الأساسيات"
+    },
+    "activity": {
+      "rookie": "مبتدئ",
+      "beginner": "بداية",
+      "intermediate": "متوسط",
+      "advance": "متقدم",
+      "true-beast": "وحش حقيقي"
+    },
+    "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
+    "units": {
+      "years-old": "سنة",
+      "kg": "كجم",
+      "cm": "سم"
+    }
+  },
+  "why-us": {
+    "features": {
+      "personalized-plans": {
+        "title": "Personalized Fitness Plans",
+        "description": "We tailor every workout to fit your unique goals and fitness level ensuring that you make the most progress."
+      },
+      "results-driven": {
+        "title": "Results-Driven Focus",
+        "description": "Everything we do is designed to help you achieve measurable results, whether you're aiming for weight loss."
+      },
+      "equipment": {
+        "title": "State-Of-The-Art Equipment",
+        "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
+      }
+    },
+    "sec-title": {
+      "why-us": "ارتقِ باللياقة بـ<highlight>أفضل طريقة</highlight> ممكنة",
+      "home": "جسمك يقدر <highlight>يتحمل أي</highlight> شيء",
+      "about-us": "نمكّنك من تحقيق <highlight>أهداف لياقتك</highlight>",
+      "fitness-classes": "غيّر جسمك مع <highlight>تمارينا القادمة</highlight> المتنوعة",
+      "healthy-nutritions": "غذّي رحلة لياقتك بـ<highlight>خطط وجبات</highlight> مخصصة لك"
+    }
+  },
+  "sec-header": {
+    "why-us": "لماذا نحن؟",
+    "about-us": "من نحن",
+    "fitness-classes": "الحصص التدريبية",
+    "work-outs": "التمارين",
+    "healthy-nutritions": "التغذية الصحية",
+    "not-found": {
+      "title": "الصفحة <highlight>غير موجودة</highlight>",
+      "title-plain": "الصفحة غير موجودة",
+      "description": "هذه الصفحة غير موجودة أو تم نقلها. عد إلى الصفحة الرئيسية أو تابع رحلتك مع إحدى حصصنا التدريبية.",
+      "back-home": "العودة إلى الرئيسية",
+      "explore-classes": "استكشف الحصص"
+    }
+  },
+  "footer": {
+    "contact-us": "اتصل بنا",
+    "our-locations": "فروعنا",
+    "our-timing": "مواعيدنا",
+    "slogan": "ابذل جهداً أكبر، وامضِ أبعد. رحلتك نحو اللياقة تبدأ اليوم!",
+    "location": "2715 شارع آش، سان خوسيه، ساوث داكوتا 83475"
   }
 }
