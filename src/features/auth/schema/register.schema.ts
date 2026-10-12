@@ -20,7 +20,7 @@ export const USER_INFO_SCHEMA = z
       .email('auth.register.errors.invalid-email'),
     password: z
       .string()
-      .min(8, 'auth.register.errors.password-min-length')
+      .min(9, 'auth.register.errors.password-min-length')
       .max(50, 'auth.register.errors.password-max-length')
       .regex(/[A-Z]/, 'auth.register.errors.password-uppercase')
       .regex(/[a-z]/, 'auth.register.errors.password-lowercase')
