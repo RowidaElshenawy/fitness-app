@@ -157,7 +157,7 @@
     "logout": "Log Out"
   },
   "auth": {
-    "subtitle-login-register": "Hey There",
+    "subtitle-login-register": "Hey There ,",
     "or": "Or",
     "login": {
       "subtitle": "WELCOME BACK!",
