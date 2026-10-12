@@ -7,10 +7,12 @@ import type { TLoginField } from '../../types/login-field';
 import { useLogin } from '../../hooks/use-login';
 import { useTranslation } from 'react-i18next';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
+import { useParams } from 'react-router-dom';
 
 const LoginForm = () => {
   //translation
   const { t } = useTranslation();
+  const { locale } = useParams();
 
   //mutation
   const { mutate: login, backendError } = useLogin();
