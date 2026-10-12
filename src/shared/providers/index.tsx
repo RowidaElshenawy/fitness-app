@@ -1,5 +1,6 @@
 import ReduxProvider from './providers/redux-provider';
 import ReactQueryProvider from './providers/react-query-provider';
+import type { ReactNode } from 'react';
 
 type ProvidersProps = {
   children: ReactNode;
