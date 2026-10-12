@@ -2,10 +2,11 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/geist';
+@import '@fontsource-variable/rubik';
 @custom-variant dark (&:is(.dark *));
 :root {
   /* Background */
-
+  --bg-white-faint: var(--color-white-faint);
   --bg-plain: var(--color-white);
   --bg-subtle: var(--color-zinc-50);
   --bg-muted: var(--color-zinc-100);
@@ -133,16 +134,14 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-#root {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
 }
+
 @theme inline {
   /* primitive colors */
-
+  --color-overlay-tint: #242424f2;
+  --color-white-faint: #fffffff2;
   --color-brand-orange-50: #fff3ec;
   --color-brand-orange-100: #ffdcc6;
   --color-brand-orange-200: #ffc199;
@@ -156,7 +155,7 @@ body {
   --color-brand-dark: #452b2c;
 
   /* Background */
-
+  --color-bg-white-faint: var(--bg-white-faint);
   --color-bg-plain: var(--bg-plain);
   --color-bg-subtle: var(--bg-subtle);
   --color-bg-muted: var(--bg-muted);
@@ -214,26 +213,32 @@ body {
 
   --font-sans: 'Baloo Thambi 2', sans-serif;
   --font-inter: 'Inter', sans-serif;
+  --font-rubik: 'Rubik', sans-serif;
+
+  /* custom size */
+  --text-md-custom: 17px;
 
   /* shadcn base tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  /* ai Chat Message */
-  --color-bg-ai-chat: var(--bg-ai-chat);
-  --blur-ai-chat: var(--blur-ai-chat);
-  --shadow-shadow-ai-chat: var(--shadow-ai-chat);
 
-  /* user Chat Message */
-  --color-bg-chat-user: var(--bg-chat-user);
-  --blur-chat-user: var(--blur-chat-user);
-  --shadow-shadow-chat-user: var(--shadow-chat-user);
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 .dark {
   /* Background */
-
+  --bg-white-faint: var(--color-overlay-tint);
   --bg-plain: var(--color-zinc-700);
   --bg-subtle: var(--color-zinc-800);
   --bg-muted: var(--color-zinc-900);
@@ -308,6 +313,9 @@ body {
   * {
     border-color: var(--border, var(--color-border-subtle));
     outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   body {
     background-color: var(--background);

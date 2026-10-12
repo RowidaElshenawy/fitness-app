@@ -32,3 +32,28 @@ export type TRegisterFields = {
   goal: Goal;
   activityLevel: ActivityLevel;
 };
+export interface TRegisterUser {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  gender: string;
+  age: number;
+  weight: number;
+  height: number;
+  activityLevel: string;
+  goal: string;
+  photo: string;
+  createdAt: string;
+}
+
+export interface TRegisterResponse {
+  message: string;
+  user: TRegisterUser;
+  token: string;
+}
+
+export interface TApiError {
+  message?: string;
+  error?: string;
+}

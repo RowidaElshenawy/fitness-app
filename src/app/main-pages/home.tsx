@@ -1,4 +1,4 @@
-import Hero from '@/features/main/components/hero';
+import Hero from '@/features/classes/components/classes-section';
 
 const Home = () => {
   return <Hero />;

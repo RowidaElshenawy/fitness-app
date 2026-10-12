@@ -4,7 +4,6 @@
     "arabic": "Arabic"
   },
   "welcome": "Welcome",
-
   "custom-input": {
     "default": {
       "first-name": "First Name",
@@ -16,12 +15,10 @@
       "submit": "Submit",
       "loading": "Loading..."
     },
-
     "search": "Search",
     "email": "Email",
     "phone": "phone number",
     "ask-me-any-thing": "Ask Me Any Things",
-
     "password": {
       "password": "Password",
       "new-password": "New Password",
@@ -30,16 +27,45 @@
     }
   },
   "main": {
+    "workouts": {
+      "bg-word": "Workouts",
+      "badge": "Fitness Class",
+      "title": "Transform your body with our dynamic <highlight>upcoming workouts</highlight>",
+      "explore": "Explore",
+      "go-to-page": "Go to page {{page}}",
+      "empty": "No muscles found for this group.",
+      "error": "Couldn't load the workouts.",
+      "retry": "Try again"
+    },
+    "healthy": {
+      "bg-word": "Healthy",
+      "ingredients": "Ingredients",
+      "show-more": "Show more",
+      "show-less": "Show less",
+      "empty": "No meals found in this category.",
+      "error": "Couldn't load the meals.",
+      "retry": "Try again"
+    },
+    "classes": {
+      "bg-word": "Classes",
+      "explore": "Explore",
+      "empty": "No exercises found.",
+      "error": "Couldn't load the exercises.",
+      "retry": "Try again",
+      "recommendation": "Recommendation For You"
+    },
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",
       "close": "Tap to Close",
-      "chat-ai": {
-        "menu": "Menu",
-        "new-chat": "New chat",
-        "no-history": "No conversations yet",
-        "login-required": "Please log in to continue chatting.",
-        "login": "Log in"
+      "ai": {
+        "chat-ai": {
+          "menu": "Menu",
+          "new-chat": "New chat",
+          "no-history": "No conversations yet",
+          "login-required": "Please log in to continue chatting.",
+          "login": "Log in"
+        }
       }
     },
     "header": {
@@ -66,6 +92,36 @@
         },
         "getStarted": "Get Started",
         "exploreMore": "Explore More"
+      },
+      "profile": {
+        "goal": "Goal",
+        "activity-level": "Activity Level",
+        "weight": "Weight",
+        "tap-to-change": "Tap to change",
+        "save": "Save",
+        "kyc-updated": {
+          "goal": "Goal updated successfully",
+          "activity-level": "Activity level updated successfully",
+          "weight": "Weight updated successfully"
+        },
+        "change-password": {
+          "title": "Change Password",
+          "cancel": "Cancel",
+          "change": "Change Password",
+          "changing": "Changing...",
+          "success": "Password changed successfully",
+          "something-went-wrong": "Something went wrong",
+          "current-password-required": "Current password is required",
+          "new-password-required": "New password is required",
+          "confirm-password-required": "Please confirm your password",
+          "passwords-do-not-match": "Passwords do not match"
+        },
+        "language": "Language",
+        "mood": "Mood",
+        "security": "Security",
+        "privacy-policy": "Privacy Policy",
+        "help": "Help",
+        "logout": "Log Out"
       }
     }
   },
@@ -100,7 +156,6 @@
     "help": "Help",
     "logout": "Log Out"
   },
-
   "auth": {
     "subtitle-login-register": "Hey There",
     "or": "Or",
@@ -114,7 +169,6 @@
     "register": {
       "title": "Create An Account",
       "login": "Login",
-
       "already-have-account": "Already have an account? ",
       "errors": {
         "first-name": "First Name is required",
@@ -134,40 +188,8 @@
         "re-password-required": "confirm password is required.",
         "password-mismatch": "Passwords do not match",
         "something-went-wrong": "Something went wrong. Please try again."
-      },
-      "Already Have an account": "Already Have an account ?"
-    },
-
-    "kyc": {
-      "gender-title": "tell us about yourself!",
-      "gender-subtitle": "We Need To Know Your Gender,",
-      "age-title": "How Old Are you ?",
-      "weight-title": "what is your weight ?",
-      "height-title": "what is your height ?",
-      "hint": "this helps us create Your personalized plan",
-      "goal-title": "What Is Your Goal ?",
-      "goal": {
-        "gain-weight": "Gain Weight",
-        "lose-weight": "Lose Weight",
-        "get-fitter": "Get Fitter",
-        "gain-flexibility": "Gain More Flexible",
-        "learn-basics": "Learn The Basic"
-      },
-      "activity": {
-        "rookie": "Rookie",
-        "beginner": "Beginner",
-        "intermediate": "Intermediate",
-        "advance": "Advance",
-        "true-beast": "True Beast"
-      },
-      "activity-title": "Your Regular Physical Activity Level ?",
-      "units": {
-        "years-old": "Years Old",
-        "kg": "KG",
-        "cm": "CM"
       }
     },
-
     "forgot-password": {
       "find-account": "Find your account",
       "enter-email": "Enter your email",
@@ -178,9 +200,86 @@
       "reset-password": "Reset your password",
       "enter-new-password": "Enter your new password",
       "reset-password-button": "Reset Password",
+      "email-required": "Email is required",
       "otp-required": "Verification code is required",
+      "password-required": "Password is required",
+      "confirm-password-required": "Please confirm your password",
+      "passwords-do-not-match": "Passwords do not match",
       "didnt-receive-code": "Didn't receive the verification code?",
       "resend-code": "Resend Code"
     }
+  },
+  "kyc": {
+    "gender-title": "tell us about yourself!",
+    "gender-subtitle": "We Need To Know Your Gender,",
+    "age-title": "How Old Are you ?",
+    "weight-title": "what is your weight ?",
+    "height-title": "what is your height ?",
+    "hint": "this helps us create Your personalized plan",
+    "goal-title": "What Is Your Goal ?",
+    "goal": {
+      "gain-weight": "Gain Weight",
+      "lose-weight": "Lose Weight",
+      "get-fitter": "Get Fitter",
+      "gain-flexibility": "Gain More Flexible",
+      "learn-basics": "Learn The Basic"
+    },
+    "activity": {
+      "rookie": "Rookie",
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advance": "Advance",
+      "true-beast": "True Beast"
+    },
+    "activity-title": "Your Regular Physical Activity Level ?",
+    "units": {
+      "years-old": "Years Old",
+      "kg": "KG",
+      "cm": "CM"
+    }
+  },
+  "why-us": {
+    "features": {
+      "personalized-plans": {
+        "title": "Personalized Fitness Plans",
+        "description": "We tailor every workout to fit your unique goals and fitness level ensuring that you make the most progress."
+      },
+      "results-driven": {
+        "title": "Results-Driven Focus",
+        "description": "Everything we do is designed to help you achieve measurable results, whether you're aiming for weight loss."
+      },
+      "equipment": {
+        "title": "State-Of-The-Art Equipment",
+        "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
+      }
+    },
+    "sec-title": {
+      "why-us": "Elevate fitness with the <highlight>best way</highlight> possible",
+      "home": "Your body can <highlight>stand almost</highlight> anything",
+      "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
+      "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
+      "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
+    }
+  },
+  "sec-header": {
+    "why-us": "Why us",
+    "about-us": "About us",
+    "fitness-classes": "fitness class",
+    "work-outs": "Workouts",
+    "healthy-nutritions": "Healthy Nutritions",
+    "not-found": {
+      "title": "Page <highlight>not found</highlight>",
+      "title-plain": "Page not found",
+      "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
+      "back-home": "Back to Home",
+      "explore-classes": "Explore Classes"
+    }
+  },
+  "footer": {
+    "contact-us": "CONTACT US",
+    "our-locations": "OUR LOCATIONS",
+    "our-timing": "OUR GYM TIMING",
+    "slogan": "Do more effort, and go further. Your journey towards fitness starts today!",
+    "location": "2715 Ash Dr. San Jose, South Dakota 83475"
   }
 }

@@ -8,7 +8,9 @@ import AuthLayout from './layouts/auth-layout/auth-layout';
 const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));
 const Classes = lazy(() => import('@/app/main-pages/classes'));
+const ClassesDetails = lazy(() => import('@/app/main-pages/classes-details'));
 const Healthy = lazy(() => import('@/app/main-pages/healthy'));
+const HealthyDetails = lazy(() => import('@/app/main-pages/healthy-details'));
 const Profile = lazy(() => import('@/app/main-pages/profile'));
 
 const Login = lazy(() => import('@/app/auth-pages/login'));
@@ -37,7 +39,9 @@ const router = createBrowserRouter([
           { index: true, element: withSuspense(<Home />) },
           { path: 'about', element: withSuspense(<About />) },
           { path: 'classes', element: withSuspense(<Classes />) },
+          { path: 'classes/:groupId', element: withSuspense(<ClassesDetails />) },
           { path: 'healthy', element: withSuspense(<Healthy />) },
+          { path: 'healthy/:mealId', element: withSuspense(<HealthyDetails />) },
           { path: 'profile', element: withSuspense(<Profile />) },
         ],
       },

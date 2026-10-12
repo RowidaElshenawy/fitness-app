@@ -109,7 +109,6 @@ export default function AiChat() {
       setLoading(false);
     }
   };
-
   return (
     <div
       className={cn(
@@ -186,7 +185,6 @@ export default function AiChat() {
               </Menu.Portal>
             </Menu.Root>
           </div>
-
           <div className="relative z-10 flex-1 px-4 overflow-y-auto scrollbar-hide">
             {messages.map((message) => (
               <div
@@ -224,7 +222,6 @@ export default function AiChat() {
                 )}
               </div>
             ))}
-
             {loading && (
               <div className="flex gap-4 pb-6 justify-start">
                 <img
