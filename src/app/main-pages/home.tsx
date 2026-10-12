@@ -1,9 +1,9 @@
-import ClassesSection from '@/features/classes/components/classes-section';
+import Hero from '@/features/classes/components/classes-section';
 
 const Home = () => {
-  // return <Hero />;
+  return <Hero />;
 
-  return <ClassesSection />;
+  // return <ClassesSection />;
 };
 
 export default Home;
