@@ -1,6 +1,7 @@
 import { ArrowLeft } from 'lucide-react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import { Button } from '@/shared/components/ui/button';
 import HeaderAuth from '../shared/header-auth';
@@ -9,19 +10,25 @@ import ResetPasswordStep from './reset-password-step';
 import VerifyCodeStep from './verify-code-step';
 import useForgotPassword from '../../hooks/use-forgot-password';
 import type { ForgotPasswordForm } from '../../lib/types/forgot-password';
+import { FORGOT_PASSWORD_SCHEMA } from '../../lib/schemas/forgot-password.schema';
 
 const ForgotPasswordFlow = () => {
   // Translation
   const { t } = useTranslation();
 
   // Form
+  const schema = FORGOT_PASSWORD_SCHEMA;
+
   const form = useForm<ForgotPasswordForm>({
+    mode: 'onChange',
+    reValidateMode: 'onChange',
     defaultValues: {
       email: '',
       resetCode: '',
       newPassword: '',
       confirmPassword: '',
     },
+    resolver: zodResolver(schema),
   });
 
   // Custom hooks
@@ -38,20 +45,48 @@ const ForgotPasswordFlow = () => {
 
   // Variables
   const stepTitle = {
-    email: t('forgot-password.find-account'),
-    code: t('forgot-password.verify-account'),
-    password: t('forgot-password.reset-password'),
+    email: t('auth.forgot-password.find-account'),
+    code: t('auth.forgot-password.verify-account'),
+    password: t('auth.forgot-password.reset-password'),
   }[step];
 
   const stepButtonTitle = {
-    email: t('forgot-password.send-otp'),
-    code: t('forgot-password.verify-code'),
-    password: t('forgot-password.reset-password-button'),
+    email: t('auth.forgot-password.send-otp'),
+    code: t('auth.forgot-password.verify-code'),
+    password: t('auth.forgot-password.reset-password-button'),
   }[step];
+
+  // Functions
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (step === 'email') {
+      if (await form.trigger('email')) {
+        handleEmailSubmit();
+      }
+
+      return;
+    }
+
+    if (step === 'code') {
+      if (await form.trigger('resetCode')) {
+        handleCodeSubmit();
+      }
+
+      return;
+    }
+
+    const newPasswordValid = await form.trigger('newPassword');
+    const confirmPasswordValid = await form.trigger('confirmPassword');
+
+    if (newPasswordValid && confirmPasswordValid) {
+      handlePasswordSubmit();
+    }
+  };
 
   return (
     <FormProvider {...form}>
-      <div className="mx-auto mt-12.5 flex max-w-121.5 flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div className="flex items-center gap-2">
           <Button
             type="button"
@@ -67,35 +102,18 @@ const ForgotPasswordFlow = () => {
         </div>
 
         <div className="rounded-xl border border-border-muted p-10">
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-
-              if (step === 'email') {
-                form.handleSubmit(handleEmailSubmit)(event);
-                return;
-              }
-
-              if (step === 'code') {
-                form.handleSubmit(handleCodeSubmit)(event);
-                return;
-              }
-
-              form.handleSubmit(handlePasswordSubmit)(event);
-            }}
-            className="flex flex-col gap-4"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {step === 'email' && <EmailStep isPending={isPending} error={stepError} />}
 
-            {step === 'code' && <VerifyCodeStep isPending={isPending} />}
+            {step === 'code' && <VerifyCodeStep isPending={isPending} error={stepError} />}
 
-            {step === 'password' && <ResetPasswordStep isPending={isPending} />}
+            {step === 'password' && <ResetPasswordStep isPending={isPending} error={stepError} />}
 
             <Button
               type="submit"
               variant="primary"
               className="w-full cursor-pointer"
-              disabled={isPending}
+              loading={isPending}
             >
               {stepButtonTitle}
             </Button>
@@ -103,7 +121,7 @@ const ForgotPasswordFlow = () => {
             {step === 'code' && (
               <div className="flex flex-col items-center gap-1 text-center">
                 <span className="text-sm text-text-subtle">
-                  {t('forgot-password.didnt-receive-code')}
+                  {t('auth.forgot-password.didnt-receive-code')}
                 </span>
 
                 <button
@@ -112,7 +130,7 @@ const ForgotPasswordFlow = () => {
                   disabled={isPending}
                   className="w-fit cursor-pointer text-sm font-bold text-text-primary hover:underline"
                 >
-                  {t('forgot-password.resend-code')}
+                  {t('auth.forgot-password.resend-code')}
                 </button>
               </div>
             )}

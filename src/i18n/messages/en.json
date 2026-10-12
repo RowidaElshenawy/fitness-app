@@ -25,6 +25,7 @@
     "password": {
       "password": "Password",
       "new-password": "New Password",
+      "confirm-password": "Confirm Password",
       "confirm-new-password": "Confirm New Password"
     }
   },
@@ -59,181 +60,265 @@
     "ai": {
       "ask": "Hey Ask Me",
       "smart-coach": "Smart coach",
-      "close": "Tap to Close"
-    },
-    "auth": {
-      "subtitle-login-register": "Hey There,",
-      "login": {
-        "subtitle": "WELCOME BACK!",
-        "title": "Login",
-        "forgot-password": "Forget Password ?",
-        "dont-have-an-account": "Dont have an account yet ? ",
-        "register": "Register",
-        "or": "Or"
-      }
-    },
-    "profile": {
-      "goal": "Goal",
-      "activity-level": "Activity Level",
-      "weight": "Weight",
-      "change-password": {
-        "title": "Change Password",
-        "cancel": "Cancel",
-        "change": "Change Password",
-        "changing": "Changing...",
-        "success": "Password changed successfully",
-        "something-went-wrong": "Something went wrong",
-        "current-password-required": "Current password is required",
-        "new-password-required": "New password is required",
-        "confirm-password-required": "Please confirm your password",
-        "passwords-do-not-match": "Passwords do not match"
-      },
-      "language": "Language",
-      "mood": "Mood",
-      "security": "Security",
-      "privacy-policy": "Privacy Policy",
-      "help": "Help",
-      "logout": "Log Out",
-      "phone": "phone number"
-    },
-
-    "auth": {
-      "subtitle-login-register": "Hey There",
-      "or": "Or",
-      "login": {
-        "subtitle": "WELCOME BACK!",
-        "title": "Login",
-        "forgot-password": "Forget Password ?",
-        "dont-have-an-account": "Dont have an account yet ? ",
-        "register": "Register"
-      },
-      "register": {
-        "title": "Create An Account",
-        "login": "Login",
-
-        "already-have-account": "Already have an account? ",
-        "errors": {
-          "first-name": "First Name is required",
-          "last-name": "Last Name is required",
-          "user-name": "User Name must be at least 2 characters.",
-          "first-name-max": "First Name must not be more than 50 characters.",
-          "last-name-max": "Last Name must not be more than 50 characters.",
-          "email-required": "Email is required.",
-          "invalid-email": "Please enter a valid email address.",
-          "email-already-registered": "This email is already registered.",
-          "password-min-length": "Password must be at least 8 characters.",
-          "password-max-length": "Password must not be more than 50 characters.",
-          "password-uppercase": "Password must contain at least one uppercase letter.",
-          "password-lowercase": "Password must contain at least one lowercase letter.",
-          "password-number": "Password must contain at least one number.",
-          "password-special": "Password must contain at least one special character.",
-          "re-password-required": "confirm password is required.",
-          "password-mismatch": "Passwords do not match",
-          "something-went-wrong": "Something went wrong. Please try again."
-        },
-        "Already Have an account": "Already Have an account ?"
-      },
-      "kyc": {
-        "gender-title": "tell us about yourself!",
-        "gender-subtitle": "We Need To Know Your Gender,",
-        "age-title": "How Old Are you ?",
-        "weight-title": "what is your weight ?",
-        "height-title": "what is your height ?",
-        "hint": "this helps us create Your personalized plan",
-        "goal-title": "What Is Your Goal ?",
-        "goal": {
-          "gain-weight": "Gain Weight",
-          "lose-weight": "Lose Weight",
-          "get-fitter": "Get Fitter",
-          "gain-flexibility": "Gain More Flexible",
-          "learn-basics": "Learn The Basic"
-        },
-        "activity": {
-          "rookie": "Rookie",
-          "beginner": "Beginner",
-          "intermediate": "Intermediate",
-          "advance": "Advance",
-          "true-beast": "True Beast"
-        },
-        "activity-title": "Your Regular Physical Activity Level ?",
-        "units": {
-          "years-old": "Years Old",
-          "kg": "KG",
-          "cm": "CM"
-        },
-        "not-found": {
-          "title": "Page <highlight>not found</highlight>",
-          "title-plain": "Page not found",
-          "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
-          "back-home": "Back to Home",
-          "explore-classes": "Explore Classes"
+      "close": "Tap to Close",
+      "ai": {
+        "ask": "Hey Ask Me",
+        "smart-coach": "Smart coach",
+        "close": "Tap to Close",
+        "chat-ai": {
+          "menu": "Menu",
+          "new-chat": "New chat",
+          "no-history": "No conversations yet",
+          "login-required": "Please log in to continue chatting.",
+          "login": "Log in"
         }
       },
+      "header": {
+        "nav": {
+          "home": "Home",
+          "about": "About",
+          "classes": "Classes",
+          "healthy": "Healthy",
+          "login": "LOGIN",
+          "signup": "SIGN UP"
+        },
+        "hero": {
+          "title": {
+            "part1": "YOUR BODY CAN",
+            "highlight1": "STAND",
+            "highlight2": "ALMOST",
+            "part2": "ANYTHING"
+          },
+          "description": "It's your mind that needs convincing. Push past your limits, stay committed, and watch as your body transforms into a powerhouse of strength and resilience.Start your journey today & truly capable of!",
+          "stats": {
+            "members": "Active Members",
+            "trainers": "Certified Trainers",
+            "experience": "Years Of Experience"
+          },
+          "getStarted": "Get Started",
+          "exploreMore": "Explore More"
+        },
 
-      "forgot-password": {
-        "find-account": "Find your account",
-        "enter-email": "Enter your email",
-        "send-otp": "Send OTP",
-        "verify-account": "Verify Account",
-        "enter-code": "Enter the verification code sent to your email",
-        "verify-code": "Verify Code",
-        "reset-password": "Reset your password",
-        "enter-new-password": "Enter your new password",
-        "reset-password-button": "Reset Password",
-        "email-required": "Email is required",
-        "otp-required": "Verification code is required",
-        "password-required": "Password is required",
-        "confirm-password-required": "Please confirm your password",
-        "passwords-do-not-match": "Passwords do not match",
-        "didnt-receive-code": "Didn't receive the verification code?",
-        "resend-code": "Resend Code"
-      }
-    },
-    "why-us": {
-      "features": {
-        "personalized-plans": {
-          "title": "Personalized Fitness Plans",
-          "description": "We tailor every workout to fit your unique goals and fitness level ensuring that you make the most progress."
+        "profile": {
+          "goal": "Goal",
+          "activity-level": "Activity Level",
+          "weight": "Weight",
+          "tap-to-change": "Tap to change",
+          "save": "Save",
+          "kyc-updated": {
+            "goal": "Goal updated successfully",
+            "activity-level": "Activity level updated successfully",
+            "weight": "Weight updated successfully"
+          },
+          "change-password": {
+            "title": "Change Password",
+            "cancel": "Cancel",
+            "change": "Change Password",
+            "changing": "Changing...",
+            "success": "Password changed successfully",
+            "something-went-wrong": "Something went wrong",
+            "current-password-required": "Current password is required",
+            "new-password-required": "New password is required",
+            "confirm-password-required": "Please confirm your password",
+            "passwords-do-not-match": "Passwords do not match"
+          },
+          "language": "Language",
+          "mood": "Mood",
+          "security": "Security",
+          "privacy-policy": "Privacy Policy",
+          "help": "Help",
+          "logout": "Log Out"
         },
-        "results-driven": {
-          "title": "Results-Driven Focus",
-          "description": "Everything we do is designed to help you achieve measurable results, whether you're aiming for weight loss."
-        },
-        "equipment": {
-          "title": "State-Of-The-Art Equipment",
-          "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
+
+        "auth": {
+          "subtitle-login-register": "Hey There",
+          "or": "Or",
+          "login": {
+            "subtitle": "WELCOME BACK!",
+            "title": "Login",
+            "forgot-password": "Forget Password ?",
+            "dont-have-an-account": "Dont have an account yet ? ",
+            "register": "Register"
+          },
+          "profile": {
+            "goal": "Goal",
+            "activity-level": "Activity Level",
+            "weight": "Weight",
+            "change-password": {
+              "title": "Change Password",
+              "cancel": "Cancel",
+              "change": "Change Password",
+              "changing": "Changing...",
+              "success": "Password changed successfully",
+              "something-went-wrong": "Something went wrong",
+              "current-password-required": "Current password is required",
+              "new-password-required": "New password is required",
+              "confirm-password-required": "Please confirm your password",
+              "passwords-do-not-match": "Passwords do not match"
+            },
+            "language": "Language",
+            "mood": "Mood",
+            "security": "Security",
+            "privacy-policy": "Privacy Policy",
+            "help": "Help",
+            "logout": "Log Out",
+            "phone": "phone number"
+          },
+
+          "auth": {
+            "subtitle-login-register": "Hey There",
+            "or": "Or",
+            "login": {
+              "subtitle": "WELCOME BACK!",
+              "title": "Login",
+              "forgot-password": "Forget Password ?",
+              "dont-have-an-account": "Dont have an account yet ? ",
+              "register": "Register"
+            },
+            "register": {
+              "title": "Create An Account",
+              "login": "Login",
+
+              "already-have-account": "Already have an account? ",
+              "errors": {
+                "first-name": "First Name is required",
+                "last-name": "Last Name is required",
+                "user-name": "User Name must be at least 2 characters.",
+                "first-name-max": "First Name must not be more than 50 characters.",
+                "last-name-max": "Last Name must not be more than 50 characters.",
+                "email-required": "Email is required.",
+                "invalid-email": "Please enter a valid email address.",
+                "email-already-registered": "This email is already registered.",
+                "password-min-length": "Password must be at least 8 characters.",
+                "password-max-length": "Password must not be more than 50 characters.",
+                "password-uppercase": "Password must contain at least one uppercase letter.",
+                "password-lowercase": "Password must contain at least one lowercase letter.",
+                "password-number": "Password must contain at least one number.",
+                "password-special": "Password must contain at least one special character.",
+                "re-password-required": "confirm password is required.",
+                "password-mismatch": "Passwords do not match",
+                "something-went-wrong": "Something went wrong. Please try again."
+              },
+              "Already Have an account": "Already Have an account ?"
+            },
+            "kyc": {
+              "gender-title": "tell us about yourself!",
+              "gender-subtitle": "We Need To Know Your Gender,",
+              "age-title": "How Old Are you ?",
+              "weight-title": "what is your weight ?",
+              "height-title": "what is your height ?",
+              "hint": "this helps us create Your personalized plan",
+              "goal-title": "What Is Your Goal ?",
+              "goal": {
+                "gain-weight": "Gain Weight",
+                "lose-weight": "Lose Weight",
+                "get-fitter": "Get Fitter",
+                "gain-flexibility": "Gain More Flexible",
+                "learn-basics": "Learn The Basic"
+              },
+              "activity": {
+                "rookie": "Rookie",
+                "beginner": "Beginner",
+                "intermediate": "Intermediate",
+                "advance": "Advance",
+                "true-beast": "True Beast"
+              },
+              "activity-title": "Your Regular Physical Activity Level ?",
+              "units": {
+                "years-old": "Years Old",
+                "kg": "KG",
+                "cm": "CM"
+              },
+              "not-found": {
+                "title": "Page <highlight>not found</highlight>",
+                "title-plain": "Page not found",
+                "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
+                "back-home": "Back to Home",
+                "explore-classes": "Explore Classes"
+              }
+            },
+
+            "forgot-password": {
+              "find-account": "Find your account",
+              "enter-email": "Enter your email",
+              "send-otp": "Send OTP",
+              "verify-account": "Verify Account",
+              "enter-code": "Enter the verification code sent to your email",
+              "verify-code": "Verify Code",
+              "reset-password": "Reset your password",
+              "enter-new-password": "Enter your new password",
+              "reset-password-button": "Reset Password",
+              "email-required": "Email is required",
+              "otp-required": "Verification code is required",
+              "password-required": "Password is required",
+              "confirm-password-required": "Please confirm your password",
+              "passwords-do-not-match": "Passwords do not match",
+              "didnt-receive-code": "Didn't receive the verification code?",
+              "resend-code": "Resend Code"
+            }
+          },
+          "why-us": {
+            "features": {
+              "personalized-plans": {
+                "title": "Personalized Fitness Plans",
+                "description": "We tailor every workout to fit your unique goals and fitness level ensuring that you make the most progress."
+              },
+              "results-driven": {
+                "title": "Results-Driven Focus",
+                "description": "Everything we do is designed to help you achieve measurable results, whether you're aiming for weight loss."
+              },
+              "equipment": {
+                "title": "State-Of-The-Art Equipment",
+                "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
+              }
+            },
+
+            "sec-title": {
+              "why-us": "Elevate fitness with the <highlight>best way</highlight> possible",
+              "home": "Your body can <highlight>stand almost</highlight> anything",
+              "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
+              "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
+              "fitness-": "Elevate fitness with the <highlight>best way</highlight> possible",
+              "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
+            }
+          },
+          "sec-header": {
+            "why-us": "Why us",
+            "about-us": "About us",
+            "fitness-classes": "fitness class",
+            "work-outs": "Workouts",
+            "healthy-nutritions": "Healthy Nutritions",
+            "not-found": {
+              "title": "Page <highlight>not found</highlight>",
+              "title-plain": "Page not found",
+              "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
+              "back-home": "Back to Home",
+              "explore-classes": "Explore Classes"
+            }
+          },
+          "footer": {
+            "contact-us": "CONTACT US",
+            "our-locations": "OUR LOCATIONS",
+            "our-timing": "OUR GYM TIMING",
+            "slogan": "Do more effort, and go further. Your journey towards fitness starts today!",
+            "location": "2715 Ash Dr. San Jose, South Dakota 83475",
+            "forgot-password": {
+              "find-account": "Find your account",
+              "enter-email": "Enter your email",
+              "send-otp": "Send OTP",
+              "verify-account": "Verify Account",
+              "enter-code": "Enter the verification code sent to your email",
+              "verify-code": "Verify Code",
+              "reset-password": "Reset your password",
+              "enter-new-password": "Enter your new password",
+              "reset-password-button": "Reset Password",
+              "otp-required": "Verification code is required",
+              "didnt-receive-code": "Didn't receive the verification code?",
+              "resend-code": "Resend Code"
+            }
+          }
         }
-      },
-
-      "sec-title": {
-        "why-us": "Elevate fitness with the <highlight>best way</highlight> possible",
-        "home": "Your body can <highlight>stand almost</highlight> anything",
-        "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
-        "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
-        "fitness-": "Elevate fitness with the <highlight>best way</highlight> possible",
-        "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
       }
-    },
-    "sec-header": {
-      "why-us": "Why us",
-      "about-us": "About us",
-      "fitness-classes": "fitness class",
-      "work-outs": "Workouts",
-      "healthy-nutritions": "Healthy Nutritions",
-      "not-found": {
-        "title": "Page <highlight>not found</highlight>",
-        "title-plain": "Page not found",
-        "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
-        "back-home": "Back to Home",
-        "explore-classes": "Explore Classes"
-      }
-    },
-    "footer": {
-      "contact-us": "CONTACT US",
-      "our-locations": "OUR LOCATIONS",
-      "our-timing": "OUR GYM TIMING",
-      "slogan": "Do more effort, and go further. Your journey towards fitness starts today!",
-      "location": "2715 Ash Dr. San Jose, South Dakota 83475"
     }
   }
 }

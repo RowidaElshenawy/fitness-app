@@ -28,7 +28,11 @@ const KycSelectField = ({
   onChange,
   disabled = false,
 }: KycSelectFieldProps) => {
+  // Translation
   const { t } = useTranslation();
+
+  // Variables
+  const selectedOption = options.find((option) => option.value === value);
 
   return (
     <div className="flex w-full items-center justify-between gap-4">
@@ -44,7 +48,7 @@ const KycSelectField = ({
         disabled={disabled}
       >
         <SelectTrigger className="h-10 w-full max-w-48 cursor-pointer border border-background bg-transparent text-background">
-          <SelectValue />
+          <SelectValue>{selectedOption ? t(selectedOption.labelKey) : ''}</SelectValue>
         </SelectTrigger>
 
         <SelectContent

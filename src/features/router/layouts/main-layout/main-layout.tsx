@@ -1,13 +1,20 @@
 import { Outlet } from 'react-router-dom';
-import Footer from '@/shared/components/custom-ui/footer/footer';
-
+import AiChat from '@/features/main/shared/ai-chat';
+import Header from '@/features/main/components/header';
 const MainLayout = () => {
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="flex flex-1 flex-col items-center justify-center">
+    <div className="flex min-h-screen flex-col items-center justify-center ">
+      {/* header */}
+
+      <Header />
+
+      {/* content */}
+      <div className=" flex-1 w-full">
         <Outlet />
-      </main>
-      <Footer />
+        <AiChat />
+      </div>
+      {/* footer */}
+      <div className="h-35 w-full "></div>
     </div>
   );
 };

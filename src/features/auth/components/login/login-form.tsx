@@ -6,11 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import type { TLoginField } from '../../types/login-field';
 import { useLogin } from '../../hooks/use-login';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 const LoginForm = () => {
-  const { locale } = useParams();
   //translation
   const { t } = useTranslation();
 
@@ -70,7 +68,7 @@ const LoginForm = () => {
             </div>
           )}
         />
-        {backendError && <ErrorAlert beError={backendError} />}
+        {backendError && <ErrorAlert errorMessage={backendError} />}
       </LoginRegisterDesign>
     </>
   );

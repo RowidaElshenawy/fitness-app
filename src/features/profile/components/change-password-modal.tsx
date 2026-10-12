@@ -1,11 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import type z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { Button } from '@/shared/components/ui/button';
 import CustomInput from '@/shared/components/custom-ui/custom-input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/shared/components/ui/dialog';
-import { getChangePasswordSchema } from '../lib/schemas/change-password.schema';
+import { translateError } from '@/features/auth/lib/utils/translate-error';
+import { CHANGE_PASSWORD_SCHEMA } from '../lib/schemas/change-password.schema';
 import type { ChangePasswordField } from '../lib/types/change-password';
 import { useChangePassword } from '../hooks/use-change-password';
 
@@ -22,13 +24,15 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
   const { mutate: changePasswordMutation, isPending } = useChangePassword();
 
   // Form
-  const form = useForm<ChangePasswordField>({
-    resolver: zodResolver(getChangePasswordSchema(t)),
+  type ChangePasswordFormValues = z.infer<typeof CHANGE_PASSWORD_SCHEMA>;
+
+  const form = useForm<ChangePasswordFormValues>({
     defaultValues: {
       password: '',
       newPassword: '',
       confirmPassword: '',
     },
+    resolver: zodResolver(CHANGE_PASSWORD_SCHEMA),
   });
 
   // Functions
@@ -61,25 +65,25 @@ const ChangePasswordModal = ({ open, onOpenChange }: TChangePasswordModalProps) 
             placeholder={t('custom-input.password.password')}
             {...form.register('password')}
             error={!!form.formState.errors.password}
-            errorMessage={form.formState.errors.password?.message}
+            errorMessage={translateError(t)(form.formState.errors.password?.message)}
           />
 
           <CustomInput
             variant="password"
-            subVariant="password"
+            subVariant="new-password"
             placeholder={t('custom-input.password.new-password')}
             {...form.register('newPassword')}
             error={!!form.formState.errors.newPassword}
-            errorMessage={form.formState.errors.newPassword?.message}
+            errorMessage={translateError(t)(form.formState.errors.newPassword?.message)}
           />
 
           <CustomInput
             variant="password"
-            subVariant="password"
+            subVariant="confirm-new-password"
             placeholder={t('custom-input.password.confirm-new-password')}
             {...form.register('confirmPassword')}
             error={!!form.formState.errors.confirmPassword}
-            errorMessage={form.formState.errors.confirmPassword?.message}
+            errorMessage={translateError(t)(form.formState.errors.confirmPassword?.message)}
           />
 
           <div className="mt-2 flex justify-between">
