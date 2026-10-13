@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import SelectableOption from './selectable-option';
 import type { Goal } from '../../../types/register';
 
-const GOAL_OPTIONS = [
+export const GOAL_OPTIONS = [
   { value: 'Gain weight', labelKey: 'auth.kyc.goal.gain-weight' },
   { value: 'Lose weight', labelKey: 'auth.kyc.goal.lose-weight' },
   { value: 'Get fitter', labelKey: 'auth.kyc.goal.get-fitter' },

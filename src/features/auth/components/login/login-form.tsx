@@ -10,9 +10,10 @@ import { useParams } from 'react-router-dom';
 import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 const LoginForm = () => {
-  const { locale } = useParams();
   //translation
   const { t } = useTranslation();
+  const { locale } = useParams();
+
   //mutation
   const { mutate: login, backendError } = useLogin();
   //form
@@ -38,7 +39,7 @@ const LoginForm = () => {
         linkTitle={t('auth.login.register')}
         title={t('auth.login.title')}
         forgotPassword={t('auth.login.forgot-password')}
-        or={t('auth.or')}
+        or={t('auth.login.or')}
         href={`/${locale}/register`}
         form={form}
         onSubmit={onSubmit}
@@ -69,7 +70,7 @@ const LoginForm = () => {
             </div>
           )}
         />
-        {backendError && <ErrorAlert beError={backendError} />}
+        {backendError && <ErrorAlert errorMessage={backendError} />}
       </LoginRegisterDesign>
     </>
   );
