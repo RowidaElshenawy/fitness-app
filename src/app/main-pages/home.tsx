@@ -3,6 +3,7 @@ import MealsSection from '@/features/main/components/meals-section/meals-section
 import WhyUs from '@/features/main/components/why-us-section/why-us';
 import Workouts from '@/features/main/components/workouts-section/workouts';
 import type { RootState } from '@/store/store';
+import AboutSection from '@/shared/components/about.tsx/about';
 
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -18,8 +19,9 @@ const Home = () => {
       <div>
         <Hero />
         <Link to={`/${locale}/profile`}>Profile</Link>
-        <WhyUs />
+        <AboutSection />
         <Workouts />
+        <WhyUs />
         <MealsSection />
       </div>
     </div>
