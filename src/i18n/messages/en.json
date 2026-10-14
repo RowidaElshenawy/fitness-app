@@ -257,5 +257,19 @@
     "our-timing": "OUR GYM TIMING",
     "slogan": "Do more effort, and go further. Your journey towards fitness starts today!",
     "location": "2715 Ash Dr. San Jose, South Dakota 83475"
+  },
+  "meals": {
+    "title": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you",
+    "read-more": "Read More",
+    "bg-word": "Health",
+    "error": "Error",
+    "empty": "No meals is founded",
+    "retry": "Try again",
+    "badge": "Healthy Nutritions",
+    "items": {
+      "breakfast": "BREAKFAST",
+      "lunch": "LUNCH",
+      "dinner": "DINNER"
+    }
   }
 }

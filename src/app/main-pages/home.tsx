@@ -1,5 +1,4 @@
-
-import MealSection from '@/features/healthy/components/meal-section';
+import MealsSection from '@/features/main/components/meals-section/meals-section';
 import WhyUs from '@/features/main/components/why-us-section/why-us';
 import Workouts from '@/features/main/components/workouts-section/workouts';
 import { Button } from '@/shared/components/ui/button';
@@ -14,7 +13,6 @@ const Home = () => {
 
   const user = useSelector((state: RootState) => state.auth.user);
   const { locale } = useParams();
-
 
   const handleClick = async () => {
     setIsLoading(true);
@@ -31,20 +29,20 @@ const Home = () => {
       <Button type="submit" loading={isLoading} onClick={handleClick}>
         NEXT
       </Button>
-    <div>
-      <h1>{user?.firstName}</h1>
+      <div>
+        <h1>{user?.firstName}</h1>
 
-      <Button variant="outline" icon={<ArrowUpRight />}>
-        Explore More
-      </Button>
-      <Button variant="ghost" icon={<ArrowUpRight />}>
-        Get Started
-      </Button>
-      <Link to={`/${locale}/profile`}>Profile</Link>
-      <WhyUs />
-      <Workouts />
-      <MealSection />
-    </div>
+        <Button variant="outline" icon={<ArrowUpRight />}>
+          Explore More
+        </Button>
+        <Button variant="ghost" icon={<ArrowUpRight />}>
+          Get Started
+        </Button>
+        <Link to={`/${locale}/profile`}>Profile</Link>
+        <WhyUs />
+        <Workouts />
+        <MealsSection />
+      </div>
     </div>
   );
 };
