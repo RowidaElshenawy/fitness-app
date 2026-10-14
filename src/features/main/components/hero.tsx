@@ -5,6 +5,7 @@ import hero from '@/assets/image/hero.png';
 import HeroStats from './hero-stats';
 import { Button } from '@/shared/components/ui/button';
 import { ArrowUpRight } from 'lucide-react';
+import MarqueeComponent from '@/shared/components/custom-ui/footer/marquee';
 
 export default function Hero() {
   const { t } = useTranslation('');
@@ -51,6 +52,7 @@ export default function Hero() {
           <img src={hero} alt="Fitness trainer" className="max-h-[80vh] w-auto object-contain" />
         </div>
       </div>
+      <MarqueeComponent />
     </section>
   );
 }
