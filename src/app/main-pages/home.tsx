@@ -6,6 +6,7 @@ import About from './about';
 const Home = () => {
   return (
     <div>
+      {/* hello */}
       <Hero />
       <About />
       <Workouts />
