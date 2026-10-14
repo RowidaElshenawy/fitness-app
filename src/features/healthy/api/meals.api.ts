@@ -11,17 +11,24 @@ const mealsAxios = axios.create({
 
 export default mealsAxios;
 
-export const getMealCategories = async (): Promise<TMealCategoriesResponse> => {
-  const res = await mealsAxios.get('/categories.php');
+export const getMealCategories = async (signal?: AbortSignal): Promise<TMealCategoriesResponse> => {
+  const res = await mealsAxios.get('/categories.php', { signal });
   return res.data;
 };
 
-export const getMealsByCategory = async (category: string): Promise<TMealsByCategoryResponse> => {
-  const res = await mealsAxios.get('/filter.php', { params: { c: category } });
+export const getMealsByCategory = async (
+  category: string,
+  signal?: AbortSignal
+): Promise<TMealsByCategoryResponse> => {
+  const res = await mealsAxios.get('/filter.php', { params: { c: category }, signal });
+  console.log('res.data', res.data);
   return res.data;
 };
 
-export const getMealById = async (id: string): Promise<TMealDetailsResponse> => {
-  const res = await mealsAxios.get('/lookup.php', { params: { i: id } });
+export const getMealById = async (
+  id: string,
+  signal?: AbortSignal
+): Promise<TMealDetailsResponse> => {
+  const res = await mealsAxios.get('/lookup.php', { params: { i: id }, signal });
   return res.data;
 };

@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import workoutsBg from '/images/meals-bg.jpg';
 import { Button } from '@/shared/components/ui/button';
 
 import SectionBgWord from '../../shared/sec-bg-word';
@@ -10,7 +9,9 @@ import { useMeals } from '@/features/main/hooks/use-meals';
 import CardGrid, { type CardGridItem } from './meals-grid';
 import Title from './meals-title';
 
-// TheMealDB has no Lunch/Dinner categories, so map the design's labels to real ones.
+// Served from /public, so reference it by URL instead of importing it
+const MEALS_BG = '/images/meals-bg.jpg';
+
 const MEALS = [
   { key: 'breakfast', category: 'Breakfast' },
   { key: 'lunch', category: 'Chicken' },
@@ -21,7 +22,7 @@ export default function MealsSection() {
   //translation
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { locale } = useParams();
+  const { locale = 'en' } = useParams();
   //queries
   const { data, isPending, isError, refetch } = useMeals();
 
@@ -35,7 +36,7 @@ export default function MealsSection() {
                 id: cat.idCategory,
                 title: t(`meals.items.${key}`),
                 image: cat.strCategoryThumb,
-                href: `/${locale}/healthy?category=${cat.strCategory}`, // was /meals/...
+                href: `/${locale}/healthy?category=${encodeURIComponent(cat.strCategory)}`,
               },
             ]
           : [];
@@ -50,7 +51,7 @@ export default function MealsSection() {
   return (
     <section
       className="relative isolate w-full overflow-hidden bg-cover bg-center bg-no-repeat h-176.25"
-      style={{ backgroundImage: `url(${workoutsBg})` }}
+      style={{ backgroundImage: `url(${MEALS_BG})` }}
     >
       <div
         aria-hidden
@@ -63,7 +64,8 @@ export default function MealsSection() {
         <Title />
 
         <div className="mt-9">
-          {isError ? (
+          {/* Only show the error state when there's no cached data to fall back on */}
+          {isError && !data ? (
             <div className="flex flex-col items-center gap-4 py-16 text-text-plain">
               <p>{t('meals.error')}</p>
               <Button variant="outline" onClick={() => refetch()}>
