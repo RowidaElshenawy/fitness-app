@@ -1,37 +1,84 @@
 import { Button } from '@/shared/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import aiImage from '@/assets/ai.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Menu } from '@base-ui/react/menu';
+import { AlignRight, Plus } from 'lucide-react';
+// import { useNavigate } from 'react-router-dom'; // LOGIN
 import { cn } from '@/shared/lib/utils/tailwind-cn';
 import CustomInput from '@/shared/components/custom-ui/custom-input';
 import chatBg from '@/assets/ai-chat-background.jpg';
 import aiPhoto from '@/assets/ai-photo.jpg';
+import { loadChats, makeTitle, saveChats, type TConversation } from '../types/chat-storage';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store/store';
 export default function AiChat() {
   //translation
   const { t } = useTranslation();
-  //variables
-  // const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
+  // const navigate = useNavigate() //LOGIN
+
   //state
   const [openChat, setOpenChat] = useState<boolean>(false);
-  const [messages, setMessages] = useState<TMessage[]>([]);
+  const [conversations, setConversations] = useState<TConversation[]>(
+    () => loadChats().conversations
+  );
+  const [activeId, setActiveId] = useState<string | null>(() => loadChats().activeId);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  // const [sessionId] = useState(() => crypto.randomUUID());
+
+  const user = useSelector((state: RootState) => state.auth.user);
+  useEffect(() => {
+    saveChats({ conversations, activeId });
+  }, [conversations, activeId]);
+
+  const messages = conversations.find((c) => c.id === activeId)?.messages ?? [];
+
+  // LOGIN
+  // const FREE_MESSAGES_LIMIT = 3;
+  // const isLoggedIn = false;
+  // const userMessagesCount = conversations
+  //   .flatMap((c) => c.messages)
+  //   .filter((m) => m.role === 'user').length;
+  // const isLimitReached = !isLoggedIn && userMessagesCount >= FREE_MESSAGES_LIMIT;
+
   //function
   const handleAiChat = () => {
     setOpenChat(!openChat);
   };
+
+  const appendMessage = (conversationId: string, message: TMessage) => {
+    setConversations((prev) =>
+      prev.map((c) => (c.id === conversationId ? { ...c, messages: [...c.messages, message] } : c))
+    );
+  };
+
+  const handleNewChat = () => {
+    if (loading) return;
+    setActiveId(null);
+    setInput('');
+  };
+
   const handleSendMessage = async () => {
-    if (!input.trim() || loading) return;
+    const content = input.trim();
+    if (!content || loading) return;
+
+    // LOGIN
+    // if (isLimitReached) return;
 
     const userMessage: TMessage = {
       id: crypto.randomUUID(),
       role: 'user',
-      content: input.trim(),
+      content,
     };
     const history = [...messages, userMessage];
+    const conversationId = activeId ?? crypto.randomUUID();
 
-    setMessages(history);
+    setConversations((prev) =>
+      activeId === null
+        ? [{ id: conversationId, title: makeTitle(content), messages: history }, ...prev]
+        : prev.map((c) => (c.id === conversationId ? { ...c, messages: history } : c))
+    );
+    setActiveId(conversationId);
     setInput('');
     setLoading(true);
 
@@ -48,75 +95,22 @@ export default function AiChat() {
 
       const data = await response.json();
 
-      setMessages((prev) => [
-        ...prev,
-        { id: crypto.randomUUID(), role: 'assistant', content: data.output },
-      ]);
+      appendMessage(conversationId, {
+        id: crypto.randomUUID(),
+        role: 'assistant',
+        content: data.output,
+      });
     } catch (error) {
       console.error('Chat error:', error);
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: crypto.randomUUID(),
-          role: 'assistant',
-          content: 'The assistant is busy right now, please try again shortly.',
-        },
-      ]);
+      appendMessage(conversationId, {
+        id: crypto.randomUUID(),
+        role: 'assistant',
+        content: 'The assistant is busy right now, please try again shortly.',
+      });
     } finally {
       setLoading(false);
     }
   };
-  // const handleSendMessage = async () => {
-  //   if (!input.trim() || loading) return;
-
-  //   const userMessage = input.trim();
-
-  //   setMessages((prev) => [
-  //     ...prev,
-  //     {
-  //       id: crypto.randomUUID(),
-  //       role: 'user',
-  //       content: userMessage,
-  //     },
-  //   ]);
-
-  //   setInput('');
-  //   setLoading(true);
-
-  //   try {
-  //     const response = await fetch(N8N_WEBHOOK_URL, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         action: 'sendMessage',
-  //         chatInput: userMessage,
-  //         sessionId,
-  //       }),
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error('Failed to send message');
-  //     }
-
-  //     const data = await response.json();
-
-  //     setMessages((prev) => [
-  //       ...prev,
-  //       {
-  //         id: crypto.randomUUID(),
-  //         role: 'assistant',
-  //         content: data.output,
-  //       },
-  //     ]);
-  //   } catch (error) {
-  //     console.error('Chat error:', error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-  // h-188.25
   return (
     <div
       className={cn(
@@ -125,9 +119,13 @@ export default function AiChat() {
       )}
     >
       <Button variant="ai" onClick={() => handleAiChat()}>
-        <img src={aiImage} className="absolute bottom-9.5 " />
+        <div className="absolute bottom-9.5 flex items-center justify-center">
+          <div className="absolute w-24 h-24 bg-bg-primary opacity-60 blur-xl rounded-full pointer-events-none" />
+          <img src={aiImage} alt="ai-icon" className="relative z-10" />
+        </div>
         {openChat ? t('main.ai.close') : t('main.ai.ask')}
       </Button>
+
       {openChat && (
         <form
           className="flex flex-col pt-10 pb-8 relative w-93.75 h-115 rounded-lg border-2 border-border-primary overflow-hidden  bg-cover bg-center  before:absolute
@@ -140,8 +138,54 @@ export default function AiChat() {
             <h2 className="font-bold text-2xl text-text-inverse font-sans ">
               {t('main.ai.smart-coach')}
             </h2>
-            {/* dropdown menu */}
-            <div>R</div>
+
+            {/* dropdown menu*/}
+            <Menu.Root>
+              <Menu.Trigger
+                type="button"
+                aria-label={t('main.ai.menu')}
+                className="rounded-md p-1 text-text-inverse outline-none hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-border-primary"
+              >
+                <AlignRight className="h-6 w-6" />
+              </Menu.Trigger>
+
+              <Menu.Portal>
+                <Menu.Positioner sideOffset={8} align="end" className="z-50">
+                  <Menu.Popup className="max-h-72 w-56 overflow-y-auto rounded-lg border border-border-primary bg-black/80 py-1 shadow-lg backdrop-blur-md outline-none">
+                    <Menu.Item
+                      onClick={handleNewChat}
+                      disabled={loading}
+                      className="flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-semibold text-text-inverse outline-none data-[highlighted]:bg-white/10 data-[disabled]:opacity-50"
+                    >
+                      <Plus className="h-4 w-4" />
+                      {t('main.ai.ai.chat-ai.new-chat')}
+                    </Menu.Item>
+
+                    <Menu.Separator className="my-1 h-px bg-white/20" />
+
+                    {conversations.length === 0 ? (
+                      <p className="px-4 py-2 text-sm text-text-inverse/60">
+                        {t('main.ai.chat-ai.no-history')}
+                      </p>
+                    ) : (
+                      conversations.map((conversation) => (
+                        <Menu.Item
+                          key={conversation.id}
+                          disabled={loading}
+                          onClick={() => setActiveId(conversation.id)}
+                          className={cn(
+                            'cursor-pointer truncate px-4 py-2 text-sm text-text-inverse outline-none data-[highlighted]:bg-white/10 data-[disabled]:opacity-50',
+                            conversation.id === activeId && 'bg-white/20'
+                          )}
+                        >
+                          {conversation.title}
+                        </Menu.Item>
+                      ))
+                    )}
+                  </Menu.Popup>
+                </Menu.Positioner>
+              </Menu.Portal>
+            </Menu.Root>
           </div>
           <div className="relative z-10 flex-1 px-4 overflow-y-auto scrollbar-hide">
             {messages.map((message) => (
@@ -171,13 +215,18 @@ export default function AiChat() {
                   {message.content}
                 </p>
 
-                {message.role === 'user' && (
-                  <img
-                    src={aiPhoto}
-                    alt="user-photo"
-                    className="w-9 h-9 rounded-full shadow-shadow-primary"
-                  />
-                )}
+                {message.role === 'user' &&
+                  (user?.photo ? (
+                    <img
+                      src={user.photo}
+                      alt="user-photo"
+                      className="w-9 h-9 rounded-full object-cover shadow-shadow-primary"
+                    />
+                  ) : (
+                    <div className="w-9 h-9 shrink-0 rounded-full bg-bg-primary text-text-inverse flex items-center justify-center font-bold shadow-shadow-primary">
+                      {user?.firstName?.charAt(0).toUpperCase() ?? '?'}
+                    </div>
+                  ))}
               </div>
             ))}
             {loading && (
@@ -193,15 +242,28 @@ export default function AiChat() {
               </div>
             )}
           </div>
+
+          {/* LOGIN
+          {isLimitReached && (
+            <div className="relative z-10 flex flex-col items-center gap-3 px-8 pb-3 text-center">
+              <p className="text-sm text-text-inverse">{t('main.ai.login-required')}</p>
+              <Button type="button" onClick={() => navigate('/login')}>
+                {t('main.ai.login')}
+              </Button>
+            </div>
+          )}
+          */}
+
           <CustomInput
             variant="ai"
             className="px-8"
             value={input}
+            // disabled={isLimitReached}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
                 e.preventDefault();
-                handleSendMessage();
+                void handleSendMessage();
               }
             }}
           />

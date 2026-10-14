@@ -1,15 +1,20 @@
-import LanguageSwitcher from '@/shared/components/custom-ui/language-switcher/language-switcher';
-import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
-
+import AiChat from '@/features/main/shared/ai-chat';
+import Header from '@/features/main/components/header';
 const MainLayout = () => {
-  const { t } = useTranslation();
-
   return (
-    <div className="flex flex-col items-center justify-center">
-      <LanguageSwitcher />
-      <h1>{t('welcome')}</h1>
-      <Outlet />
+    <div className="flex min-h-screen flex-col items-center justify-center ">
+      {/* header */}
+
+      <Header />
+
+      {/* content */}
+      <div className=" flex-1 w-full">
+        <Outlet />
+        <AiChat />
+      </div>
+      {/* footer */}
+      <div className="h-35 w-full "></div>
     </div>
   );
 };
