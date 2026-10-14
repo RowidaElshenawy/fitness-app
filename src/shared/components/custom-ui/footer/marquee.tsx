@@ -1,4 +1,3 @@
-import React from 'react';
 import Star from '/icons/star.svg';
 import { cn } from '@/shared/lib/utils/tailwind-cn';
 
