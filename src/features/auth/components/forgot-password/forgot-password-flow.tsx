@@ -86,7 +86,7 @@ const ForgotPasswordFlow = () => {
 
   return (
     <FormProvider {...form}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 w-full lg:w-121.5">
         <div className="flex items-center gap-2">
           <Button
             type="button"

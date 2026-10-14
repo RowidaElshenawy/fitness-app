@@ -29,6 +29,7 @@ const EmailStep = ({ isPending, error }: EmailStepProps) => {
         render={({ field, fieldState }) => (
           <CustomInput
             variant="email"
+            autoComplete="email"
             value={field.value}
             onChange={field.onChange}
             disabled={isPending}

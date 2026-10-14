@@ -181,6 +181,37 @@
         "something-went-wrong": "حدث خطأ ما. يرجى المحاولة مرة أخرى"
       }
     },
+    "Already Have an account": "Already Have an account ?",
+    "kyc": {
+      "gender-title": "اخبرنا عن نفسك!",
+      "gender-subtitle": "نحتاج لمعرفة جنسك،",
+      "age-title": "كم عمرك ؟",
+      "weight-title": "ما هو وزنك ؟",
+      "height-title": "ما هو طولك ؟",
+      "hint": "هذا يساعدنا على إنشاء خطتك المخصصة",
+      "goal-title": "ما هو هدفك ؟",
+      "activity-title": "ما هو مستوى نشاطك البدني المعتاد ؟",
+      "goal": {
+        "gain-weight": "زيادة الوزن",
+        "lose-weight": "خسارة الوزن",
+        "get-fitter": "زيادة اللياقة",
+        "gain-flexibility": "زيادة المرونة",
+        "learn-basics": "تعلم الأساسيات"
+      },
+      "activity": {
+        "rookie": "مبتدئ",
+        "beginner": "بداية",
+        "intermediate": "متوسط",
+        "advance": "متقدم",
+        "true-beast": "وحش حقيقي"
+      },
+      "units": {
+        "years-old": "سنة",
+        "kg": "كجم",
+        "cm": "سم"
+      }
+    },
+
     "forgot-password": {
       "find-account": "البحث عن حسابك",
       "enter-email": "أدخل بريدك الإلكتروني",
@@ -196,6 +227,13 @@
       "didnt-receive-code": "لم تستلم رمز التحقق؟",
       "resend-code": "إعادة إرسال الرمز"
     }
+  },
+  "not-found": {
+    "title": "الصفحة <highlight>غير موجودة</highlight>",
+    "title-plain": "الصفحة غير موجودة",
+    "description": "هذه الصفحة غير موجودة أو تم نقلها. عد إلى الصفحة الرئيسية أو تابع رحلتك مع إحدى حصصنا التدريبية.",
+    "back-home": "العودة إلى الرئيسية",
+    "explore-classes": "استكشف الحصص"
   },
   "kyc": {
     "gender-title": "اخبرنا عن نفسك!",
@@ -269,5 +307,19 @@
     "our-timing": "مواعيدنا",
     "slogan": "ابذل جهداً أكبر، وامضِ أبعد. رحلتك نحو اللياقة تبدأ اليوم!",
     "location": "2715 شارع آش، سان خوسيه، ساوث داكوتا 83475"
+  },
+  "meals": {
+    "title": "عزّز رحلتك الرياضية مع <highlight>خطط وجبات</highlight> مخصصة لك",
+    "read-more": "اقرأ المزيد",
+    "bg-word": "الصحة",
+    "error": "خطأ",
+    "empty": "لا يوجد وجبات",
+    "retry": "إعادة المحاولة",
+    "badge": "تغذية صحية",
+    "items": {
+      "breakfast": "إفطار",
+      "lunch": "الغداء",
+      "dinner": "عشاء"
+    }
   }
 }
