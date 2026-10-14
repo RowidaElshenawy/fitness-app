@@ -1,5 +1,6 @@
 import React from 'react';
 import Star from '/icons/star.svg';
+import { cn } from '@/shared/lib/utils/tailwind-cn';
 
 const ITEMS = [
   'Outdoor & Online Trainers',
@@ -11,12 +12,12 @@ const ITEMS = [
 const REPEAT = 3;
 const TRACK_ITEMS = Array.from({ length: REPEAT }, () => ITEMS).flat();
 
-const MarqueeComponent: React.FC = () => {
+const MarqueeComponent = ({ className }: { className?: string }) => {
   return (
     <section
       dir="ltr"
       aria-label="Our services"
-      className="w-full overflow-hidden bg-bg-primary py-4 text-white"
+      className={cn('w-full overflow-hidden bg-bg-primary py-4 text-white', className)}
     >
       <div className="flex w-max animate-marquee hover:paused motion-reduce:animate-none">
         {[0, 1].map((copy) => (

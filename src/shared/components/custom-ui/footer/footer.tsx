@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     <footer className="w-full overflow-hidden bg-bg-muted">
       <MarqueeComponent />
 
-      <div className="flex w-full flex-col items-start gap-10 px-8 py-10 lg:flex-row lg:justify-between lg:px-13 md:flex-row md:justify-between md:px-13">
+      <div className="flex w-full flex-col items-start gap-10 px-8 py-4 lg:flex-row lg:justify-between lg:px-13 md:flex-row md:justify-between md:px-13">
         <LogoComponent />
         <ContactComponent />
         <TimeComponent />

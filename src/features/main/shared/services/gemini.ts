@@ -1,11 +1,11 @@
 export type TChatMessage = {
   id: number;
-  role: 'user' | 'ai';
+  role: 'user' | 'assistant';
   text: string;
 };
 
 export async function sendToGemini(messages: TChatMessage[]): Promise<string> {
-  const response = await fetch('http://localhost:3000/api/chat', {
+  const response = await fetch('/api/chat', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

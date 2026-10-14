@@ -35,7 +35,7 @@ export default function LocaleLayout() {
   }
 
   return (
-    <div className="min-h-screen bg-amber-950">
+    <div className="min-h-screen ">
       <LanguageProvider />
       {/* <LanguageSwitcher /> */}
       <Outlet />

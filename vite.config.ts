@@ -11,4 +11,13 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, 'src'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://fitness-app-six-sigma-70.vercel.app',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
 });
