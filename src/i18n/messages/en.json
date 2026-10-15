@@ -126,7 +126,6 @@
       }
     }
   },
-
   "profile": {
     "goal": "Goal",
     "activity-level": "Activity Level",
@@ -269,9 +268,29 @@
       "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
     }
   },
+  "about-us": {
+    "features": {
+      "personal-trainer": {
+        "title": "Personal Trainer",
+        "description": "Achieve your fitness goals with the guidance of our certified trainers."
+      },
+      "cardio-programs": {
+        "title": "Cardio Programs",
+        "description": "From steady-state cardio to interval sprints, our treadmill programs."
+      },
+      "quality-equipment": {
+        "title": "Quality Equipment",
+        "description": "Our gym is equipped with the latest cardio & strength machines."
+      },
+      "healthy-nutrition": {
+        "title": "Healthy Nutrition",
+        "description": "Fuel your fitness journey with customized meal plans for you."
+      }
+    }
+  },
   "sec-header": {
     "why-us": "Why us",
-    "about-us": "About us",
+    "about-us": "About Us",
     "fitness-classes": "fitness class",
     "work-outs": "Workouts",
     "healthy-nutritions": "Healthy Nutritions",

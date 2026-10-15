@@ -287,6 +287,26 @@
       "healthy-nutritions": "غذّي رحلة لياقتك بـ<highlight>خطط وجبات</highlight> مخصصة لك"
     }
   },
+  "about-us": {
+    "features": {
+      "personal-trainer": {
+        "title": "مدرب شخصي",
+        "description": "حقق أهداف لياقتك بإرشاد مدربينا المعتمدين."
+      },
+      "cardio-programs": {
+        "title": "برامج الكارديو",
+        "description": "من الكارديو المنتظم إلى العدو المتقطع، برامجنا على جهاز المشي تناسبك."
+      },
+      "quality-equipment": {
+        "title": "معدات عالية الجودة",
+        "description": "صالتنا مجهزة بأحدث أجهزة الكارديو وتمارين القوة."
+      },
+      "healthy-nutrition": {
+        "title": "تغذية صحية",
+        "description": "غذِّ رحلة لياقتك بخطط وجبات مخصصة لك."
+      }
+    }
+  },
   "sec-header": {
     "why-us": "لماذا نحن؟",
     "about-us": "من نحن",

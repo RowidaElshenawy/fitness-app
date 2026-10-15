@@ -1,27 +1,26 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/shared/components/ui/button';
 import SecHeader from '@/features/main/shared/sec-header';
 import SecTitle from '@/features/main/shared/sec-title';
+import SectionBgWord from '@/features/main/shared/sec-bg-word';
+import aboutImage from '@/assets/about.png';
+import aboutImage2 from '@/assets/about2.png';
+import aboutImage3 from '@/assets/about3.png';
 
 export default function AboutSection() {
+  const { t } = useTranslation();
+
   const featureList = [
-    {
-      title: 'Personal Trainer',
-      description: 'Achieve your fitness goals with the guidance of our certified trainers.',
-    },
-    {
-      title: 'Cardio Programs',
-      description: 'From steady-state cardio to interval sprints, our treadmill programs.',
-    },
-    {
-      title: 'Quality Equipment',
-      description: 'Our gym is equipped with the latest cardio & strength machines.',
-    },
-    {
-      title: 'Healthy Nutritions',
-      description: 'Fuel your fitness journey with customized meal plans for you.',
-    },
-  ];
+    'personal-trainer',
+    'cardio-programs',
+    'quality-equipment',
+    'healthy-nutrition',
+  ].map((key) => ({
+    key,
+    title: t(`about-us.features.${key}.title`),
+    description: t(`about-us.features.${key}.description`),
+  }));
 
   return (
     <main className="min-h-screen bg-[#f5f2ef] px-20 py-8 text-[#1d1d1f] lg:px-8 lg:py-10">
@@ -29,7 +28,7 @@ export default function AboutSection() {
         <div className="relative mx-auto flex sm:h-[740px] h-96 w-full  items-center justify-center">
           <div className="absolute left-1 top-0 h-3/4 w-3/5 overflow-hidden rounded-[30px] bg-[#d7d5d2] shadow-[0_40px_70px_rgba(32,24,22,0.18)]">
             <img
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80"
+              src={aboutImage}
               alt="Athlete working out with a kettlebell"
               className="h-full w-full object-cover"
             />
@@ -37,7 +36,7 @@ export default function AboutSection() {
 
           <div className="absolute  right-0  top-4/37 h-1/4 w-3/8 overflow-hidden rounded-[28px] bg-[#d9d4d0] shadow-[0_25px_50px_rgba(32,24,22,0.15)]">
             <img
-              src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80"
+              src={aboutImage2}
               alt="Male athlete posing after a workout"
               className="h-full w-full object-cover object-center"
             />
@@ -45,7 +44,7 @@ export default function AboutSection() {
 
           <div className="absolute bottom-0 right-0 h-3/5 w-3/5 overflow-hidden rounded-[30px] bg-[#d9d4d0] shadow-[0_35px_60px_rgba(32,24,22,0.16)]">
             <img
-              src="https://images.unsplash.com/photo-1541534401786-2077eed87a74?auto=format&fit=crop&w=900&q=80"
+              src={aboutImage3}
               alt="Athlete training in a dark gym"
               className="h-full w-full object-cover object-center"
             />
@@ -53,8 +52,18 @@ export default function AboutSection() {
         </div>
 
         <div className="">
-          <SecHeader titleKey="sec-header.why-us" className="pb-6" />
-          <SecTitle translationKey="why-us.sec-title.why-us" />
+          <div className="relative pt-10 pb-10 md:pt-14">
+            {/* big outlined word */}
+            <SectionBgWord className="top-0 left-0 z-0 translate-x-0 rtl:right-0 rtl:left-auto text-7xl tracking-normal md:text-9xl [-webkit-text-stroke:2px_rgba(0,0,0,0.18)] mask-[linear-gradient(to_bottom,black_30%,transparent)]">
+              {t('main.workouts.bg-word')}
+            </SectionBgWord>
+            <SecHeader
+              titleKey="sec-header.about-us"
+              className="relative z-10 items-center ps-4"
+              titleClassName="pt-0 text-xl md:text-2xl"
+            />
+          </div>
+          <SecTitle translationKey="why-us.sec-title.about-us" />
           <p className="font-rubik pb-4 md:pb-10 text-lg leading-7 text-text-plain">
             We offer a fitness journey that's tailored to your goals, supported by professional
             trainers and a welcoming community. Whether it's weight loss, strength building, or
@@ -62,7 +71,7 @@ export default function AboutSection() {
           </p>
           <div className=" grid gap-x-12 gap-y-8 md:grid-cols-2 border-b border">
             {featureList.map((feature) => (
-              <div key={feature.title} className="flex items-start gap-3">
+              <div key={feature.key} className="flex items-start gap-3">
                 <svg
                   width="35"
                   height="35"
