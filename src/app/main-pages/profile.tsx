@@ -5,9 +5,7 @@ const Profile = () => {
   return (
     <>
       <LayoutBackground />
-      <div className="z-50">
-        <ProfileContent />
-      </div>
+      <ProfileContent />
     </>
   );
 };

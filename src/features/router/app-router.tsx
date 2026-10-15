@@ -4,6 +4,8 @@ import { lazy, Suspense } from 'react';
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
+import GuestRoute from './guards/guest-route';
+import ProtectedRoute from './guards/protected-route';
 // import AuthLayout from './layouts/auth-layout/auth-layout';
 
 const Home = lazy(() => import('@/app/main-pages/home'));
@@ -43,15 +45,21 @@ const router = createBrowserRouter([
           { path: 'classes/:groupId', element: withSuspense(<ClassesDetails />) },
           { path: 'healthy', element: withSuspense(<Healthy />) },
           { path: 'healthy/:mealId', element: withSuspense(<HealthyDetails />) },
-          { path: 'profile', element: withSuspense(<Profile />) },
+          {
+            path: 'profile',
+            element: <ProtectedRoute> {withSuspense(<Profile />)}</ProtectedRoute>,
+          },
         ],
       },
       {
         element: <AuthLayout />,
         children: [
-          { path: 'login', element: withSuspense(<Login />) },
-          { path: 'register', element: withSuspense(<Register />) },
-          { path: 'forgot-password', element: withSuspense(<ForgotPassword />) },
+          { path: 'login', element: <GuestRoute> {withSuspense(<Login />)}</GuestRoute> },
+          { path: 'register', element: <GuestRoute>{withSuspense(<Register />)} </GuestRoute> },
+          {
+            path: 'forgot-password',
+            element: <GuestRoute> {withSuspense(<ForgotPassword />)}</GuestRoute>,
+          },
         ],
       },
       { path: '*', element: withSuspense(<NotFound />) },

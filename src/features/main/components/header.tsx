@@ -23,7 +23,7 @@ export default function Header() {
   const getPath = (path: string) => (path ? `/${locale}/${path}` : `/${locale}`);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
+    <header className="absolute inset-x-0 top-0 z-20 ">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <img src={logo} alt="Super Fitness" className="h-12 w-auto" />
 

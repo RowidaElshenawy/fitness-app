@@ -114,8 +114,8 @@ export default function AiChat() {
   return (
     <div
       className={cn(
-        'fixed rtl:left-20 ltr:right-20 flex flex-col items-center z-222',
-        openChat ? ' bottom-0' : ' bottom-30'
+        'fixed  flex flex-col items-center z-10 sm:rtl:left-20 sm:ltr:right-20',
+        openChat ? ' bottom-0  inset-x-0 sm:inset-x-auto ' : ' bottom-30 rtl:left-4 ltr:right-4 '
       )}
     >
       <Button variant="ai" onClick={() => handleAiChat()}>
