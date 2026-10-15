@@ -37,7 +37,11 @@ const KycWeightField = ({ value, onSave, disabled = false }: KycWeightFieldProps
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-36" aria-label={t('profile.weight')}>
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto w-full max-w-38"
+      aria-label={t('profile.weight')}
+    >
       <div className="relative w-full">
         <Input
           id="profile-weight"
@@ -47,7 +51,7 @@ const KycWeightField = ({ value, onSave, disabled = false }: KycWeightFieldProps
           onChange={(event) => setWeight(event.target.value)}
           disabled={disabled}
           aria-label={t('profile.weight')}
-          className="h-8 w-full border-background bg-transparent px-4 text-background [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none placeholder:text-background/60 focus-visible:border-background focus-visible:ring-1 focus-visible:ring-background"
+          className="h-10 w-full border-background bg-transparent px-4 text-background [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none placeholder:text-background/60 focus-visible:border-background focus-visible:ring-1 focus-visible:ring-background"
         />
 
         <span className="pointer-events-none absolute top-1/2 inset-e-20 -translate-y-1/2 text-sm text-background">

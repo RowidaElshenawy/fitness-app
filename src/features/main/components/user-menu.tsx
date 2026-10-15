@@ -47,6 +47,9 @@ export default function UserMenu() {
 
       {open && (
         <div className="absolute end-0 top-full z-30 mt-3 flex w-48 flex-col gap-5 rounded-2xl  p-4 shadow-lg">
+          <Button size="sm" icon={<ArrowUpRight />} onClick={() => go('profile')}>
+            {t('main.header.nav.profile')}
+          </Button>
           <Button size="sm" icon={<ArrowUpRight />} onClick={() => go('login')}>
             {t('main.header.nav.login')}
           </Button>

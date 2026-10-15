@@ -35,39 +35,41 @@ const KycSelectField = ({
   const selectedOption = options.find((option) => option.value === value);
 
   return (
-    <div className="flex w-full items-center justify-between gap-4">
-      <span className="text-background">{label}</span>
+    <div className="flex w-full justify-center">
+      <div className="w-full max-w-55">
+        {label ? <span className="text-background">{label}</span> : null}
 
-      <Select
-        value={value}
-        onValueChange={(value) => {
-          if (value !== null) {
-            onChange(value);
-          }
-        }}
-        disabled={disabled}
-      >
-        <SelectTrigger className="h-10 w-full max-w-48 cursor-pointer border border-background bg-transparent text-background">
-          <SelectValue>{selectedOption ? t(selectedOption.labelKey) : ''}</SelectValue>
-        </SelectTrigger>
-
-        <SelectContent
-          side="bottom"
-          align="start"
-          sideOffset={4}
-          className="border border-background bg-bg-plain"
+        <Select
+          value={value}
+          onValueChange={(value) => {
+            if (value !== null) {
+              onChange(value);
+            }
+          }}
+          disabled={disabled}
         >
-          {options.map((option) => (
-            <SelectItem
-              key={option.value}
-              value={option.value}
-              className="cursor-pointer text-text-plain hover:bg-bg-subtle hover:text-text-plain"
-            >
-              {t(option.labelKey)}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+          <SelectTrigger className="h-10 w-full cursor-pointer border border-background bg-transparent text-background">
+            <SelectValue>{selectedOption ? t(selectedOption.labelKey) : ''}</SelectValue>
+          </SelectTrigger>
+
+          <SelectContent
+            side="bottom"
+            align="start"
+            sideOffset={4}
+            className="border border-background bg-bg-plain"
+          >
+            {options.map((option) => (
+              <SelectItem
+                key={option.value}
+                value={option.value}
+                className="cursor-pointer text-text-plain hover:bg-bg-subtle hover:text-text-plain"
+              >
+                {t(option.labelKey)}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 };

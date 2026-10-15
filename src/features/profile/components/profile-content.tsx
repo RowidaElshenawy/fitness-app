@@ -68,13 +68,13 @@ const ProfileContent = () => {
   };
 
   return (
-    <div className="w-full px-4 pt-20 sm:px-6 lg:px-8">
+    <div className="px-4 pb-6 pt-28 sm:px-6 sm:pb-8 lg:px-32 xl:px-96 lg:pb-0">
       {/* KYC */}
-      <div className="mb-10 mx-auto grid w-full gap-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-2">
         {/* Goal */}
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-3 text-center">
           <span className="text-background text-2xl font-semibold">{t('profile.goal')}</span>
-          <span className="text-xs text-background/60 uppercase">{t('profile.tap-to-change')}</span>
+          <span className="text-xs uppercase text-background/60">{t('profile.tap-to-change')}</span>
           <KycSelectField
             value={goal}
             options={GOAL_OPTIONS}
@@ -84,11 +84,11 @@ const ProfileContent = () => {
         </div>
 
         {/* Activity level */}
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-3 text-center">
           <span className="text-background text-2xl font-semibold">
             {t('profile.activity-level')}
           </span>
-          <span className="text-xs text-background/60 uppercase">{t('profile.tap-to-change')}</span>
+          <span className="text-xs uppercase text-background/60">{t('profile.tap-to-change')}</span>
           <KycSelectField
             value={activityLevel}
             options={ACTIVITY_LEVEL_OPTIONS}
@@ -98,9 +98,9 @@ const ProfileContent = () => {
         </div>
 
         {/* Weight */}
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col items-center gap-3 text-center">
           <span className="text-background text-2xl font-semibold">{t('profile.weight')}</span>
-          <span className="text-xs text-background/60 uppercase">{t('profile.tap-to-change')}</span>
+          <span className="text-xs uppercase text-background/60">{t('profile.tap-to-change')}</span>
           <KycWeightField
             value={weight}
             onSave={(value) => editProfileMutation({ weight: value })}

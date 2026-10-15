@@ -1,12 +1,12 @@
+import ProfileBackground from '@/features/profile/components/profile-background';
 import ProfileContent from '@/features/profile/components/profile-content';
-import LayoutBackground from '@/shared/components/auth/layout-background';
 
 const Profile = () => {
   return (
-    <>
-      <LayoutBackground />
+    <div className="relative min-h-screen w-full">
+      <ProfileBackground />
       <ProfileContent />
-    </>
+    </div>
   );
 };
 
