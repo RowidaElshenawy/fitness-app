@@ -74,6 +74,7 @@
         "about": "About",
         "classes": "Classes",
         "healthy": "Healthy",
+        "profile": "PROFILE",
         "login": "LOGIN",
         "signup": "SIGN UP"
       },
@@ -190,6 +191,35 @@
         "something-went-wrong": "Something went wrong. Please try again."
       }
     },
+    "kyc": {
+      "gender-title": "tell us about yourself!",
+      "gender-subtitle": "We Need To Know Your Gender,",
+      "age-title": "How Old Are you ?",
+      "weight-title": "what is your weight ?",
+      "height-title": "what is your height ?",
+      "hint": "this helps us create Your personalized plan",
+      "goal-title": "What Is Your Goal ?",
+      "goal": {
+        "gain-weight": "Gain Weight",
+        "lose-weight": "Lose Weight",
+        "get-fitter": "Get Fitter",
+        "gain-flexibility": "Gain More Flexible",
+        "learn-basics": "Learn The Basic"
+      },
+      "activity": {
+        "rookie": "Rookie",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advance": "Advance",
+        "true-beast": "True Beast"
+      },
+      "activity-title": "Your Regular Physical Activity Level ?",
+      "units": {
+        "years-old": "Years Old",
+        "kg": "KG",
+        "cm": "CM"
+      }
+    },
     "forgot-password": {
       "find-account": "Find your account",
       "enter-email": "Enter your email",
@@ -215,35 +245,6 @@
     "description": "This page doesn't exist or has moved. Head back home or pick up your journey with one of our classes.",
     "back-home": "Back to Home",
     "explore-classes": "Explore Classes"
-  },
-  "kyc": {
-    "gender-title": "tell us about yourself!",
-    "gender-subtitle": "We Need To Know Your Gender,",
-    "age-title": "How Old Are you ?",
-    "weight-title": "what is your weight ?",
-    "height-title": "what is your height ?",
-    "hint": "this helps us create Your personalized plan",
-    "goal-title": "What Is Your Goal ?",
-    "goal": {
-      "gain-weight": "Gain Weight",
-      "lose-weight": "Lose Weight",
-      "get-fitter": "Get Fitter",
-      "gain-flexibility": "Gain More Flexible",
-      "learn-basics": "Learn The Basic"
-    },
-    "activity": {
-      "rookie": "Rookie",
-      "beginner": "Beginner",
-      "intermediate": "Intermediate",
-      "advance": "Advance",
-      "true-beast": "True Beast"
-    },
-    "activity-title": "Your Regular Physical Activity Level ?",
-    "units": {
-      "years-old": "Years Old",
-      "kg": "KG",
-      "cm": "CM"
-    }
   },
   "why-us": {
     "features": {
