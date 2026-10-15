@@ -269,6 +269,7 @@
     }
   },
   "about-us": {
+    "description": "We offer a fitness journey that's tailored to your goals, supported by professional trainers and a welcoming community. Whether it's weight loss, strength building, or overall wellness, our proven methods will get you there.",
     "features": {
       "personal-trainer": {
         "title": "Personal Trainer",
@@ -276,7 +277,7 @@
       },
       "cardio-programs": {
         "title": "Cardio Programs",
-        "description": "From steady-state cardio to interval sprints, our treadmill programs."
+        "description": "From steady-state cardio to interval sprints, our treadmill programs fit every level."
       },
       "quality-equipment": {
         "title": "Quality Equipment",
@@ -286,6 +287,12 @@
         "title": "Healthy Nutrition",
         "description": "Fuel your fitness journey with customized meal plans for you."
       }
+    },
+    "explore-more": "Explore More",
+    "images": {
+      "kettlebell": "Athlete working out with a kettlebell",
+      "after-workout": "Male athlete resting after a workout",
+      "dark-gym": "Athlete training in a gym"
     }
   },
   "sec-header": {

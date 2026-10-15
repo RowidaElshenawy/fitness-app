@@ -23,30 +23,31 @@ export default function AboutSection() {
   }));
 
   return (
-    <main className="min-h-screen bg-[#f5f2ef] px-20 py-8 text-[#1d1d1f] lg:px-8 lg:py-10">
-      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
-        <div className="relative mx-auto flex sm:h-[740px] h-96 w-full  items-center justify-center">
-          <div className="absolute left-1 top-0 h-3/4 w-3/5 overflow-hidden rounded-[30px] bg-[#d7d5d2] shadow-[0_40px_70px_rgba(32,24,22,0.18)]">
+    <main className="min-h-screen overflow-hidden bg-[#f5f2ef] px-4 pt-28 pb-12 text-[#1d1d1f] md:px-10 lg:px-20 lg:pt-32">
+      <div className="mx-auto grid max-w-360 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        {/* image collage keeps its proportions at every width */}
+        <div className="relative mx-auto aspect-5/6 w-full max-w-150">
+          <div className="absolute start-0 top-0 h-[72%] w-[58%] overflow-hidden rounded-[30px] bg-[#d7d5d2] shadow-[0_40px_70px_rgba(32,24,22,0.18)]">
             <img
               src={aboutImage}
-              alt="Athlete working out with a kettlebell"
+              alt={t('about-us.images.kettlebell')}
               className="h-full w-full object-cover"
             />
           </div>
 
-          <div className="absolute  right-0  top-4/37 h-1/4 w-3/8 overflow-hidden rounded-[28px] bg-[#d9d4d0] shadow-[0_25px_50px_rgba(32,24,22,0.15)]">
+          <div className="absolute end-0 top-[10%] h-[24%] w-[38%] overflow-hidden rounded-[28px] bg-[#d9d4d0] shadow-[0_25px_50px_rgba(32,24,22,0.15)]">
             <img
               src={aboutImage2}
-              alt="Male athlete posing after a workout"
-              className="h-full w-full object-cover object-center"
+              alt={t('about-us.images.after-workout')}
+              className="h-full w-full object-cover object-left"
             />
           </div>
 
-          <div className="absolute bottom-0 right-0 h-3/5 w-3/5 overflow-hidden rounded-[30px] bg-[#d9d4d0] shadow-[0_35px_60px_rgba(32,24,22,0.16)]">
+          <div className="absolute end-0 bottom-0 h-[58%] w-[58%] overflow-hidden rounded-[30px] bg-[#d9d4d0] shadow-[0_35px_60px_rgba(32,24,22,0.16)]">
             <img
               src={aboutImage3}
-              alt="Athlete training in a dark gym"
-              className="h-full w-full object-cover object-center"
+              alt={t('about-us.images.dark-gym')}
+              className="h-full w-full object-cover object-top"
             />
           </div>
         </div>
@@ -54,7 +55,7 @@ export default function AboutSection() {
         <div className="">
           <div className="relative pt-10 pb-10 md:pt-14">
             {/* big outlined word */}
-            <SectionBgWord className="top-0 left-0 z-0 translate-x-0 rtl:right-0 rtl:left-auto text-7xl tracking-normal md:text-9xl [-webkit-text-stroke:2px_rgba(0,0,0,0.18)] mask-[linear-gradient(to_bottom,black_30%,transparent)]">
+            <SectionBgWord className="top-0 left-0 z-0 translate-x-0 rtl:right-0 rtl:left-auto text-6xl tracking-normal sm:text-7xl md:text-9xl lg:text-8xl xl:text-9xl [-webkit-text-stroke:2px_rgba(0,0,0,0.18)] mask-[linear-gradient(to_bottom,black_30%,transparent)]">
               {t('main.workouts.bg-word')}
             </SectionBgWord>
             <SecHeader
@@ -65,9 +66,7 @@ export default function AboutSection() {
           </div>
           <SecTitle translationKey="why-us.sec-title.about-us" />
           <p className="font-rubik pb-4 md:pb-10 text-lg leading-7 text-text-plain">
-            We offer a fitness journey that's tailored to your goals, supported by professional
-            trainers and a welcoming community. Whether it's weight loss, strength building, or
-            overall wellness, our proven methods.
+            {t('about-us.description')}
           </p>
           <div className=" grid gap-x-12 gap-y-8 md:grid-cols-2 border-b border">
             {featureList.map((feature) => (
@@ -110,7 +109,7 @@ export default function AboutSection() {
             ))}
             <div>
               <Button variant="outline" icon={<ArrowUpRight />}>
-                Explore More
+                {t('about-us.explore-more')}
               </Button>
             </div>
           </div>
