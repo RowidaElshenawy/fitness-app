@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu } from 'lucide-react';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store/store';
 
 import logo from '@/assets/image/logo.png';
 import { NAV_LINKS } from '../shared/constants';
@@ -14,6 +16,8 @@ export default function Header() {
   const { locale } = useParams();
 
   const [open, setOpen] = useState(false);
+
+  const user = useSelector((state: RootState) => state.auth.user);
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `text-sm font-semibold transition-colors hover:text-bg-primary ${
@@ -42,6 +46,8 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          {user && <span className="text-text-plain text-sm font-semibold">{user.firstName}</span>}
+
           <UserMenu />
 
           <Button

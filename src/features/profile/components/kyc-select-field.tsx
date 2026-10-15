@@ -37,7 +37,7 @@ const KycSelectField = ({
   return (
     <div className="flex w-full justify-center">
       <div className="w-full max-w-55">
-        {label ? <span className="text-background">{label}</span> : null}
+        {label ? <span className="text-text-plain">{label}</span> : null}
 
         <Select
           value={value}
@@ -48,7 +48,7 @@ const KycSelectField = ({
           }}
           disabled={disabled}
         >
-          <SelectTrigger className="h-10 w-full cursor-pointer border border-background bg-transparent text-background">
+          <SelectTrigger className="h-10 w-full cursor-pointer border-border-plain bg-transparent text-text-plain">
             <SelectValue>{selectedOption ? t(selectedOption.labelKey) : ''}</SelectValue>
           </SelectTrigger>
 

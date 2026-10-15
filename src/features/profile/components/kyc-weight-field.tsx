@@ -51,17 +51,17 @@ const KycWeightField = ({ value, onSave, disabled = false }: KycWeightFieldProps
           onChange={(event) => setWeight(event.target.value)}
           disabled={disabled}
           aria-label={t('profile.weight')}
-          className="h-10 w-full border-background bg-transparent px-4 text-background [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none placeholder:text-background/60 focus-visible:border-background focus-visible:ring-1 focus-visible:ring-background"
+          className="h-10 w-full border-border-plain bg-transparent px-4 text-text-plain [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none placeholder:text-text-plain/60 focus-visible:border-border-plain focus-visible:ring-1 focus-visible:ring-background"
         />
 
-        <span className="pointer-events-none absolute top-1/2 inset-e-20 -translate-y-1/2 text-sm text-background">
+        <span className="pointer-events-none absolute top-1/2 inset-e-20 -translate-y-1/2 text-sm text-text-plain">
           {t('auth.kyc.units.kg')}
         </span>
 
         <Button
           type="submit"
           disabled={disabled || !currentWeight || Number(currentWeight) === value}
-          className="absolute top-1/2 inset-e-1 h-8 -translate-y-1/2 cursor-pointer bg-bg-primary px-3 text-background hover:bg-bg-primary/80"
+          className="absolute top-1/2 inset-e-1 h-8 -translate-y-1/2 cursor-pointer bg-bg-primary px-3 text-text-plain hover:bg-bg-primary/80"
         >
           {disabled ? <Loader2 className="size-4 animate-spin" /> : t('profile.save')}
         </Button>
