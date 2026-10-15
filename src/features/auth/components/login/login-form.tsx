@@ -6,8 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import type { TLoginField } from '../../types/login-field';
 import { useLogin } from '../../hooks/use-login';
 import { useTranslation } from 'react-i18next';
-import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 import { useParams } from 'react-router-dom';
+import ErrorAlert from '@/shared/components/custom-ui/error-alert';
 
 const LoginForm = () => {
   //translation
@@ -39,7 +39,7 @@ const LoginForm = () => {
         linkTitle={t('auth.login.register')}
         title={t('auth.login.title')}
         forgotPassword={t('auth.login.forgot-password')}
-        or={t('auth.login.or')}
+        or={t('auth.or')}
         href={`/${locale}/register`}
         form={form}
         onSubmit={onSubmit}

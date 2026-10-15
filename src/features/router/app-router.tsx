@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react';
 import LocaleLayout from './layouts/locale-layout/locale-layout';
 import MainLayout from './layouts/main-layout/main-layout';
 import AuthLayout from './layouts/auth-layout/auth-layout';
+// import AuthLayout from './layouts/auth-layout/auth-layout';
 
 const Home = lazy(() => import('@/app/main-pages/home'));
 const About = lazy(() => import('@/app/main-pages/about'));

@@ -10,8 +10,8 @@ import { useMealCategories } from '@/features/healthy/hooks/use-meal-categories'
 import { useMealsByCategory } from '@/features/healthy/hooks/use-meals-by-category';
 import SectionBgWord from '@/features/main/shared/sec-bg-word';
 import SecHeader from '@/features/main/shared/sec-header';
-import TabsSkeleton from '@/features/main/skeleton/tabs-skeleton';
 import SecTitle from '@/features/main/shared/sec-title';
+import TabsSkeleton from '@/features/main/skeleton/tabs-skeleton';
 
 const MEALS_LIMIT = 6;
 
@@ -29,7 +29,7 @@ export default function MealSection() {
   //translation
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { locale } = useParams();
+  const { locale = 'en' } = useParams();
   //state
   const [selectedCategory, setSelectedCategory] = useState<string>();
   //queries
@@ -37,8 +37,11 @@ export default function MealSection() {
   const activeCategory = selectedCategory ?? categories.data?.[0]?.strCategory;
   const meals = useMealsByCategory(activeCategory);
 
-  const isError = categories.isError || meals.isError;
-  const isLoading = categories.isPending || meals.isPending;
+  // Only treat it as an error when there's no cached data to fall back on
+  const isError = (categories.isError && !categories.data) || (meals.isError && !meals.data);
+  // meals stays "pending" while disabled (no category yet), so only count it once we have one
+  const isLoading = categories.isPending || (!!activeCategory && meals.isPending);
+  const mealsList = meals.data ?? [];
 
   const handleRetry = () => {
     if (categories.isError) categories.refetch();
@@ -49,6 +52,7 @@ export default function MealSection() {
     if (!activeCategory) return;
     navigate(`/${locale}/healthy/${mealId}?category=${encodeURIComponent(activeCategory)}`);
   };
+
   const renderMeals = () => {
     if (isError) {
       return (
@@ -61,17 +65,22 @@ export default function MealSection() {
       );
     }
     if (isLoading) return <MealCardsSkeleton />;
-    if (meals.data.length === 0) {
+    if (mealsList.length === 0) {
       return <p className="py-16 text-center text-text-plain">{t('main.healthy.empty')}</p>;
     }
 
     return (
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {meals.data.slice(0, MEALS_LIMIT).map((meal) => (
+        {mealsList.slice(0, MEALS_LIMIT).map((meal) => (
           <Card
             key={meal.idMeal}
+            role="link"
+            tabIndex={0}
             className="aspect-square max-w-none cursor-pointer"
             onClick={() => handleExplore(meal.idMeal)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleExplore(meal.idMeal);
+            }}
           >
             <CardImage src={meal.strMealThumb} alt={meal.strMeal} />
 

@@ -34,6 +34,7 @@ const VerifyCodeStep = ({ isPending, error }: VerifyCodeStepProps) => {
             disabled={isPending}
             error={!!fieldState.error}
             errorMessage={translateError(t)(fieldState.error?.message)}
+            className="my-4"
           />
         )}
       />

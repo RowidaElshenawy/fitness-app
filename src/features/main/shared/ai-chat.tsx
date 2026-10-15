@@ -10,7 +10,8 @@ import CustomInput from '@/shared/components/custom-ui/custom-input';
 import chatBg from '@/assets/ai-chat-background.jpg';
 import aiPhoto from '@/assets/ai-photo.jpg';
 import { loadChats, makeTitle, saveChats, type TConversation } from '../types/chat-storage';
-
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/store/store';
 export default function AiChat() {
   //translation
   const { t } = useTranslation();
@@ -25,6 +26,7 @@ export default function AiChat() {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const user = useSelector((state: RootState) => state.auth.user);
   useEffect(() => {
     saveChats({ conversations, activeId });
   }, [conversations, activeId]);
@@ -156,7 +158,7 @@ export default function AiChat() {
                       className="flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-semibold text-text-inverse outline-none data-[highlighted]:bg-white/10 data-[disabled]:opacity-50"
                     >
                       <Plus className="h-4 w-4" />
-                      {t('main.ai.chat-ai.new-chat')}
+                      {t('main.ai.ai.chat-ai.new-chat')}
                     </Menu.Item>
 
                     <Menu.Separator className="my-1 h-px bg-white/20" />
@@ -213,13 +215,18 @@ export default function AiChat() {
                   {message.content}
                 </p>
 
-                {message.role === 'user' && (
-                  <img
-                    src={aiPhoto}
-                    alt="user-photo"
-                    className="w-9 h-9 rounded-full shadow-shadow-primary"
-                  />
-                )}
+                {message.role === 'user' &&
+                  (user?.photo ? (
+                    <img
+                      src={user.photo}
+                      alt="user-photo"
+                      className="w-9 h-9 rounded-full object-cover shadow-shadow-primary"
+                    />
+                  ) : (
+                    <div className="w-9 h-9 shrink-0 rounded-full bg-bg-primary text-text-inverse flex items-center justify-center font-bold shadow-shadow-primary">
+                      {user?.firstName?.charAt(0).toUpperCase() ?? '?'}
+                    </div>
+                  ))}
               </div>
             ))}
             {loading && (
