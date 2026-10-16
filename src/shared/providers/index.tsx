@@ -2,6 +2,7 @@ import ReduxProvider from './providers/redux-provider';
 import ReactQueryProvider from './providers/react-query-provider';
 import type { ReactNode } from 'react';
 import { Toaster } from '../components/ui/sonner';
+import ThemeProvider from './providers/theme-provider';
 
 type ProvidersProps = {
   children: ReactNode;
@@ -10,10 +11,12 @@ type ProvidersProps = {
 function Providers({ children }: ProvidersProps) {
   return (
     <ReduxProvider>
-      <ReactQueryProvider>
-        {children}
-        <Toaster />
-      </ReactQueryProvider>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ReactQueryProvider>
+          {children}
+          <Toaster />
+        </ReactQueryProvider>
+      </ThemeProvider>
     </ReduxProvider>
   );
 }
