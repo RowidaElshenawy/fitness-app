@@ -16,7 +16,7 @@ export default function SecHeader({ titleKey, className = '' }: SecHeaderProps) 
         className="h-[34px] w-[34px]   "
       />
 
-      <h3 className=" pt-1.5   text-sm  font-semibold text-text-primary ">{t(titleKey)}</h3>
+      <h3 className=" pt-1.5  text-sm  font-semibold text-text-primary ">{t(titleKey)}</h3>
     </div>
   );
 }

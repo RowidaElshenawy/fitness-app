@@ -60,7 +60,7 @@ export default function ClassesSectionDetail() {
 
   return (
     <MasterDetailLayout
-      bgWord={t('main.classes.bg-word')}
+      bgWord={t('main.workouts.bg-word')}
       header={<MuscleGroupTabs value={activeGroupId} onChange={handleGroupChange} />}
       sidebarHeader={
         !difficulties?.length ? (

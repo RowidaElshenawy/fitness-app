@@ -161,18 +161,18 @@ export default function ClassesSection() {
 
   return (
     <section
-      className="relative isolate w-full overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="relative isolate w-full overflow-hidden bg-cover bg-center bg-no-repeat pt-17"
       style={{ backgroundImage: `url(${workoutsBg})` }}
     >
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 z-0 h-full bg-white/60 backdrop-blur-md dark:bg-[#242424]/60"
+        className="absolute inset-x-0 top-0 z-0 h-full bg-bg-plain/60 backdrop-blur-md "
       />
 
-      <SectionBgWord>{t('main.classes.bg-word')}</SectionBgWord>
+      <SectionBgWord className={'pt-18'}>{t('main.workouts.bg-word')}</SectionBgWord>
 
-      <div className="relative z-10 mx-auto max-w-360 px-4 pt-12 pb-16 md:px-8 xl:px-20">
-        <SecHeader titleKey="sec-header.fitness-classes" className="justify-center" />
+      <div className="relative z-10 mx-auto max-w-360 px-4 pt-12 pb-16 md:px-8 xl:px-20 ">
+        <SecHeader titleKey="sec-header.fitness-classes" className="justify-center " />
 
         <SecTitle
           translationKey="why-us.sec-title.fitness-classes"

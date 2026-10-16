@@ -6,9 +6,19 @@ import HeroStats from './hero-stats';
 import { Button } from '@/shared/components/ui/button';
 import { ArrowUpRight } from 'lucide-react';
 import MarqueeComponent from '@/shared/components/custom-ui/footer/marquee';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Hero() {
   const { t } = useTranslation('');
+  const { locale } = useParams();
+  const navigate = useNavigate();
+  const [, setOpen] = useState(false);
+  const go = (path: string) => {
+    setOpen(false);
+    navigate(`/${locale}/${path}`);
+  };
 
   return (
     <section className="relative isolate min-h-screen overflow-hidden bg-bg-soft">
@@ -31,18 +41,29 @@ export default function Hero() {
             {t('main.header.hero.title.part2')}
           </h1>
 
-          <p className="max-w-md border-s-4 border-border-primary ps-3 text-sm leading-relaxed text-neutral-800">
+          <p className="max-w-md border-s-4 border-border-primary ps-3 text-sm leading-relaxed text-text-plain">
             {t('main.header.hero.description')}
           </p>
 
           <HeroStats />
 
           <div className="flex gap-20 justify-center md:justify-start ">
-            <Button size="lg" icon={<ArrowUpRight />}>
-              {t('getStarted')}
+            <Button
+              size="lg"
+              icon={<ArrowUpRight />}
+              className="text-text-plain"
+              onClick={() => go('classes')}
+            >
+              {t('main.header.hero.getStarted')}
             </Button>
-            <Button variant="outline" size="lg" icon={<ArrowUpRight />}>
-              {t('exploreMore')}
+            <Button
+              variant="outline"
+              size="lg"
+              icon={<ArrowUpRight />}
+              className="text-text-primary"
+              onClick={() => go('healthy')}
+            >
+              {t('main.header.hero.exploreMore')}
             </Button>
           </div>
         </div>

@@ -84,7 +84,7 @@ function Button({
               className={cn(
                 'absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2',
                 'flex size-8 items-center justify-center rounded-full',
-                'bg-bg-primary text-text-inverse',
+                'bg-bg-primary text-text-plain',
                 'shadow-sm'
               )}
             >
@@ -99,7 +99,7 @@ function Button({
               className={cn(
                 'absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2',
                 'flex size-8 items-center justify-center rounded-full',
-                'bg-bg-primary text-text-inverse',
+                'bg-bg-primary text-text-plain',
                 'ring-2 ring-bg-plain',
                 'shadow-sm'
               )}
