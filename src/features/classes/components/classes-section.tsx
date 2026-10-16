@@ -16,34 +16,12 @@ import { useMuscleGroups } from '@/features/main/hooks/use-muscle-groups';
 import SectionBgWord from '@/features/main/shared/sec-bg-word';
 import SecHeader from '@/features/main/shared/sec-header';
 import SecTitle from '@/features/main/shared/sec-title';
+import CardsSkeleton from '@/features/main/skeleton/cards-skeleton';
 
 import type { IExercise } from '@/features/classes/types/exercise';
 
 const EXERCISES_LIMIT = 6;
 const RECOMMENDATION_LIMIT = 5;
-
-function CardsSkeleton({ count }: { count: number }) {
-  return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {Array.from({ length: count }, (_, i) => (
-        <div key={i} className="aspect-square w-full animate-pulse rounded-2xl bg-bg-soft" />
-      ))}
-    </div>
-  );
-}
-
-function CarouselSkeleton() {
-  return (
-    <div className="flex gap-6 overflow-hidden px-6">
-      {Array.from({ length: RECOMMENDATION_LIMIT }, (_, i) => (
-        <div
-          key={i}
-          className="aspect-square w-60 shrink-0 animate-pulse rounded-2xl bg-bg-soft md:w-72"
-        />
-      ))}
-    </div>
-  );
-}
 
 function ExerciseCards({
   exercises,
@@ -112,8 +90,7 @@ export default function ClassesSection() {
   );
 
   const renderExercises = () => {
-    if (groupsQuery.isPending || exercisesQuery.isPending)
-      return <CardsSkeleton count={EXERCISES_LIMIT} />;
+    if (groupsQuery.isPending || exercisesQuery.isPending) return <CardsSkeleton />;
     if (groupsQuery.isError) return renderError(() => groupsQuery.refetch());
     if (!groups.length) return renderEmpty();
     if (exercisesQuery.isError) return renderError(() => exercisesQuery.refetch());
@@ -132,8 +109,7 @@ export default function ClassesSection() {
     if (recommendationsQuery.isPending)
       return (
         <div className="mt-14">
-          <div className="mb-6 h-9 w-64 animate-pulse rounded-lg bg-bg-soft" />
-          <CarouselSkeleton />
+          <CardsSkeleton />
         </div>
       );
     if (recommendationsQuery.isError || !recommendations.length) return null;
