@@ -127,7 +127,6 @@
       }
     }
   },
-
   "profile": {
     "goal": "Goal",
     "activity-level": "Activity Level",
@@ -262,6 +261,12 @@
         "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
       }
     },
+    "images": {
+      "trainer": "Trainer in a gym",
+      "standing": "Man standing in the gym",
+      "dumbbells": "Athlete lifting dumbbells",
+      "stretching": "Athlete stretching"
+    },
     "sec-title": {
       "why-us": "Elevate fitness with the <highlight>best way</highlight> possible",
       "description": "We offer a fitness journey that's tailored to your goals, supported by professional trainers and a welcoming community. Whether it's weight loss, strength building, or overall wellness, our proven methods",
@@ -270,11 +275,40 @@
       "about-us": "Empowering you to achieve <highlight>your fitness</highlight> goals",
       "fitness-classes": "Transform Your Body with Our Dynamic <highlight>Upcoming Workouts</highlight>",
       "healthy-nutritions": "Fuel your fitness journey with customized <highlight>meal plans</highlight> for you"
+    },
+    "paragraph": "We offer a fitness journey that's tailored to your goals, supported by professional trainers and a welcoming community. Whether it's weight loss, strength building, or overall wellness, our proven methods.",
+    "background-title": "Why us"
+  },
+  "about-us": {
+    "description": "We offer a fitness journey that's tailored to your goals, supported by professional trainers and a welcoming community. Whether it's weight loss, strength building, or overall wellness, our proven methods will get you there.",
+    "features": {
+      "personal-trainer": {
+        "title": "Personal Trainer",
+        "description": "Achieve your fitness goals with the guidance of our certified trainers."
+      },
+      "cardio-programs": {
+        "title": "Cardio Programs",
+        "description": "From steady-state cardio to interval sprints, our treadmill programs fit every level."
+      },
+      "quality-equipment": {
+        "title": "Quality Equipment",
+        "description": "Our gym is equipped with the latest cardio & strength machines."
+      },
+      "healthy-nutrition": {
+        "title": "Healthy Nutrition",
+        "description": "Fuel your fitness journey with customized meal plans for you."
+      }
+    },
+    "explore-more": "Explore More",
+    "images": {
+      "kettlebell": "Athlete working out with a kettlebell",
+      "after-workout": "Male athlete resting after a workout",
+      "dark-gym": "Athlete training in a gym"
     }
   },
   "sec-header": {
     "why-us": "Why us",
-    "about-us": "About us",
+    "about-us": "About Us",
     "fitness-classes": "fitness class",
     "work-outs": "Workouts",
     "healthy-nutritions": "Healthy Nutritions",

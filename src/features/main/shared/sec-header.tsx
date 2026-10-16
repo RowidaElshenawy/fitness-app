@@ -1,11 +1,14 @@
 import { useTranslation } from 'react-i18next';
 
+import { cn } from '@/shared/lib/utils/tailwind-cn';
+
 interface SecHeaderProps {
   titleKey: string;
   className?: string;
+  titleClassName?: string;
 }
 
-export default function SecHeader({ titleKey, className = '' }: SecHeaderProps) {
+export default function SecHeader({ titleKey, className = '', titleClassName }: SecHeaderProps) {
   const { t } = useTranslation();
 
   return (
@@ -16,7 +19,9 @@ export default function SecHeader({ titleKey, className = '' }: SecHeaderProps) 
         className="h-[34px] w-[34px]   "
       />
 
-      <h3 className=" pt-1.5  text-sm  font-semibold text-text-primary ">{t(titleKey)}</h3>
+      <h3 className={cn('pt-1.5 text-sm font-semibold text-text-primary', titleClassName)}>
+        {t(titleKey)}
+      </h3>
     </div>
   );
 }
