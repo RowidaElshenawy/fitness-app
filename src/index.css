@@ -257,7 +257,7 @@ body {
   --bg-default: var(--color-zinc-600);
   --bg-inverse: var(--color-zinc-50);
   --bg-elevated: color-mix(in srgb, var(--color-black) 20%, transparent);
-  --bg-primary: var(--color-brand-orange-800);
+  --bg-primary: var(--color-brand-orange-600);
   --bg-primary-faint: color-mix(in srgb, var(--color-brand-orange-500) 50%, transparent);
   --bg-primary-fade: color-mix(in srgb, var(--color-brand-orange-500) 25%, transparent);
   --bg-overlay: color-mix(in srgb, var(--color-black) 60%, transparent);

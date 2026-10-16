@@ -57,7 +57,7 @@ const LoginRegisterDesign = ({
           {buttonTitle}
         </Button>
       </div>
-      <span className="font-sans font-normal text-base text-text-inverse mt-2">
+      <span className="font-sans font-normal text-base text-text-plain mt-2">
         {spanTitle}
         <Link
           to={href}

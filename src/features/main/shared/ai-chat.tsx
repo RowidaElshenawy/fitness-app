@@ -1,7 +1,7 @@
 import { Button } from '@/shared/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import aiImage from '@/assets/ai.png';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu } from '@base-ui/react/menu';
 import { AlignRight, Plus } from 'lucide-react';
 // import { useNavigate } from 'react-router-dom'; // LOGIN
@@ -27,6 +27,31 @@ export default function AiChat() {
   const [loading, setLoading] = useState(false);
 
   const user = useSelector((state: RootState) => state.auth.user);
+  const chatRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!openChat) return;
+
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      // Ignore clicks inside the chat or its dropdown menu
+      if (
+        chatRef.current?.contains(target) ||
+        target.closest('[role="menu"]') ||
+        target.closest('[role="menuitem"]')
+      ) {
+        return;
+      }
+
+      setOpenChat(false);
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [openChat]);
   useEffect(() => {
     saveChats({ conversations, activeId });
   }, [conversations, activeId]);
@@ -113,14 +138,20 @@ export default function AiChat() {
   };
   return (
     <div
+      ref={chatRef}
       className={cn(
         'fixed  flex flex-col items-center z-10 sm:rtl:left-20 sm:ltr:right-20',
         openChat ? ' bottom-0  inset-x-0 sm:inset-x-auto ' : ' bottom-30 rtl:left-4 ltr:right-4 '
       )}
     >
-      <Button variant="ai" onClick={() => handleAiChat()}>
+      <Button
+        variant="ai"
+        onClick={() => handleAiChat()}
+        className="transition-transform duration-300 ease-in-out active:scale-95"
+      >
         <div className="absolute bottom-9.5 flex items-center justify-center">
           <div className="absolute w-24 h-24 bg-bg-primary opacity-60 blur-xl rounded-full pointer-events-none" />
+
           <img src={aiImage} alt="ai-icon" className="relative z-10" />
         </div>
         {openChat ? t('main.ai.close') : t('main.ai.ask')}
@@ -144,24 +175,24 @@ export default function AiChat() {
               <Menu.Trigger
                 type="button"
                 aria-label={t('main.ai.menu')}
-                className="rounded-md p-1 text-text-inverse outline-none hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-border-primary"
+                className="rounded-md p-1 text-text-inverse outline-none hover:text-text-inverse/10 focus-visible:ring-2 focus-visible:ring-border-primary"
               >
                 <AlignRight className="h-6 w-6" />
               </Menu.Trigger>
 
               <Menu.Portal>
                 <Menu.Positioner sideOffset={8} align="end" className="z-50">
-                  <Menu.Popup className="max-h-72 w-56 overflow-y-auto rounded-lg border border-border-primary bg-black/80 py-1 shadow-lg backdrop-blur-md outline-none">
+                  <Menu.Popup className="max-h-72 w-56 overflow-y-auto rounded-lg border border-border-primary text-text-inverse/80 py-1 shadow-lg backdrop-blur-md outline-none">
                     <Menu.Item
                       onClick={handleNewChat}
                       disabled={loading}
-                      className="flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-semibold text-text-inverse outline-none data-[highlighted]:bg-white/10 data-[disabled]:opacity-50"
+                      className="flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-semibold text-text-inverse outline-none data-[highlighted]:text-text-inverse/10 data-[disabled]:opacity-50"
                     >
                       <Plus className="h-4 w-4" />
                       {t('main.ai.ai.chat-ai.new-chat')}
                     </Menu.Item>
 
-                    <Menu.Separator className="my-1 h-px bg-white/20" />
+                    <Menu.Separator className="my-1 h-px text-text-inverse/20" />
 
                     {conversations.length === 0 ? (
                       <p className="px-4 py-2 text-sm text-text-inverse/60">
@@ -174,8 +205,8 @@ export default function AiChat() {
                           disabled={loading}
                           onClick={() => setActiveId(conversation.id)}
                           className={cn(
-                            'cursor-pointer truncate px-4 py-2 text-sm text-text-inverse outline-none data-[highlighted]:bg-white/10 data-[disabled]:opacity-50',
-                            conversation.id === activeId && 'bg-white/20'
+                            'cursor-pointer truncate px-4 py-2 text-sm text-text-inverse outline-none data-[highlighted]:text-white/10 data-[disabled]:opacity-50',
+                            conversation.id === activeId && 'text-text-inverse/20'
                           )}
                         >
                           {conversation.title}
@@ -187,7 +218,21 @@ export default function AiChat() {
               </Menu.Portal>
             </Menu.Root>
           </div>
+
           <div className="relative z-10 flex-1 px-4 overflow-y-auto scrollbar-hide">
+            {messages.length === 0 && !loading && (
+              <div className="flex items-start gap-3 pb-6">
+                <img
+                  src={aiPhoto}
+                  alt="ai-photo"
+                  className="w-9 h-9 rounded-full object-cover shadow-shadow-primary"
+                />
+
+                <p className="w-52.5 rounded-tr-lg rounded-b-lg bg-bg-ai-chat p-3 text-lg font-normal text-text-inverse whitespace-pre-wrap break-words backdrop-blur-ai-chat shadow-shadow-ai-chat">
+                  Hello How Can I Assist You Today?
+                </p>
+              </div>
+            )}
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -236,7 +281,7 @@ export default function AiChat() {
                   alt="ai-photo"
                   className="w-9 h-9 rounded-full shadow-shadow-primary"
                 />
-                <p className="text-text-inverse text-lg rounded-tr-lg rounded-b-lg p-2 bg-bg-ai-chat backdrop-blur-ai-chat shadow-shadow-ai-chat animate-pulse">
+                <p className="text-text-inverse  text-lg rounded-tr-lg rounded-b-lg p-2 bg-bg-ai-chat backdrop-blur-ai-chat shadow-shadow-ai-chat animate-pulse">
                   ...
                 </p>
               </div>
@@ -256,7 +301,7 @@ export default function AiChat() {
 
           <CustomInput
             variant="ai"
-            className="px-8"
+            className="px-8 "
             value={input}
             // disabled={isLimitReached}
             onChange={(e) => setInput(e.target.value)}

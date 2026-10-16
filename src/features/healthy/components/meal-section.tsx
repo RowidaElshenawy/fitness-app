@@ -104,12 +104,12 @@ export default function MealSection() {
     >
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 z-0 h-full bg-white/60 backdrop-blur-md dark:bg-[#242424]/60"
+        className="absolute inset-x-0 top-0 z-0 h-full bg-bg-plain/60 backdrop-blur-md "
       />
 
-      <SectionBgWord>{t('main.healthy.bg-word')}</SectionBgWord>
+      <SectionBgWord className="pt-19">{t('main.healthy.bg-word')}</SectionBgWord>
 
-      <div className="relative z-10 mx-auto max-w-360 px-4 pt-12 pb-12 md:px-8 xl:px-20">
+      <div className="relative z-10 mx-auto max-w-360 px-4  pb-12 md:px-8 xl:px-20 pt-30">
         <SecHeader titleKey="sec-header.healthy-nutritions" className="justify-center" />
 
         <SecTitle

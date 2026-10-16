@@ -1,13 +1,15 @@
 import type { ComponentProps } from 'react';
 import { useTranslation } from 'react-i18next';
 
+//Variables
 const stepKeys = ['personalized-plans', 'results-driven', 'equipment'] as const;
 
 export default function FeatureList({ className = '', ...props }: ComponentProps<'ol'>) {
+  //Translation
   const { t } = useTranslation();
 
   return (
-    <ol className={` max-w-md list-none p-0 ${className}`} {...props}>
+    <ol className={`max-w-md list-none p-0 ${className}`} {...props}>
       {stepKeys.map((key, i) => {
         const isLast = i === stepKeys.length - 1;
         return (
@@ -26,11 +28,11 @@ export default function FeatureList({ className = '', ...props }: ComponentProps
               {String(i + 1).padStart(2, '0')}
             </span>
 
-            <div>
-              <h3 className="mb-1.5 text-md-custom font-bold leading-snug text-text-plain">
+            <div className="min-w-0 text-start">
+              <h3 className="mb-1.5 text-md-custom font-bold leading-snug rtl:leading-normal text-text-plain">
                 {t(`why-us.features.${key}.title`)}
               </h3>
-              <p className="text-base leading-relaxed text-text-plain">
+              <p className="text-base leading-relaxed rtl:leading-loose text-text-plain">
                 {t(`why-us.features.${key}.description`)}
               </p>
             </div>

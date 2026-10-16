@@ -2,12 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, User } from 'lucide-react';
+import { useSelector } from 'react-redux';
+
 import { Button } from '@/shared/components/ui/button';
+import type { RootState } from '@/store/store';
 
 export default function UserMenu() {
   const { t } = useTranslation();
   const { locale } = useParams();
   const navigate = useNavigate();
+
+  const isLoggedIn = useSelector((state: RootState) => Boolean(state.auth.token));
+
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -17,11 +23,14 @@ export default function UserMenu() {
         setOpen(false);
       }
     };
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(false);
     };
+
     document.addEventListener('mousedown', onClick);
     document.addEventListener('keydown', onKey);
+
     return () => {
       document.removeEventListener('mousedown', onClick);
       document.removeEventListener('keydown', onKey);
@@ -50,17 +59,19 @@ export default function UserMenu() {
           <Button size="sm" icon={<ArrowUpRight />} onClick={() => go('profile')}>
             {t('main.header.nav.profile')}
           </Button>
-          <Button size="sm" icon={<ArrowUpRight />} onClick={() => go('login')}>
-            {t('main.header.nav.login')}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            icon={<ArrowUpRight />}
-            onClick={() => go('register')}
-          >
-            {t('main.header.nav.signup')}
-          </Button>
+          {!isLoggedIn && (
+            <>
+              <Button size="sm" onClick={() => go('login')}>
+                <ArrowUpRight />
+                {t('main.header.nav.login')}
+              </Button>
+
+              <Button variant="outline" size="sm" onClick={() => go('register')}>
+                <ArrowUpRight />
+                {t('main.header.nav.signup')}
+              </Button>
+            </>
+          )}
         </div>
       )}
     </div>

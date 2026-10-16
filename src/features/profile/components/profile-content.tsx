@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useTheme } from 'next-themes';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { type RootState } from '@/store/store';
@@ -19,7 +20,6 @@ import KycSelectField from '@/features/profile/components/kyc-select-field';
 import KycWeightField from '@/features/profile/components/kyc-weight-field';
 import ProfileActionCard from '@/features/profile/components/profile-action-card';
 import { useEditProfile } from '@/features/profile/hooks/use-edit-profile';
-import { useTheme } from '@/features/profile/hooks/use-theme';
 import type { ActivityLevel, Goal } from '@/features/auth/types/register';
 import { ACTIVITY_LEVEL_OPTIONS } from '@/features/auth/components/register/steps/activity-step';
 import { GOAL_OPTIONS } from '@/features/auth/components/register/steps/goal-step';
@@ -39,9 +39,9 @@ const ProfileContent = () => {
   const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
 
-  // Custom hooks
+  // Hooks
   const { mutate: editProfileMutation, isPending } = useEditProfile();
-  const { theme, changeTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   // Authentication guard
   if (!user) {
@@ -58,8 +58,7 @@ const ProfileContent = () => {
   };
 
   const handleThemeChange = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    changeTheme(nextTheme);
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   const handleLanguageChange = () => {

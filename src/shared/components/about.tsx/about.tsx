@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/shared/components/ui/button';
 import SecHeader from '@/features/main/shared/sec-header';
 import SecTitle from '@/features/main/shared/sec-title';
+
 import SectionBgWord from '@/features/main/shared/sec-bg-word';
 import aboutImage from '@/assets/about.png';
 import aboutImage2 from '@/assets/about2.png';
@@ -23,11 +24,11 @@ export default function AboutSection() {
   }));
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f5f2ef] px-4 pt-28 pb-12 text-[#1d1d1f] md:px-10 lg:px-20 lg:pt-32">
+    <main className="min-h-screen overflow-hidden bg-bg-plain px-4 pt-28 pb-12 text-[#1d1d1f] md:px-10 lg:px-20 lg:pt-32">
       <div className="mx-auto grid max-w-360 items-center gap-12 lg:grid-cols-2 lg:gap-20">
         {/* image collage keeps its proportions at every width */}
         <div className="relative mx-auto aspect-5/6 w-full max-w-150">
-          <div className="absolute start-0 top-0 h-[72%] w-[58%] overflow-hidden rounded-[30px] bg-[#d7d5d2] shadow-[0_40px_70px_rgba(32,24,22,0.18)]">
+          <div className="absolute start-0 top-0 h-[72%] w-[58%] overflow-hidden rounded-[30px] bg-bg-plain shadow-[0_40px_70px_rgba(32,24,22,0.18)]">
             <img
               src={aboutImage}
               alt={t('about-us.images.kettlebell')}
@@ -35,7 +36,7 @@ export default function AboutSection() {
             />
           </div>
 
-          <div className="absolute end-0 top-[10%] h-[24%] w-[38%] overflow-hidden rounded-[28px] bg-[#d9d4d0] shadow-[0_25px_50px_rgba(32,24,22,0.15)]">
+          <div className="absolute end-0 top-[10%] h-[24%] w-[38%] overflow-hidden rounded-[28px] bg-bg-plain shadow-[0_25px_50px_rgba(32,24,22,0.15)]">
             <img
               src={aboutImage2}
               alt={t('about-us.images.after-workout')}
@@ -43,7 +44,7 @@ export default function AboutSection() {
             />
           </div>
 
-          <div className="absolute end-0 bottom-0 h-[58%] w-[58%] overflow-hidden rounded-[30px] bg-[#d9d4d0] shadow-[0_35px_60px_rgba(32,24,22,0.16)]">
+          <div className="absolute end-0 bottom-0 h-[58%] w-[58%] overflow-hidden rounded-[30px] bg-bg-plain shadow-[0_35px_60px_rgba(32,24,22,0.16)]">
             <img
               src={aboutImage3}
               alt={t('about-us.images.dark-gym')}
@@ -68,7 +69,9 @@ export default function AboutSection() {
           <p className="font-rubik pb-4 md:pb-10 text-lg leading-7 text-text-plain">
             {t('about-us.description')}
           </p>
-          <div className=" grid gap-x-12 gap-y-8 md:grid-cols-2 border-b border">
+
+          {/* Features Grid */}
+          <div className="grid gap-x-8 gap-y-6 md:grid-cols-2">
             {featureList.map((feature) => (
               <div key={feature.key} className="flex items-start gap-3">
                 <svg
@@ -98,12 +101,10 @@ export default function AboutSection() {
                   </defs>
                 </svg>
                 <div>
-                  <h2 className="mb-2 text-xl font-bold uppercase tracking-[-0.03em] text-[#1f1f1f] md:text-[1.05rem]">
+                  <h3 className="mb-1 text-base font-bold text-text-plain uppercase tracking-wide">
                     {feature.title}
-                  </h2>
-                  <p className="text-[0.96rem] leading-relaxed text-[#5d5a59]">
-                    {feature.description}
-                  </p>
+                  </h3>
+                  <p className="text-sm leading-relaxed text-text-muted">{feature.description}</p>
                 </div>
               </div>
             ))}
