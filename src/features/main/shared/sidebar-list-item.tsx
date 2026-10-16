@@ -7,6 +7,8 @@ interface SidebarListItemProps {
   active: boolean;
   onSelect: () => void;
   action?: boolean;
+  imageError?: boolean;
+  onImageError?: () => void;
 }
 
 export default function SidebarListItem({
@@ -16,6 +18,8 @@ export default function SidebarListItem({
   active,
   onSelect,
   action,
+  imageError,
+  onImageError,
 }: SidebarListItemProps) {
   return (
     <li className="border-b border-border-subtle last:border-b-0">
@@ -30,13 +34,18 @@ export default function SidebarListItem({
           onClick={onSelect}
           className="flex min-w-0 flex-1 items-center gap-4 text-start"
         >
-          {image && (
-            <img
-              src={image}
-              alt={title}
-              loading="lazy"
-              className="size-24 shrink-0 rounded-3xl object-cover"
-            />
+          {imageError ? (
+            <div aria-hidden className="size-24 shrink-0 animate-pulse rounded-3xl bg-bg-soft" />
+          ) : (
+            image && (
+              <img
+                src={image}
+                alt={title}
+                loading="lazy"
+                onError={onImageError}
+                className="size-24 shrink-0 rounded-3xl object-cover"
+              />
+            )
           )}
 
           <div className="min-w-0">

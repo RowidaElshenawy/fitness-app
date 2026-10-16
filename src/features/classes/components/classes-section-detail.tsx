@@ -11,7 +11,7 @@ import { useMuscleGroups } from '@/features/main/hooks/use-muscle-groups';
 import { useDifficultyLevels } from '../hooks/use-difficulty-levels';
 import { useRandomExercises } from '../hooks/use-random-exercises';
 
-import ErrorState from '@/features/healthy/components/error-state';
+import CardsSkeleton from '@/features/main/skeleton/cards-skeleton';
 import ExerciseListItem from './exercise-list-item';
 import ExerciseHero from './exercise-hero';
 
@@ -83,14 +83,7 @@ export default function ClassesSectionDetail() {
       }
       sidebar={
         <>
-          {isError && (
-            <ErrorState
-              onRetry={() => {
-                groupsQuery.refetch();
-                exercisesQuery.refetch();
-              }}
-            />
-          )}
+          {isError && <CardsSkeleton />}
 
           {!isError && isLoading && <MealsListSkeleton />}
 
@@ -115,7 +108,7 @@ export default function ClassesSectionDetail() {
       }
     >
       {isError ? (
-        <ErrorState onRetry={() => exercisesQuery.refetch()} />
+        <CardsSkeleton />
       ) : isLoading ? (
         <MealDetailsSkeleton />
       ) : activeExercise ? (

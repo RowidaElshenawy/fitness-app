@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import workoutsBg from '@/assets/workouts-bg.png';
 import SidebarListItem from '@/features/main/shared/sidebar-list-item';
 import type { IExercise } from '../types/exercise';
@@ -21,6 +23,9 @@ interface ExerciseListItemProps {
 }
 
 export default function ExerciseListItem({ exercise, active, onSelect }: ExerciseListItemProps) {
+  //state
+  const [isError, setIsError] = useState(false);
+
   const thumbnail =
     getYouTubeThumbnail(exercise.short_youtube_demonstration_link) ??
     getYouTubeThumbnail(exercise.in_depth_youtube_explanation_link) ??
@@ -29,6 +34,8 @@ export default function ExerciseListItem({ exercise, active, onSelect }: Exercis
   return (
     <SidebarListItem
       image={thumbnail}
+      imageError={isError}
+      onImageError={() => setIsError(true)}
       title={exercise.exercise}
       subtitle={exercise.primary_equipment}
       active={active}
