@@ -50,7 +50,7 @@ export default function MealsSection() {
 
   return (
     <section
-      className="relative isolate w-full overflow-hidden bg-cover bg-center bg-no-repeat h-176.25"
+      className="relative isolate w-full  bg-cover bg-center bg-no-repeat min-h-176.25"
       style={{ backgroundImage: `url(${MEALS_BG})` }}
     >
       <div
