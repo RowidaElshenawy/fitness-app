@@ -1,5 +1,6 @@
 import { cn } from '@/shared/lib/utils/tailwind-cn';
 import type { ComponentProps } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const BASE = '/images/why-us-images';
 
@@ -27,19 +28,22 @@ function Photo({ src, alt, ratio, className }: PhotoProps) {
 type ImagesContainerProps = ComponentProps<'div'>;
 
 export default function ImagesContainer({ className, ...props }: ImagesContainerProps) {
+  //Translation
+  const { t } = useTranslation();
+
   return (
     <div className={cn('grid w-fit grid-cols-[auto_auto] gap-2', className)} {...props}>
       {/* Column 1 */}
       <div className="flex flex-col gap-2">
         <Photo
           src={`${BASE}/Image0.png`}
-          alt="Trainer in a gym"
+          alt={t('why-us.images.trainer')}
           ratio="aspect-[191/278]"
           className="w-[171px] md:w-[191px]"
         />
         <Photo
           src={`${BASE}/Image1.png`}
-          alt="Man standing in the gym"
+          alt={t('why-us.images.standing')}
           ratio="aspect-[191/236]"
           className="w-[171px] md:w-[191px]"
         />
@@ -49,13 +53,13 @@ export default function ImagesContainer({ className, ...props }: ImagesContainer
       <div className="flex flex-col pb-2 gap-2 pt-6 md:pt-[34px]">
         <Photo
           src={`${BASE}/Image2.png`}
-          alt="Athlete lifting dumbbells"
+          alt={t('why-us.images.dumbbells')}
           ratio="aspect-[191/228]"
           className="w-[171px] md:w-[191px]"
         />
         <Photo
           src={`${BASE}/Figure.png`}
-          alt="Athlete stretching"
+          alt={t('why-us.images.stretching')}
           ratio="aspect-[191/236]"
           className="w-[171px] md:w-[191px]"
         />

@@ -198,17 +198,23 @@
   "why-us": {
     "features": {
       "personalized-plans": {
-        "title": "Personalized Fitness Plans",
-        "description": "We tailor every workout to fit your unique goals and fitness level ensuring that you make the most progress."
+        "title": "خطط لياقة بدنية مصممة خصيصاً لك",
+        "description": "نحن نقدم خطط لياقة بدنية مصممة خصيصًا لتلبية احتياجاتك وأهدافك الفردية. سواء كنت ترغب في فقدان الوزن، أو بناء العضلات، أو تحسين اللياقة العامة، فإن برامجنا المخصصة تضمن لك تحقيق أفضل النتائج."
       },
       "results-driven": {
-        "title": "Results-Driven Focus",
-        "description": "Everything we do is designed to help you achieve measurable results, whether you're aiming for weight loss."
+        "title": "نتائج مثبتة",
+        "description": "كل ما نقوم به مصمم لمساعدتك في تحقيق نتائج قابلة للقياس، سواء كنت تهدف إلى فقدان الوزن."
       },
       "equipment": {
-        "title": "State-Of-The-Art Equipment",
-        "description": "We provide the latest in gym equipment, from cardio machines to free weights, designed to support every type."
+        "title": "معدات حديثة",
+        "description": "نحن نوفر أحدث المعدات في الصالات الرياضية، من آلات التمارين القلبية إلى الأثقال الحرة، مصممة لدعم كل نوع."
       }
+    },
+    "images": {
+      "trainer": "مدرب في صالة رياضية",
+      "standing": "رجل واقف في صالة رياضية",
+      "dumbbells": "رياضي يرفع الدمبل",
+      "stretching": "رياضي يمدد عضلاته"
     },
     "sec-title": {
       "why-us": "ارتقِ باللياقة بـ<highlight>أفضل طريقة</highlight> ممكنة",
@@ -216,7 +222,9 @@
       "about-us": "نمكّنك من تحقيق <highlight>أهداف لياقتك</highlight>",
       "fitness-classes": "غيّر جسمك مع <highlight>تمارينا القادمة</highlight> المتنوعة",
       "healthy-nutritions": "غذّي رحلة لياقتك بـ<highlight>خطط وجبات</highlight> مخصصة لك"
-    }
+    },
+    "paragraph": "نحن نقدم رحلة لياقة تتماشى مع أهدافك، وندعمها بمدربين محترفين ومجتمع مرحباً. سواء كان الهدف هو فقدان الوزن، بناء القوة، أو الصحة العامة، فإن طرقنا المثبتة تضمن تحقيق النتائج المرجوة.",
+    "background-title": "لماذا نحن"
   },
   "sec-header": {
     "why-us": "لماذا نحن؟",

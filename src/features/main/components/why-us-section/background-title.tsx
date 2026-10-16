@@ -1,4 +1,3 @@
-// components/BackgroundTitle.tsx
 import { useId } from 'react';
 
 type BackgroundTitleProps = {
@@ -7,6 +6,7 @@ type BackgroundTitleProps = {
 };
 
 export default function BackgroundTitle({ text, className = '' }: BackgroundTitleProps) {
+  // Hooks
   const gradientId = useId();
 
   return (
@@ -29,8 +29,8 @@ export default function BackgroundTitle({ text, className = '' }: BackgroundTitl
         fill="none"
         stroke={`url(#${gradientId})`}
         strokeWidth="1"
-        className="font-sans font-bold uppercase"
-        style={{ fontSize: 64, letterSpacing: 0 }}
+        className="font-sans font-bold uppercase text-[64px] rtl:text-[56px] rtl:[transform:translateX(224px)]"
+        style={{ letterSpacing: 0 }}
       >
         {text}
       </text>
